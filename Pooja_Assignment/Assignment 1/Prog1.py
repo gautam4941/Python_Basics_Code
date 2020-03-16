@@ -7,27 +7,26 @@ for i in range( len( ap_seq ) ):
 a = ap_seq[0]
 d = ap_seq[1] - ap_seq[0]
 
-sum = a
-indicator = 0
+if( d < 0 ):
+    d = -d
 
-if( d >0 ):
-    while( sum <= key ):
+indicator = False
 
-        if( sum == key ):
-            indicator = 1
-            break
+if( key < a ):
+    while( a>=key ):
+        if( a == key):
+            indicator = True
 
-        sum = sum + d
+        a = a - d
 else:
-    while (sum >= key):
+    while( a <= key ):
+        if (a == key):
+            indicator = True
 
-        if (sum == key):
-            indicator = 1
-            break
+        a = a + d
 
-        sum = sum + d
+if( indicator == True ):
+    print( "Yes" )
 
-if( indicator == 0 ):
-    print(False)
 else:
-    print( True )
+    print( "No" )
