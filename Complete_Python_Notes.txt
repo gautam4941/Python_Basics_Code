@@ -2171,3 +2171,1214 @@ print( f"2. s2 = { s2 }\n" )
 # It does data shuffling at the time of creation
 # It doesn't allow duplicate values
 # We can use set to implement Mathematical SETS Operations
+
+"""
+import sys
+
+# 52. Write a Python program to print all permutations with given repetition
+# number of characters of a given string.
+
+def permutation( word ):
+    # print( f"word = { word }" )
+    
+    if( len( word ) == 1 ):
+        return [ word ]
+
+    elif( len( word ) == 2 ):
+        return [ word, word[ : : -1] ]
+
+    else:
+        main_list = []
+        
+        for i in range( len(word) ):
+            
+            curr_str = word[i]
+            recc_str = word[:i] + word[i+1:]
+
+            # print( f"curr_str = { curr_str } and recc_str = { recc_str }" )
+
+            op = [ curr_str + j for j in permutation( recc_str ) ]
+            main_list.extend( op )
+
+            # print( f"op = { op }" )
+            # print( f"main_list = { main_list }\n" )
+
+        return main_list
+
+# word = "abaa"
+word = sys.argv[1]
+op = permutation( word )
+op = list( set( op ) )
+print( op )
+
+# print( f"sys.argv = { sys.argv } and type( sys.argv ) = { type( sys.argv ) }" )
+"""
+
+################################# Dictionary #################################
+
+### Add value in dictionary :-
+# dict_var[key] = value
+# if key is not present in dict_var then, it will add the key:value pair in dict_var
+# if key is already present in dict_var then, it will update the value pair for given key in dict_var
+"""
+d = {}
+print( f"d = { d } and type(d) = { type(d) }" )
+
+d[True] = 'True'
+print( f"d = { d }" )
+
+d[1] = 'one'
+print( f"d = { d }" )
+
+d[2] = [ 'one', 'two', True, False ]
+print( f"d = { d }" )
+
+d[3] = ( 0, 1 )
+print( f"d = { d }" )
+
+d[1.2] = 'Float'
+print( f"d = { d }" )
+
+d[False] = { 'False' , True, False}
+print( f"d = { d }" )
+
+d[ 'hello' ] = 'Hi'
+print( f"d = { d }" )
+
+# d = {} and type(d) = <class 'dict'>
+# d = {1: 'one'}
+# d = {1: 'one', 2: ['one', 'two', True, False]}
+# d = {1: 'one', 2: ['one', 'two', True, False], 3: (0, 1)}
+# d = {1: 'one', 2: ['one', 'two', True, False], 3: (0, 1), 1.2: 'Float'}
+# d = {1: 'True', 2: ['one', 'two', True, False], 3: (0, 1), 1.2: 'Float'}
+# d = {1: 'True', 2: ['one', 'two', True, False], 3: (0, 1), 1.2: 'Float', False: {False, True, 'False'}}
+# d = {1: 'True', 2: ['one', 'two', True, False], 3: (0, 1), 1.2: 'Float', False: {False, True, 'False'}, 'hello': 'Hi'}
+"""
+
+d = {
+     1: 'True'
+   , 2: ['one', 'two', True, False]
+   , 3: (0, 1)
+   , 1.2: { 0.1 : 'Float'}
+    }
+
+# print( f"d = { d }" )
+"""
+print( f"d[1] = { d[1] }" )
+print( f"d[2] = { d[2] }" )
+print( f"d[3] = { d[3] }" )
+print( f"d[1.2] = { d[1.2] }" )
+"""
+
+"""
+print( f"d.keys() = { d.keys() } and type( d.keys() ) = { type( d.keys() ) }" )
+print()
+
+keys = list( d.keys() )
+print( f"keys = { keys } and type( keys ) = { type( keys ) }" )
+"""
+
+"""
+for i in d.keys():
+    print( f"i = { i } and type(i) = { type(i) }" )
+
+# i = 1 and type(i) = <class 'int'>
+# i = 2 and type(i) = <class 'int'>
+# i = 3 and type(i) = <class 'int'>
+# i = 1.2 and type(i) = <class 'float'>
+"""
+
+"""
+# print( d.values() )
+for i in d.values():
+    print( f"i = { i } and type( i ) = { type( i ) }" )
+"""
+
+"""
+# print( f"items() }\n and type( d.items() ) = { type( d.items() ) }" )
+
+for i, j in d.items():
+    print( f"Key -> { i } and type( i ) = { type( i ) }" )
+    print( f"Value -> { j } and type( j ) = { type( j ) }" )
+    print()
+"""
+
+# for i in dict_var.keys()  -> Keys can be accessed
+# for i in dict_var         -> Keys can be accessed
+
+# for i in dict_var.values() -> Values can be accessed
+
+# for i in dict_var.items() -> Keys and values both can be accessed
+
+d = {
+     1: 'True'
+   , 2: ['one', 'two', True, False]
+   , 3: (0, 1)
+   , 1.2: { 0.1 : 'Float'}
+    }
+
+"""
+print( f"d[1] = { d[1] }" )
+print( f"d[2] = { d[2] }" )
+print( f"d[3] = { d[3] }" )
+print( f"d[1.2] = { d[1.2] }" )
+# print( f"d[10] = { d[10] }" )       # KeyError: 10
+print( f"d.get( 10 ) = { d.get( 10 ) }" )
+"""
+
+### Delete the key-value pair from dictionary
+"""
+print( f"1. Before pop(), d = { d }" )
+print( f"2. d.pop(1) = { d.pop(1) }" )
+print( f"3. After pop(), d = { d }\n" )
+
+del d[2]
+
+print( f"4. After del d[2], d = { d }" )
+
+# d.pop(10)   # KeyError: 10
+# del d[10]     # KeyError: 10
+print( f"5. After pop(), d = { d }\n" )
+"""
+
+"""
+# print( f"d.fromkeys( [1, 2, 3] ) = { d.fromkeys( [1, 2, 3] ) }" )
+# print( f"d.fromkeys( 'Hello' ) = { d.fromkeys( 'Hello' ) }" )
+
+print( f"dict.fromkeys( 'Hello', [1, 2, 3] ) = { dict.fromkeys( 'Hello', [1, 2, 3] ) }" )
+print( f"dict.fromkeys( 'Hello', 0 ) = { dict.fromkeys( 'Hello', 0 ) }" )
+
+# O/p :-
+# dict.fromkeys( 'Hello', [1, 2, 3] ) = {'H': [1, 2, 3], 'e': [1, 2, 3], 'l': [1, 2, 3], 'o': [1, 2, 3]}
+# dict.fromkeys( 'Hello', 0 ) = {'H': 0, 'e': 0, 'l': 0, 'o': 0}
+"""
+
+"""
+print( f"1. Before pop(), d = { d }\n" )
+
+print( f"d.popitem() = { d.popitem() }" )
+print( f"After popitem(), d = { d }\n" )
+
+print( f"d.popitem() = { d.popitem() }" )
+print( f"After popitem(), d = { d }\n" )
+
+print( f"d.popitem() = { d.popitem() }" )
+print( f"After popitem(), d = { d }\n" )
+
+print( f"d.popitem() = { d.popitem() }" )
+print( f"After popitem(), d = { d }\n" )
+
+print( f"d.popitem() = { d.popitem() }" )
+print( f"After popitem(), d = { d }\n" )
+"""
+
+"""
+d = {
+     1: 'True'
+   , 2: ['one', 'two', True, False]
+   , 3: (0, 1)
+   , 1.2: { 0.1 : 'Float'}
+    }
+
+# d[key] = value
+print( f"1. d = { d }\n" )
+
+d.setdefault( 4, 40 )
+print( f"2.1 d = { d }\n" )
+
+d[4] = None
+print( f"2.2 d = { d }\n" )
+
+d.setdefault( 5 )
+print( f"3. d = { d }\n" )
+
+d.setdefault( 6, 20 )
+print( f"4. d = { d }\n" )
+
+d.setdefault( 5, 15 )
+print( f"4. d = { d }\n" )
+"""
+
+"""
+k = [ 5, 6, 7, 8, 9, 5 ]
+v= [ 11, 12, 13, 14, 15, 16 ]
+
+d = {}
+print( f"Before, d = {d}\n" )
+
+for i in range( len(k) ):
+    # d[ k[i] ] = v[i]
+    d.setdefault( k[i], v[i] )
+    print( f"key = {k[i]}, value = {v[i]}, d = { d }\n" )
+"""
+
+"""
+d = {
+     1: 'True'
+   , 2: ['one', 'two', True, False]
+   , 3: (0, 1)
+   , 1.2: { 0.1 : 'Float'}
+    }
+
+print( f"1. d = { d }\n" )
+
+d.update( {4 : 40} )
+print( f"2. d = { d }\n" )
+
+d.update( {2 : 20} )
+print( f"3. d = { d }\n" )
+"""
+
+"""
+# d1 = { 1: 11, 2 : 22 }
+# d2 = { 3: 31, 2 : 42 }
+
+# d1 = { 1: 11, 2 : [ 22, 42 ], 3: 31 }
+"""
+
+# d = { 1: 11, 2 : 22, 3: 31, 4 : 42 }
+
+################################# File Handling #################################
+
+# r -> read
+# , w -> write
+# , a -> append
+
+# , r+ -> read and write
+# , w+ -> write and read
+# , a -> append and read
+
+r"""
+file_path = r"C:\Users\gauta\Desktop\File_Handling_File.txt"
+mode = 'r'
+
+f = open( file_path, mode )
+op = f.read()
+f.close()
+
+print( op )
+"""
+
+################################# Functions #################################
+
+# Syntax :- def function_name( <args> ):
+#               Statement 1
+#               Statement 2
+#               .
+#               .
+#               Statement n
+
+"""
+a = 6
+
+def airthmetic():
+    global a
+
+    a = 50
+
+    print( f"a = { a }" )
+    print( f"a + 5 = { a + 5 }" )
+    print( f"a - 5 = { a - 5 }" )
+    print( f"a * 5 = { a * 5 }" )
+    print( f"a / 5 = { a / 5 }\n" )
+
+print( f"Before, Outside, a = { a }\n" )
+
+for i in range( 1, 3 ):
+    airthmetic()
+
+print( f"After, Outside, a = { a }\n" )
+"""
+
+"""
+def airthmetic( a ):
+    
+    print( f"a = { a }" )
+    print( f"a + 5 = { a + 5 }" )
+    print( f"a - 5 = { a - 5 }" )
+    print( f"a * 5 = { a * 5 }" )
+    print( f"a / 5 = { a / 5 }" )
+
+    return a + 5, a - 5, a * 5, a / 5
+
+print( "Start\n" )
+
+op = airthmetic( 10 )
+print( f"op = { op }\n" )
+
+op = airthmetic( 20 )
+print( f"op = { op }\n" )
+
+print( "End" )
+"""
+
+"""
+def airthmetic( a ):
+    
+    print( f"airthmetic Start, a = { a }" )
+
+    def add(a):
+        print( f"a + 5 = { a + 5 }" )
+        return a + 5
+    
+    def sub(a):
+        print( f"a - 5 = { a - 5 }" )
+        return a - 5
+        
+    def mult(a):
+        print( f"a * 5 = { a * 5 }" )
+        return a * 5
+
+    def div(a):
+        print( f"a / 5 = { a / 5 }" )
+        return a / 5
+
+    
+    print( f"airthmetic End, a = { a }" )
+
+    return add(10), sub(10), mult(10), div(10)
+
+op = airthmetic( 10 )
+print( f"Outside, op = { op }" )
+"""
+
+"""
+a = [1, 2, 3]
+
+def f1( x ):
+    # print( f"F1, a = { a } and id(a) = { id(a) }" )
+    print( f"F1, x = { x } and id(x) = { id(x) }" )
+
+print( f"outside, a = { a } and id(a) = { id(a) }" )
+# f1(a) # f1( [1, 2, 3] )
+f1( [1, 2, 3] )
+"""
+
+"""
+a = 5
+def f1(x):
+    print( f"F1, Before, x = { x } and id(a) = { id(x) }" )
+    x = x + 5
+    print( f"F1, After, x = { x } and id(a) = { id(x) }" )
+
+
+print( f"Outside, a = {a}" )
+f1(a)
+print( f"Outside, a = {a}" )
+"""
+
+######### Types of Arguments #########
+# 1) Reuired Argument
+"""
+def f1( a ):
+    print( f"F1, a = { a }" )
+
+f1(5)
+# f1()
+# f1( 5, 10 )
+"""
+
+
+# 2) Positional argument
+"""
+def f1( a, b ):
+    print( f"F1-> Before add, a = { a }, b = {b}" )
+
+    a = a + 5
+    b = b + 10
+
+    print( f"F1-> After add, a = { a }, b = {b}" )
+
+# f1(1, 2)
+# f1(2, 1)
+f1( b = 2, a = 1 )
+"""
+
+# 3) Defualt Argument
+"""
+def add(b, a = 0):
+    print( f"F1-> Before add, a = { a }, b = {b}" )
+
+    a = a * 5
+    b = b * 3
+
+    print( f"F1-> After add, a = { a }, b = {b}, add = { a + b }\n" )
+
+add(a = 5, b = 2 )
+add( 6, a = 5 )
+add()
+"""
+
+
+# 4) args( arguments ) and kwargs( Keyword - arguments )
+"""
+def add(  *a, **x ):
+    print( f"a = {a} and type(a) = { type(a) }" )
+    print( f"x = {x} and type(x) = { type(x) }" )
+
+    all_sum = 0
+    for i in a:
+        all_sum = all_sum + i
+
+    for i in x.values():
+        all_sum = all_sum + i
+
+    print( f"all_sum = { all_sum }\n" )
+
+add( 2, 3, 4, 8, 0, 19, 9, b = 1, c = 2, d = 3 )
+"""
+
+"""
+# Required -> Default -> Args -> Kwargs
+def add(  p, q, r = 0, s = 0, *a, **x ):
+    print( f"p = {p} and type(p) = { type(p) }" )
+    print( f"q = {q} and type(q) = { type(q) }" )    
+    print( f"r = {r} and type(r) = { type(r) }" )
+    print( f"s = {s} and type(s) = { type(s) }" )
+    print( f"a = {a} and type(a) = { type(a) }" )
+    print( f"x = {x} and type(x) = { type(x) }" )
+
+    all_sum = 0
+    for i in a:
+        all_sum = all_sum + i
+
+    for i in x.values():
+        all_sum = all_sum + i
+
+    print( f"all_sum = { all_sum }\n" )
+
+# Values/ args, positional Arg/ Kwargs
+add( 2, 3, 4, 8, 0, 19, 9, b = 1, c = 2, d = 3 )
+"""
+
+"""
+import time
+
+start_time = time.time()
+
+# def f1( a, b ):
+#     return a + b
+
+# print( f1(2, 3) )
+
+print( f"2+3 = { 2+3 }" )
+
+print( f"Executed Time : { time.time() - start_time } seconds " )
+"""
+
+
+################################# Classes sand Objects #################################
+"""
+import time
+
+class Abc:
+    a = 1
+    b = 1000
+
+    def f1( self ):
+        print( f"Abc : F1, self = { self } and id( self ) = { id( self ) }\n" )
+
+
+ob1 = Abc()
+ob2 = Abc()
+ob3 = Abc()
+
+print( f"ob1 = { ob1 } and id(ob1) = { id(ob1) }" )
+print( f"ob2 = { ob2 } and id(ob2) = { id(ob2) }" )
+print( f"ob3 = { ob3 } and id(ob3) = { id(ob3) }\n" )
+
+# Abc.f1( ob1 )
+# Abc.f1( ob2 )
+# Abc.f1( ob3 )
+
+ob1.f1()
+ob2.f1()
+ob3.f1()
+"""
+
+################################# Classes sand Objects #################################
+"""
+class Arithmetic:
+    a = 10
+    b = 20
+
+    # def add( self, a, b):
+        # print( f"Arithmetic : add, a = {a} and b = {b}" )
+        # print( f"Arithmetic : add, self.a = {self.a} and self.b = { self.b }" )
+        # print( f"Arithmetic : add, Arithmetic.a = {Arithmetic.a} and Arithmetic.b = { Arithmetic.b }" )
+
+    def add(self):
+        return self.a+self.b
+
+    def sub( self):
+        return self.a-self.b
+
+    def mult( self):
+        return self.a*self.b
+
+    def div( self):
+        return self.a/self.b
+        
+
+ob1 = Arithmetic()
+
+# ob1.a = 100
+# ob1.b = 200
+# ob1.add(1, 2)
+
+print( f"ob1.add() = { ob1.add() }" )
+print( f"ob1.sub() = { ob1.sub() }" )
+print( f"ob1.mult() = { ob1.mult() }" )
+print( f"ob1.div() = { ob1.div() }" )
+"""
+
+
+# To add variable only in all Object
+'''
+class Arithmetic:
+    a = 10
+    b = 20
+
+    # def add( self, a, b):
+        # print( f"Arithmetic : add, a = {a} and b = {b}" )
+        # print( f"Arithmetic : add, self.a = {self.a} and self.b = { self.b }" )
+        # print( f"Arithmetic : add, Arithmetic.a = {Arithmetic.a} and Arithmetic.b = { Arithmetic.b }" )
+
+    def add(self):
+        return self.a+self.b
+
+    def sub( self):
+        return self.a-self.b
+
+    def mult( self):
+        return self.a*self.b
+
+    def div( self):
+        return self.a/self.b
+        
+
+ob1 = Arithmetic()
+
+# To add data in any class or Object :- <class_name/ Object_name>.variable_name = value
+
+# Adding variable only in class and changes will be reflect in class as well as on all of it's objects
+"""
+print( f"dir(Arithmetic) :- \n{ dir(Arithmetic) }\n" )
+print( f"dir(ob1) :- \n{ dir(ob1) }\n" )
+Arithmetic.c = 30
+print( f"dir(Arithmetic) :- \n{ dir(Arithmetic) }\n" )
+print( f"dir(ob1) :- \n{ dir(ob1) }\n" )
+"""
+
+
+# To add data in any class or Object :- <class_name/ Object_name>.variable_name = value
+"""
+print( f"dir(Arithmetic) :- \n{ dir(Arithmetic) }\n" )
+print( f"dir(ob1) :- \n{ dir(ob1) }\n" )
+ob1.c = 30
+print( f"dir(Arithmetic) :- \n{ dir(Arithmetic) }\n" )
+print( f"dir(ob1) :- \n{ dir(ob1) }\n" )
+"""
+
+'''
+
+########### Creation of variable - a and b inside take_input()
+"""
+import random
+
+def sub():
+        print( "Outside : Sub() \n" )
+
+class Arithmetic:
+
+    def take_input( self ): # self = ob1
+        self.a = random.randint(1, 11 ) # ob1.a = ...
+        self.b = random.randint(1, 11 ) # ob1.b = ...
+
+        print( f"Arithmetic : take_input()" )
+        print( f"id(self ) = { id(self ) }" )
+        print( f"self.a = {self.a} and self.b = {self.b}\n" )
+    
+    def add(self, func): # self = ob1
+        func()
+        return self.a+self.b
+
+ob1 = Arithmetic()
+ob2 = Arithmetic()
+
+print( f"id(ob1) = { id(ob1) }" )
+print( f"id(ob2) = { id(ob2) }\n" )
+
+ob1.take_input()
+# ob2.take_input()
+
+# print( f"ob1.add() = { ob1.add() }\n" )
+# ob2.add()
+
+# print( ob1.add( sub ) )
+"""
+
+################################# Classes sand Objects #################################
+##### Constructor -> __init__ #####
+"""
+import random
+
+class Arithmetic:
+
+    def __init__( self, x = 0, y = 0 ): # self = ob1
+        self.a = x # ob1.a = ...
+        self.b = y # ob1.b = ...
+
+        print( f"Arithmetic : take_input()" )
+        print( f"id(self ) = { id(self ) }" )
+        print( f"self.a = {self.a} and self.b = {self.b}\n" )
+    
+    def add(self):
+        return self.a+self.b
+
+x = random.randint(1, 11 )
+y = random.randint(1, 11 )
+
+ob1 = Arithmetic(x, y)
+ob2 = Arithmetic(x, y)
+
+print( f"id(ob1) = { id(ob1) }" )
+print( f"id(ob2) = { id(ob2) }\n" )
+
+ob1.add()
+
+ob1.__init__()
+"""
+
+###### Summary ######
+# 1) We should use classes and objects concept when we need to maintain data parallely and in isolated way.
+# 2) Class is always the main copy/ template and object is the duplicate copy of class/template.
+# 3) We can keep statements in class but we should not do this because if do so then that time class
+#    will executed and python will run the statement writen inside class but not in any class function.
+# 4) If we want to use any function inside clas then we must use self concept.
+# 5) 1st argument of any class's function represent the object which is running in the execution flow.
+# 6) If we do changes in any element of class/main copy/template then, it will effect all the same
+#    element of objects until unless that part of object is unchanges.
+# 7) Class Variable and Object Variable
+# 8) Constructor/ __init__() -> This is also same as normal function. The only difference is that,
+#               Constructor/ __init__() will be called automatically only for 1 time at the time of
+#               object creation.
+
+
+#####################Menu Program ##########
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 1
+
+# Enter your Name =
+# Enter your Age =
+
+# You details are added and your id is 0
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 1
+
+# Enter your Name =
+# Enter your Age =
+
+# You details are added and your id is 1
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 1
+
+# Enter your Name =
+# Enter your Age =
+
+# You details are added and your id is 2
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 1
+
+# Enter your id to be delete = 1
+# Following Person Details got Delete,
+
+# Name =
+# Age =
+# id =
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 3
+
+# Enter your id =
+
+# Name =
+# Age =
+# id =
+# Status = 'Deleted Record'
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 4
+# Show only Active people Records
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 5
+
+# Active Records : 1. Search by id, 2. Search by name =
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 6
+
+# Deleted Records : 1. Search by id, 2. Search by name =
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 7
+
+# >>> Program Terminated
+
+'''
+import random
+
+class Person:
+    def __init__(self, id, name = "", age = 0):
+        self.name = name
+        self.age = age
+        self.id = id
+        self.status = 'active'
+
+    def display_info( self ):
+        print( f"Name = { self.name }" )
+        print( f"Age = { self.age }" )
+        print( f"ID = { self.id }" )
+        print()
+
+    def delete_info( self ):
+        self.display_info()
+        self.status = 'deleted'
+
+person_dict = {}
+id_count = 0
+names = [ 'A', 'B', 'C', 'D', 'E', 'F' ]
+
+while( True ):
+    op = input( """Menu : 1) Add Person Details, 2) Delete Person Details,
+    3) Display All Person Details, 4) Search Person, 5) Deleted Records, 6) Exit = """ )
+    print()
+
+    if( op == '1' ):
+        person_dict[id_count] = Person( id = id_count, name = random.choice( names ), age = random.randint( 1, 101 ) )
+        
+        print( f"Your details are added and your id is {id_count}" )
+        id_count = id_count + 1
+
+    elif( op == '2' ):
+        person_id = input( "Enter your id to be delete = " )
+        print()
+
+        if( person_id.isdigit() ):
+            person_id = int( person_id )
+
+            person_data = person_dict.get( person_id )
+
+            if( person_data ):
+                if( person_data.status == 'active' ):
+                    print( f"Following Person Details got Deleted," )
+                    person_data.delete_info()
+                else:
+                    print( f"Following Person Details was already Deleted," )
+                    person_data.display_info()
+            else:
+                print( f"Sorry Can't Delete. ID : {person_id} does not exists" )
+        else:
+            print( f"Sorry Can't Delete. Only numbers are allowed as id" )
+
+    elif( op == '3'):
+        not_found = True
+        for id, person_data in person_dict.items():
+            
+            if( person_data.status == 'active' ):
+                person_data.display_info()
+                not_found = False
+
+        if( not_found ):
+            print( "There is no active person Data" )
+
+    elif( op == '4' ):
+        search_op = input( "1. Search by id, 2. Search by name = " )
+
+        if( search_op == '1' ):
+            person_id = input( "Enter your id to be searched = " )
+
+            if( person_id.isdigit() ):
+                person_id = int( person_id )
+
+                person_data = person_dict.get( person_id )
+
+                if( person_data ):
+                    if( person_data.status == 'active' ):
+                        person_data.display_info()
+                    else:
+                        print( f"Person having id : {person_id} was already Deleted" )
+                else:
+                    print( f"Sorry Can't display. ID : {person_id} does not exists" )
+            else:
+                print( f"Sorry Can't display. Only numbers are allowed as id" )
+
+        elif( search_op == '2' ):
+            person_name = input( "Enter your name to be searched = " )
+
+            not_found = True
+            for person_data in person_dict.values():
+                
+                if( ( person_data.status == 'active' )
+                    and ( person_data.name.lower() == person_name.lower() )
+                    ):
+                    person_data.display_info()
+                    not_found = False
+
+            if( not_found ):
+                print( "There is no active person Data" )
+
+        else:
+            print( f"Sorry, Wrong Option. Please choose correct one" )
+
+    elif( op == '5' ):
+        not_found = True
+        for person_data in person_dict.values():
+            
+            if( person_data.status == 'deleted' ):
+                person_data.display_info()
+                not_found = False
+
+        if( not_found ):
+            print( "There is no delete person Data" )
+
+    elif( op == '6' ):
+        break
+
+    else:
+        print( f"Sorry, Wrong Option. Please choose correct one" )
+
+        
+    print()
+'''
+
+################################# Classes sand Objects #################################
+##### destructor -> __del__ #####
+
+"""
+class A:
+    x = 1
+
+    def __init__(self):
+        print( f"__init__() Called, id( self ) = { id( self ) }\n" )
+
+    def __del__(self):
+        print( f"__del__() Called, id( self ) = { id( self ) }\n" )
+
+ob1 = A()
+ob2 = A()
+
+print( f"id(ob1) = { id(ob1) }\n" )
+
+del ob1
+
+print( f"id(ob2) = { id(ob2) }\n" )
+"""
+
+#### Types of Inheritance ####
+# 1) Single Inheritance         :   A -> B( A, B )
+# 2) Multi-Level Inheritance    :   A -> B( A, B ) -> C( A, B, C )
+# 3) Multi-ple Inheritance      :   A, B -> C( A, B, C )
+# 4) Hierarchichal Inheritance  :   A -> B, C, D, ...
+# 5) Hybrid Inheritance         :   A -> B, C -> D
+
+# 1) Single Inheritance         :   A -> B( A, B )
+
+"""
+class A:
+    a = 1
+
+    def __init__(self):
+        print( f"A Cont., self.a = {self.a}" )
+
+    def add(self):
+        print( f"A, add : self.a + 10 = { self.a + 10 }" )
+
+class B( A ):
+    b = 2
+
+    def __init__(self):
+        print( f"B Cont., self.a = {self.a} and self.b = {self.b}" )
+
+    def mult(self):
+        print( f"B, mult : self.a * 10 = { self.a * 10 } and self.b * 10 = { self.b * 10 }" )
+
+oba = A()
+obb = B()
+
+obb.add()
+"""
+
+# 2) Multi-Level Inheritance    :   A -> B( A, B ) -> C( A, B, C )
+"""
+class A:
+    a = 1
+
+    def __init__(self):
+        print( f"A Cont., a = {self.a}" )
+
+    def add(self):
+        print( f"A, add : a + 10 = { self.a + 10 }" )
+
+class B( A ):
+    b = 2
+
+    def __init__(self):
+        print( f"B Cont., a = {self.a} and b = {self.b}" )
+
+    def mult(self):
+        print( f"B, mult : a * 10 = { self.a * 10 } and b * 10 = { self.b * 10 }" )
+
+class C( B ):
+    c = 2
+
+    def __init__(self):
+        print( f"C Cont., a = {self.a}, b = {self.b} and c = {self.c}" )
+
+    def mult(self):
+        print( f"C, mult : a * 10 = { self.a * 10 }, b * 10 = { self.b * 10 } and c * 10 = { self.c * 10 }" )
+
+oba = A()
+obb = B()
+obc = C()
+print()
+
+oba.add()
+obb.add()
+obc.add()
+print()
+
+obb.mult()
+obc.mult()
+"""
+
+# 3) Multi-ple Inheritance      :   A, B -> C( A, B, C )
+"""
+class A:
+    a = 1
+
+    def __init__(self):
+        print( f"A Cont., a = {self.a}" )
+
+    def add(self):
+        print( f"A, add : a + 10 = { self.a + 10 }" )
+
+    def mult(self):
+        print( f"A, mult : a * 10 = { self.a * 10 }" )
+
+class B:
+    b = 2
+
+    def __init__(self):
+        print( f"B Cont., b = {self.b}" )
+
+    def mult(self):
+        print( f"B, mult : b * 10 = { self.b * 10 }" )
+
+class C:
+    c = 2
+
+    def __init__(self):
+        print( f"C Cont.,c = {self.c}" )
+
+    def mult(self):
+        print( f"C, mult" )
+
+    def div(self):
+        print( f"C, c / 10 = { self.c / 10 }" )
+
+class D(A, B, C):
+    pass
+
+oba = A()
+obb = B()
+obc = C()
+obd = D()
+print()
+
+obd.mult()
+"""
+
+# 4) Hierarchichal Inheritance  :   A -> B, C, D, ...
+# 5) Hybrid Inheritance         :   A -> B, C -> D
+
+#######Abstract Class#######
+
+# Abstract Functions -> YES
+# def f1():
+#     pass
+
+## Abstract Class -> YES
+# class A:
+#   a = 1
+#   b = 2
+
+## Abstract Class -> YES
+# class A:
+#   a = 1
+#   b = 2
+#
+#   def f1(self):
+#       pass
+
+## Abstract Class -> NO
+# class A:
+#   a = 1
+#   b = 2
+#
+#   def f1(self):
+#       print( "F1" )
+
+"""
+class Vehicle:
+    wheels = 0
+    automatic = None
+
+    def color(self):
+        pass
+
+    def dimension(self):
+        pass
+"""
+
+#######Polymerphism -> Abstract Class + Inheritance( Over-riding ) #######
+"""
+class Vehicle:
+    wheels = None
+    automatic = None
+
+    def __init__(self):
+        pass
+
+    def color(self):
+        pass
+
+    def dimension(self):
+        pass
+
+
+class Car( Vehicle ):
+
+    def __init__( self, automatic = False ):
+        self.wheels = 4
+        self.automatic = automatic
+
+class Auto( Vehicle ):
+
+    def __init__( self, automatic = False ):
+        self.wheels = 3
+        self.automatic = automatic
+
+scorpio = Car( True )
+normal_auto = Auto( False )
+
+print( f"scorpio.wheels = { scorpio.wheels } and scorpio.automatic = { scorpio.automatic }" )
+print( f"normal_auto.wheels = { normal_auto.wheels } and normal_auto.automatic = { normal_auto.automatic }" )
+"""
+
+"""
+class A:
+    a = 11     # Public
+    _b = 21    # Protected
+    __c = 31   # Private
+
+    def get_c(self):
+        return self.__c
+
+    def set_c(self, new_c):
+        self.__c = new_c
+
+    def __change_fees(self):
+        print(f"__change_fees" )
+
+    def access_change_fees(self):
+        print(f"access_change_fees" )
+        self.__change_fees()
+
+oba = A()
+print( f"oba.get_c() = { oba.get_c() }" )
+oba.set_c( 1 )
+print( f"oba.get_c() = { oba.get_c() }" )
+"""
+
+######### Static, Instance and Class Method #########
+"""
+class A:
+    a = 1
+    b = 2
+    
+    def f1( self ):
+        print( f"F1, id( self ) = { id( self ) }\n" )
+
+    @classmethod
+    def f2( self ):
+        print( f"F2, id( self ) = { id( self ) }\n" )
+        self.a = 10
+        self.b = 20
+
+    @staticmethod
+    def f3():
+        print( f"F3" )
+        # print( f"F3, id( self ) = { id( self ) }\n" )
+
+oba = A()
+
+print( f"Outside, id(A) = { id(A) }" )
+print( f"Outside, id(oba) = { id(oba) }\n" )
+
+print( f"Before, A.a = {A.a} and A.b = { A.b }" )
+print( f"Before, oba.a = {oba.a} and oba.b = { oba.b }\n" )
+
+oba.b = 100
+
+oba.f1()
+oba.f2()
+oba.f3()    # A.f3( oba )
+
+print( f"After, A.a = {A.a} and A.b = { A.b }" )
+print( f"After, oba.a = {oba.a} and oba.b = { oba.b }" )
+"""
+
+"""
+class A:
+
+    def __init__( self ):
+        self.a = 1
+        self.b = 2
+
+        print( f"id(self) = { id(self) }\n" )
+
+    def disp(self):
+        print( f"id(self) = { id(self) }, a = {self.a} and b = {self.b}\n" )
+
+    def __add__(self, num): # ob1, 5
+        print( f"__add__, id(self) = { id(self) }, self = {self} and num = {num}\n" )
+        return "__add__ Function"
+
+    def __sub__(self, num): # ob1, 5
+        print( f"__sub__, id(self) = { id(self) }, self = {self} and num = {num}\n" )
+        return "__sub__ Function"
+
+    def __mul__(self, num): # ob1, 5
+        print( f"__mul__, id(self) = { id(self) }, self = {self} and num = {num}\n" )
+        return "__mult__ Function"
+        
+
+ob1 = A()
+
+ob1.disp()
+
+op = ob1+5
+print( f"op = { op }\n" )
+
+op = ob1-5
+print( f"op = { op }\n" )
+
+op = ob1*5
+print( f"op = { op }\n" )
+"""
