@@ -1,0 +1,3417 @@
+#######################PATH#######################
+
+                                            PC
+C Drive                     D Drive                 E Drive
+Install Python
+
+Open Python 
+    -> System 
+        -> Python installed ? 
+            -> Open Python( Loc where python is installed )
+                -> Execute Python
+                    
+Solution :- Store the Path : C:\Users\gauta\AppData\Local\Programs\Python\Python37
+            in environment variables
+
+Open Python 
+    -> System 
+        -> Python installed( Check Env Variable )
+            -> Open Python( Check Env Variable )
+                -> Execute Python
+
+Python provides 2 platform to write the code,
+1. Shell
+    -> Shows output
+    -> We can run Demo kind of code
+
+2. Editor
+    -> We can save our program for future reference
+
+######################### Data ##################
+
+    Visual                  Audio( AI/ NLP )      Taste(x)     Smell(x)       Touch(x)
+    
+Photos(DL)  Video(OpenCV)   Text( Python )
+
+                Number                          Non-Number
+       Non-Decimal      Decimal             Alphabets       Symbols             boolean
+       5, 12, 9, etc    5.6, 2.3, etc       [a-z], [A-Z]     ( @, !, ), etc )   True, False
+       ( Float )        ( integer )         ( String )         ( String )       ( bool )
+           float            int                 str                 str         
+                                            "True"              "@@#@#"
+                                            /'True'             /'@@#@#'
+                                            /"""True"""         /"""@@#@#"""
+                                            /'''True'''         /'''@@#@#'''
+                                            /'A'
+
+######################### Data Types ##################                   
+           
+4 Primitive Data Types,
+
+Float/ float
+integer/ int
+String/ str
+Boolean/ bool
+
+################# Variable ############
+
+# 1) x = 5, y = 6 , x + y = 11
+
+# 2) x = 7, y = 2 , x - y = 7 - 2 = 5
+
+# 3) x = 2, y = 9 , x * y = 2 * 9 = 18
+
+Variable = Vary( Change ) + able( Capable )
+        = Something which is capable of change from time to time is known as Variable.
+
+x = 5
+x( 5 )+6 = 11
+x( 5 )*6 = 30
+
+x = 2
+x*5 = 10
+
+
+1 Operation = 1 unit/ value
+                                                  Case 1,
+Without Variable                                        With Variable
+
+2+3                                -> 1 Unit        |   a = 2+3     -> 2 Units
+( 2+3 ) * 4                        -> 2 Units       |   b = a*4     -> 2 Units
+( ( 2+3 ) * 4 )/5                  -> 3 Units       |   c = b/5     -> 2 Units
+( ( ( 2+3 ) * 4 )/5 )-6            -> 4 Units       |   d = c-6     -> 2 Units
+( ( ( ( 2+3 ) * 4 )/5 )-6 ) + 3    -> 5 Units       |   e = d + 3   -> 2 Units
+                                ---------------     |           ---------------
+                                     15 Units       |                  10 Units
+                                ---------------     |           ---------------
+                                
+                                
+Conclusion 1 : Variable helps us in reducing program execution/run time.
+
+
+                                                  Case 2,
+Without Variable                                        With Variable
+
+2+3                                -> 1 Unit        |   a = 2+3                             -> 2 Units
+( 2-3 ) * 4                        -> 2 Units       |   b = ( 2-3 ) * 4                     -> 3 Units
+( ( 2/3 ) - 4 )+5                  -> 3 Units       |   c = ( ( 2/3 ) - 4 )+5               -> 4 Units
+( ( ( 2*3 ) / 4 )-5 )/6            -> 4 Units       |   d = ( ( ( 2*3 ) / 4 )-5 )/6         -> 5 Units
+( ( ( ( 2*3 ) + 4 )*5 )/6 ) / 3    -> 5 Units       |   e = ( ( ( ( 2*3 ) + 4 )*5 )/6 ) / 3 -> 6 Units
+                                ---------------     |                                   ---------------
+                                     15 Units       |                                          20 Units
+                                ---------------     |                                   ---------------
+                                
+                                
+Conclusion 2 : Variable increases program execution/run time.
+
+Final Conclusion = We should be storing only those data in variable which has future usage.
+                   If any data/ calculation is present only for one time then, we should not be
+                   Storing it in variable.
+
+a = 15		|	a = 15			Yes		No
+b = 20		|	b = 20			No		No
+c = a * 5	|	c = 15 * 5		No		No
+d = b + 5	|	d = b + 5		No		No
+e = a/2		|	e = 15/2		No		No
+f = a-2		|	f = 15-2		No		No
+
+							With variable	
+a = 5 * 2	|	Yes		| 		2 Units		
+b = a * 4	|	No		| 		2 Units		
+c = a - 6	|	No		| 		2 Units		
+d = b * c	|	Yes		| 		2 Units		
+e = d + 5	|	No		| 		2 Units		
+f = d / 2	|	No		| 		2 Units		
+							----------------
+							   12 Units
+
+							Without variable	
+a = 5 * 2			|	Yes		| 		2 Units		
+	a * 4			|	No		| 		1 Units		
+	a - 6			|	No		| 		1 Units		
+d = a * 4 * a - 6	|	Yes		| 		4 Units		
+d + 5				|	No		| 		1 Units		
+d / 2				|	No		| 		1 Units		
+									----------------
+									   10 Units
+
+############ Comments###########
+
+Single Line Comment :- #
+
+One Time Quote :- '<String_Data>' / "<String_Data>"
+    Supports only single line string
+
+Three Time Quotes :- '''<String_Data>'''/ """<String_Data>"""
+    Supports only single line string and multi line string
+
+Multi-Line String :- ''' ''' / """ """( Wrong ) / NA( Correct )
+    We are using ''' ''' / """ """ in such a way that it behaves like comment
+    but actually it's string.
+
+###################### Operator ####################
+
+Arithmetic Operator :- + , - , * , / ,// , ** , %
+Input :- Number( int/ float )
+Output :-  Number( int/ float )
+
+* -> 5*2 = 10           , ** -> 5**2 = 25 # base**power
+                        , ** -> √5 -> 2√5 -> 5**(1/2)
+                        , ** -> 16√5 -> 5**(1/16) = 1.1058230170302352
+
+8/2 = 4.0( float )
+8//2 = 4( integer )
+8%2 = 0
+
+7/2 = 3.5( float )
+7//2 = 3( integer )
+7%2 = 1
+
+199/100 -> 1.99
+199//100 -> 1
+199%100 -> 99
+              
+    --------        |     --------              
+  2 )   8   ( 4     |   2 )   7   ( 3           
+       -8           |        -6                 
+    --------        |     --------              
+        0           |         1                 
+    --------        |     --------              
+    
+
+2) Comparision Operator :- < , > , == , != , >= , <=
+Input :- Number( int/ float )
+Output :-  bool( True/ False )
+
+Big > Small -> True otherwise False
+Small < Big -> True otherwise False
+
+a = 2
+b = 3
+c = 2
+
+a > b -> False , a < b -> True
+
+a == b -> 2 == 3 -> False
+a == c -> 2 == 2 -> True
+
+a != b -> 2 != 3 -> True
+a != c -> 2 != 2 -> False
+
+a >= b -> a > b  or  a == b
+
+5>=5 -> True
+5>5 -> False
+5==5 -> True
+
+5 >= 5 -> True
+6 >= 5 -> True
+4 >= 5 -> False
+
+5 <= 5 -> True
+6 <= 5 -> False
+4 <= 5 -> True
+
+
+3) Logical Operator :-  and( both ) , or( anyone )
+Input :- bool( True/ False )
+Output :-  bool( True/ False )
+
+True  and True   -> True     | True or True   -> True 
+True  and False  -> False    | True or False  -> True
+False and True  -> False     | False or True  -> True
+False and False -> False     | False or False -> False
+
+
+a = 4
+b = 3
+c = 2
+
+a>b and a>c -> a>b( True ) and a>c( True ) -> True
+a>b and c>a -> a>b( True ) and c>a( False ) -> False
+
+a>b or  a>c -> a>b( True ) or a>c( True ) -> True
+a>b or  c>a -> a>b( True ) or c>a( False ) -> True
+
+We use logical operator to combine multiple Comparision Statement.
+
+4) Assignment Operator, =
+
+5) Membership Opearator -> in, not in
+Input :- Strings, numbers and list, list in list, etc
+Output :-  bool( True/ False )
+
+Nihal in Family -> True
+Family in Nihal -> False
+
+small element in/ not in Group -> True/ False
+Group in/ not in small element -> False/ True
+
+"H"     in "Hello, How are you ?" -> True
+"H,"    in "Hello, How are you ?" -> False
+"He"    in "Hello, How are you ?" -> True
+"Helol" in "Hello, How are you ?" -> False
+
+"Hello, How are you ?" in "Helol" -> False
+
+"H"     not in "Hello, How are you ?" -> False
+"H,"    not in "Hello, How are you ?" -> True
+"He"    not in "Hello, How are you ?" -> False
+"Helol" not in "Hello, How are you ?" -> True
+
+"Hello, How are you ?" not in "Helol" -> True
+
+a = [ 2, 10, True, 'Hello' ]
+
+2 in a -> True
+2 not in a -> False
+
+6) Identity Opearator -> is , is not
+Input :- Any Data Type
+Output :-  bool( True/ False )
+
+C/ Java                        Python
+a = 5 , Space1, Memory Loc1  | a = 5    ,   Space1  ,    Memory Loc1
+b = 5 , Space2, Memory Loc2  | b = 5    ,   Space1  ,    Memory Loc1
+c = 5 , Space3, Memory Loc3  | c = 5    ,   Space1  ,    Memory Loc1
+d = 6 , Space4, Memory Loc4  | d = 6    ,   Space2  ,    Memory Loc2
+
+Memory Allocation happens       Memory Allocation happens
+on the basis of variables       on the basis of Values
+
+
+We can check memory address using id()
+
+id(5) -> 140706838835600
+id(a) -> 140706838835600
+id(b) -> 140706838835600
+id(c) -> 140706838835600
+
+id(6) -> 140706838835632
+id(d) -> 140706838835632
+
+a == b -> True          # Check by value
+id(a) == id(b) -> True  # Check by Memory Address
+a is b -> True          # Check by Memory Address
+
+a == d -> False          # Check by value
+id(a) == id(d) -> False  # Check by Memory Address
+a is d -> False          # Check by Memory Address
+
+l1 = [ 2, 3, 5 ]
+l2 = [ 2, 3, 5 ]
+l3 = l1
+
+l1 == l2 -> True                # Check by Value
+id(l1) == id(l2) -> False       # Check by Memory Location
+l1 is l2         -> False       # Check by Memory Location
+
+l1 == l3 -> True                # Check by Value
+id(l1) == id(l3) -> True        # Check by Memory Location
+l1 is l3         -> True        # Check by Memory Location
+
+
+
+a != b -> False                 |   a == b -> True            
+a != c -> False                 |   a == c -> True
+                                |                              
+id( a ) != id( b ) -> False     |   id( a ) == id( b ) -> True
+id( a ) != id( c ) -> False     |   id( a ) == id( c ) -> True
+                                |                              
+a is not b -> False             |   a is b -> True        
+a is not c -> False             |   a is c -> True        
+
+7) Bitwise Opearator -> &, |
+Input :- Numbers
+Output :-  Numbers
+
+25&23 -> 17
+25|23 -> 31
+
+25 -> 25/2 = 12, rem = 1    |   23 -> 23/2 = 11, rem = 1
+      12/2 = 6 , rem = 0    |         11/2 = 5 , rem = 1
+      6/2  = 3 , rem = 0    |         5/2  = 2 , rem = 1
+      3/2  = 1 , rem = 1    |         2/2  = 1 , rem = 0
+      1/2  = 0 , rem = 1    |         1/2  = 0 , rem = 1
+      
+25 -> 11001 -> ( 1 * 2 power 4 ) 
+             + ( 1 * 2 power 3 ) 
+             + ( 0 * 2 power 2 ) 
+             + ( 0 * 2 power 1 ) 
+             + ( 1 * 2 power 0 )
+             
+            -> 16 + 8 + 0 + 0 + 1 = 25
+
+25 -> 11001
+23 -> 10111
+-------------
+&  -> 10001 ->  2 power 4 + 2 power 0 -> 16 + 1 = 17
+|  -> 11111 ->  2 power 4 + 2 power 3 + 2 power 2 + 2 power 1 + 2 power 0
+            ->  16 + 8 + 4 + 2 + 1 = 31
+-------------
+
+8) Minus Operator -> -
+   a = 5
+   print( -a ) # -5
+
+10001       -> ( 1 * 2 power 4 )        |   11111       -> ( 1 * 2 power 4 ) 
+             + ( 0 * 2 power 3 )        |                + ( 1 * 2 power 3 ) 
+             + ( 0 * 2 power 2 )        |                + ( 1 * 2 power 2 ) 
+             + ( 0 * 2 power 1 )        |                + ( 1 * 2 power 1 ) 
+             + ( 1 * 2 power 0 )        |                + ( 1 * 2 power 0 )
+                                        |                
+            -> 16 + 0 + 0 + 0 + 1 = 17  |               -> 16 + 8 + 4 + 2 + 1 = 31
+
+############################## Type Casting #############################
+
+Type = Data Type
+Casting = Conversion of any object from one state to another state
+
+Type Casting = Conversion of any data from one datatype to another datatype is known as Type Casting
+
+'abcd' + 5 -> Error
+str      int
+
+'5' + 5     -> Error
+str   int
+
+'5' + 5 ->
+Expectation : 10
+Reality :- 
+    '5' -> 5 + 5 -> 10
+    
+Type Casting = Conversion of any data( '5' ) from one datatype( str ) to another datatype( int )
+                is known as Type Casting
+                
+functions for Type Casting :- 
+    input -> int() -> integer number
+    input -> float() -> float number
+    input -> str() -> str data
+    input -> bool() -> True/ False
+    
+Notes,    
+0 -> False
+1 -> True
+    
+int : understands only Digits( 0 - 9 )
+float : understands Digits( 0-9 ) and decimal( . )
+
+bool( 0 ) -> False and bool( 1 ) -> True
+bool( 0.0 ) -> False and bool( 1.0 ) -> True
+
+input( int ) -> bool( int_value ) -> 0 -> False and Non-0 -> True
+input( float ) -> bool( float_value ) -> 0.0 -> False and Non-0.0 -> True
+input( str ) -> bool() -> empty string -> False and Non-empty string -> True
+
+Universal Type Caster :- input -> Type Casting Function -> Output/ No Error
+        Answer : bool()( x ) and str()( Yes )
+    
+Input :- integer     |   Input :- float         |   Input :- bool               |
+, Output = Other     |   , Output = Other       |   , Output = Other            |
+          Data Type  |             Data Type    |             Data Type         |
+                     |                          |                               |
+float( 5 ) -> 5.0    |   int( 5.6 )  -> 5       |   int( True )    ->  1        |
+str( 5 )   -> '5'    |   str( 5.6 )  -> '5.6'   |   int( False )   ->  0        |
+bool( 5 )  -> True   |   bool( 5.6 ) -> True    |   float( True )  ->  1.0      |
+bool( -5 ) -> True   |   bool( -5.6 )-> True    |   float( False ) ->  0.0      |
+bool( 0 )  -> False  |   bool( 0.0 ) -> False   |   str( True )    ->  'True'   |
+                     |                          |   str( False )   ->  'False'  |
+                     |                          |                               |
+                     |                          |                               |
+                     |                          |                               |
+                     |                          |                               |
+                     |                          |                               |
+                     |                          |                               |
+                     |                          |                               |
+Input :- str                    
+, Output = Other Data Type             
+                     
+int( 'abc' )       ->  Error    |float( 'abc' )       ->  Error    |bool( 'abc' )       ->  True    |
+int( '123' )       ->  123      |float( '123' )       ->  123.0    |bool( '123' )       ->  True    |
+int( '#$@' )       ->  Error    |float( '#$@' )       ->  Error    |bool( '#$@' )       ->  True    |
+int( 'abc123' )    ->  Error    |float( 'abc123' )    ->  Error    |bool( 'abc123' )    ->  True    |
+int( '123$%@' )    ->  Error    |float( '123$%@' )    ->  Error    |bool( '123$%@' )    ->  True    |
+int( 'abc@#' )     ->  Error    |float( 'abc@#' )     ->  Error    |bool( 'abc@#' )     ->  True    |
+int( 'abc123#$#' ) ->  Error    |float( 'abc123#$#' ) ->  Error    |bool( 'abc123#$#' ) ->  True    |
+int( '' )          ->  Error    |float( '' )          ->  Error    |bool( '' )          ->  False   |
+int( '5' )         ->  5        |float( '5' )         ->  5.0      |bool( '5' )         ->  True    |
+int( 'a' )         ->  Error    |float( 'a' )         ->  Error    |bool( 'a' )         ->  True    |
+int( '%' )         ->  Error    |float( '%' )         ->  Error    |bool( '%' )         ->  True    |
+int( '0' )         ->  0        |float( '0' )         ->  0.0      |bool( '0' )         ->  True    |
+int( '123.5' )     ->  Error    |float( '123.5' )     ->  123.5    |bool( '123.5' )     ->  True    |
+                                
+
+
+a = int( input() ) # 5 -> input() -> str(5) -> '5' -> int( '5' ) -> 5 -> a
+
+print( f"a = { a }" ) # a = 5
+print( f"a * 5 = { a * 5 }" ) # '5' * 5, '55555'
+print( f"a * 5 = { a + 5 }" ) # '5' + 5, Error
+
+######################## input() #####################
+
+"""
+print( "Start" )
+
+a = 3
+
+print( a )
+print( a * 5 )
+print( a + 5 )
+print( a - 5 )
+print( a / 5 )
+
+print( "End" )
+"""
+
+"""
+print( "Start" )
+
+# a = input() # 5 -> input()/str() -> '5' -> a
+            # 5.6 -> input()/str() -> '5.6' -> a
+            # True -> input()/str() -> 'True' -> a
+            # abcd -> input()/str() -> 'abcd' -> a
+
+a = int( input("Enter a number = ") )
+# 5 -> input()/str() -> '5' -> int('5') -> a
+
+print( a )      # print( '5' )
+print( type(a) ) # print( type('5') )
+
+# print( a + 2 )  # print( '5' + 2 )
+print( a + 2 )  # print( int('5') + 2 ) -> print( 5 + 2 )
+print( a + 3 )  # print( int('5') + 3 ) -> print( 5 + 3 )
+print( a + 4 )  # print( int('5') + 4 ) -> print( 5 + 4 )
+print( a + 5 )  # print( int('5') + 5 ) -> print( 5 + 5 )
+print( a + 6 )  # print( int('5') + 6 ) -> print( 5 + 6 )
+
+print( "End" )
+
+# 400 lines of code are executed
+# a = input()
+# 600 lines of code are pending
+"""
+
+# Way1 : Prininting Multiple values inside single print
+"""
+# Expecttion : 1True 2.3Hello
+# Actual : 1 True 2.3 Hello
+
+a = 1
+b = 2.3
+c = True
+d = "Hello"
+
+print( "Start" )
+print(a,c,b,d)
+print( "End" )
+"""
+
+# Way2 : print + end = 'sep'
+"""
+# Expecttion : 1True 2.3Hello
+# Actual : 1True 2.3Hello
+
+a = 1
+b = 2.3
+c = True
+d = "Hello"
+
+print(a, end = '')
+print(c, end = ' ')
+print(b, end = '')
+print(d)
+"""
+
+# Way3 : Type Casting Method
+"""
+# Expecttion : 1True 2.3Hello
+# Actual : 1True 2.3Hello
+
+a = 1
+b = 2.3
+c = True
+d = "Hello"
+
+print( str(a) + str(c)+ ' ' + str(b) + d )
+# print( str(1) + str(True)+ ' ' + str(2.3) + 'Hello' )
+# print( '1' + 'True' + ' ' + '2.3' + 'Hello' )
+# print( '1True 2.3Hello' )
+"""
+
+# Way4 : f String Method
+# Expecttion : 1True 2.3Hello
+# Actual : 1True 2.3Hello
+
+# f"{non_string area} str_area {non_string area} str_area"
+"""
+a = 1
+b = 2.3
+c = True
+d = "Hello"
+
+print( "ac bd" )                # ac bd
+print( f"ac bd" )               # ac bd
+print( f"{a}c bd" )             # 1c bd
+print( f"{a}{c} bd" )           # 1True bd
+print( f"{a}{c} {b}d" )         # 1True 2.3d
+print( f"{a}{c} {b}{d}" )       # 1True 2.3Hello
+print( "{a}{c} {b}{d}" )        # {a}{c} {b}{d}
+print( f"{a * 5 + 7}{c} {b * 3 + 5}{d}" )   # 12True 11.899999999999999Hello
+"""
+
+"""
+a = 7
+print( f"a = { a }" )
+print( f"a + 5 = { a + 5 }" )
+print( f"a - 5 = { a - 5 }" )
+print( f"a * 5 = { a * 5 }" )
+print( f"a / 5 = { a / 5 }" )
+print( f"a // 5 = { a // 5 }" )
+print( f"a % 5 = { a % 5 }" )
+"""
+
+############ Conditional Statement ###################
+
+a = 5           # Statement1
+
+print( a )      # Statement2
+print( a + 5 )  # Statement3
+print( a * 5 )  # Statement4
+
+
+# Conditional Statement = Statement with Conditions
+
+# Types of Conditional Statements,
+# 1. If Statement
+# 2. If-else Statement
+# 3. elif ladder Statement
+# 4. nested conditional Statement
+# 5. Multiple conditional Statement
+
+# 1. If Statement
+
+"""
+print( "Start" )    # Statement1
+
+if( False ):        # Condition
+    a = 5           # Statement2( Conditional )
+
+    print( a )      # Statement3( Conditional )
+    print( a + 5 )  # Statement4( Conditional )
+    print( a * 5 )  # Statement5( Conditional )
+
+print( "End" )      # Statement6
+"""
+
+"""
+print( "Start" )# Statement1
+
+a = 5           # Statement2
+print( a )      # Statement3
+
+if( True ):        # Condition
+    print( a + 5 )  # Statement4( Conditional )
+    print( a * 5 )  # Statement5( Conditional )
+
+print( "End" )      # Statement6
+"""
+
+"""
+print( "Start" )# Statement1
+
+a = 5           # Statement2
+print( f"a = {a}" )      # Statement3
+
+if( a>0 ):        # Condition
+    print( f"IF, a + 5 = { a + 5 }" )  # Statement4( Conditional )
+    print( f"IF, a * 5 = { a * 5 }" )  # Statement5( Conditional )
+
+print( "End" )      # Statement6
+"""
+
+# 2. If-else Statement
+"""
+print( "Start" )    # Statement1
+
+if( False ):        # Condition
+    print( "Inside IF" ) # Statement2( Conditional )
+else:
+    print( "Inside Else" ) # Statement2( Conditional )
+
+print( "End" )      # Statement6
+"""
+
+"""
+print( "Start" )# Statement1
+
+a = -5           # Statement2
+print( f"a = {a}" )      # Statement3
+
+if( a>0 ):        # Condition
+    print( f"IF, a + 5 = { a + 5 }" )  # Statement4( Conditional )
+    print( f"IF, a * 5 = { a * 5 }" )  # Statement5( Conditional )
+else:
+    print( f"Else, a - 5 = { a - 5 }" )  # Statement4( Conditional )
+    print( f"Else, a / 5 = { a / 5 }" )  # Statement5( Conditional )
+
+print( "End" )      # Statement6
+"""
+
+
+# Elif Ladder
+"""
+print( "Start" )
+
+if( False ):        
+    print( "Inside IF 1" )
+
+elif( False ):        
+    print( "Inside IF 2" )
+
+elif( True ):        
+    print( "Inside IF 3" )
+
+elif( False ):        
+    print( "Inside IF 4" )
+    
+else:
+    print( "Inside Else" )
+
+print( "End" )      # Statement6
+"""
+
+"""
+print( "Start" )
+
+a = 35
+
+if( a < 0 ):
+    print( f"a = { a }, Less than 0" )
+
+elif( a == 0 ):
+    print( f"a = { a }, Equals to 0" )
+
+elif( (a > 0) and (a<11) ):
+    print( f"a = { a }, is from 1 to 10" )
+
+elif( (a > 10) and (a<21) ):
+    print( f"a = { a }, is from 11 to 20" )
+
+elif( (a > 20) and (a<31) ):
+    print( f"a = { a }, is from 21 to 30" )
+
+else:
+    print( f"a = { a }, is more than 30" )
+
+print( "End" )
+"""
+
+"""
+id = int( input("Enter Customer ID : ") )
+name = input("Enter Customer Name : ")
+unit = float( input("Enter Unit Consumed : ") )
+
+amount = 0
+
+if( unit >= 0 ):
+
+    if( unit <= 199 ):
+        amount = 1.20 * unit
+        
+    elif( unit >=200 and unit < 400 ):
+        amount = 1.50 * unit
+        
+    elif( unit >=400 and unit < 600 ):
+        amount = 1.80 * unit
+
+    else:
+        amount = 2 * unit
+
+    if( amount > 400 ):
+        amount = amount + ( 0.15 * amount )
+        
+    elif( amount < 100 ):
+        amount = 100
+
+    print( f"Customer_ID = { id }, Name = { name }, Units Consumed = { unit } and Bill Amt.= { amount }" )
+        
+else:
+    print( f"Unit value can't be negative" )
+"""
+
+"""
+month_num = int( input("Enter Month Number = ") )
+
+if( month_num in [1, 3, 5, 7, 8, 10, 12] ):
+    days = 31
+elif( month_num == 2):
+    days = 28
+else:
+    days = 30
+
+print( f"Month have {days} days" )
+"""
+
+"""
+month_num = int( input("Enter Month Number = ") )
+
+# in [1, 3, 5, 7, 8, 10, 12] ):
+    
+if( month_num == 1 ):
+    days = 31
+elif( month_num == 2):
+    days = 28
+elif( month_num == 3):
+    days = 31
+elif( month_num == 5):
+    days = 31
+elif( month_num == 7):
+    days = 31
+elif( month_num == 8):
+    days = 31
+elif( month_num == 10):
+    days = 31
+elif( month_num == 12):
+    days = 31
+else:
+    days = 30
+
+print( f"Month have {days} days" )
+"""
+
+# 4. nested conditional Statement
+"""
+# nested = one inside one
+
+# Structure :-
+    if( True/ False/ Condition ):
+        if( True/ False/ Condition ):
+            if( True/ False/ Condition ):
+                if( True/ False/ Condition ):
+                    .
+                        .
+                elif:
+                
+                else:
+            
+            elif:
+            
+            else:
+            
+
+num = 10
+
+if( num > 0):
+    print( f"{num} is +ve" )
+    if( num%5 == 0):
+        print( f"\t{num} is divisible by 5" )
+        
+    elif( num%6 == 0):
+        print( f"\t{num} is divisible by 6" )
+        
+    elif( num%7 == 0):
+        print( f"\t{num} is divisible by 7" )
+        
+else:
+    print( f"{num} is +-e" )
+"""
+
+# 5. Multiple conditional Statement
+"""
+print( "Start" )
+
+num = 336
+if( num%5 == 0 ):
+    print( f"{num} is divisible by 5" )
+
+if( num%6 == 0 ):
+    print( f"{num} is divisible by 6" )
+
+if( num%7 == 0 ):
+    print( f"{num} is divisible by 7" )
+
+if( num%8 == 0 ):
+    print( f"{num} is divisible by 8" )
+
+print( "End" )
+"""
+
+
+########Loops############
+# Where ever there is repeatation there we can use Loops
+
+# 10 times
+"""
+print( 1 )
+print( 1 )
+print( 1 )
+print( 1 )
+print( 1 )
+print( 1 )
+print( 1 )
+print( 1 )
+print( 1 )
+print( 1 )
+"""
+
+# Components of Loops,
+# 1) Start
+# 2) End
+# 3) Incr/ decr
+# 4) Incr by/ Decr by
+# 5) Work
+
+# Types of Loops
+# 1) While Loops
+# 2) For Loops
+
+# 1) While Loops,
+# Syntax :-
+# loop_variable = start
+# while( Condition ): # Condition start <= end
+#
+#   work
+#   loop_var = loop_var incr(+) incr_by
+
+"""
+print( "Start" )
+
+i = 1
+while( i <= 10 ): # 11 <= 10 -> False
+
+    print( 1 )
+    i = i + 1
+
+print( "End" )
+"""
+
+"""
+1 x 5 = 5
+2 x 5 = 10
+.
+.
+10 x 5 = 50
+"""
+
+"""
+print( "Start" )
+
+num = 70
+
+i = 1
+while( i <= 10 ): # 11 <= 10 -> False
+
+    print( f"{i} x {num} = { i*num }" )
+    i = i + 1
+
+print( "End" )
+"""
+
+# https://www.w3resource.com/c-programming-exercises/for-loop/index.php
+# 5. Write a program in C to display the cube of the number upto given an integer. Go to the editor
+# Test Data :
+# Input number of terms : 5
+# Expected Output :
+# Number is : 1 and cube of the 1 is :1
+# Number is : 2 and cube of the 2 is :8
+# Number is : 3 and cube of the 3 is :27
+# Number is : 4 and cube of the 4 is :64
+# Number is : 5 and cube of the 5 is :125
+"""
+print( "Start" )
+
+num = 70
+power = 9
+
+i = 1
+while( i <= num ):
+
+    print( f"Number is : {i} and {i} to the power {power} is :{ i ** power }" )
+    i = i + 1
+
+print( "End" )
+"""
+
+# 15. Write a C program to calculate the factorial of a given number. Go to the editor
+# Test Data :
+# Input the number : 5
+# Expected Output :
+# The Factorial of 5 is: 120
+"""
+
+'''
+5! = 5 x 4 x 3 x 2 x 1 or 1 x 2 x 3 x 4 x 5
+                           curr mult i
+mult = 1, i = 1 ,   mult = mult(1) * 1 , new mult = 1
+mult = 1, i = 2 ,   mult = mult(1) * 2 , new mult = 2
+mult = 2, i = 3 ,   mult = mult(2) * 3 , new mult = 6
+mult = 6, i = 4 ,   mult = mult(6) * 4 , new mult = 24
+mult = 24, i = 5 ,  mult = mult(24)* 5 , new mult = 120
+'''
+
+print( "Start" )
+
+num = 5
+mult = 1
+
+i = 1
+while( i <= num ):
+
+    print(f"Before mult = {mult}, i = {i}", end = ', ' )
+    mult = mult * i
+    print(f"After mult = {mult}\n" )
+    
+    i = i + 1
+
+print( f"{num}! = { mult }" )
+print( "End" )
+
+"""
+
+# W2
+k = 1
+    i = 1 -> W1
+    i = 2 -> W1
+    i = 3 -> W1
+k = 2
+    i = 1 -> W1
+    i = 2 -> W1
+    i = 3 -> W1
+k = 3
+    i = 1 -> W1
+    i = 2 -> W1
+    i = 3 -> W1
+k = 4
+    i = 1 -> W1
+    i = 2 -> W1
+    i = 3 -> W1
+k = 5
+    i = 1 -> W1
+    i = 2 -> W1
+    i = 3 -> W1
+
+W2 = 5 x W1
+W3 = 3 x W2
+
+
+"""
+for( init ; condition ; incr/decr )
+{
+        statement
+}
+
+for var in range( start, end, incr/decr ):
+    statement
+"""
+
+#            Incr -> <
+#            decr -> >
+# range( start = 0, end, incr = 1 )
+
+# for i in range( 1, 10, 1 ): # 1 to 9
+#     print( i )
+
+
+# for i in range(1, 10 ): # 1 to 9
+#     print( i )
+
+# for i in range( 10 ): # 0 to 9
+#     print( i )
+
+# for i in range(): # TypeError: range expected 1 arguments, got 0
+#     print( i )
+
+# for i in range( 1, 10, -1 ): # Will not execute
+#     print( i )
+                
+# for i in range( 10, 1, -1 ): # 10 to 2
+#     print( i )
+
+######## Difference between While and For Loop,
+"""
+print( "Start" )
+
+i = 1
+while( i <= 10 ):
+    print( f"Before i = { i }", end = ' , ' )
+    
+    if( i%2 == 0 ):
+        i = i + 1
+    else:
+        i = i + 3
+
+    print( f"After i = { i }" )
+
+print()
+print()
+
+for i in range(1, 11, 1 ):
+    print( f"Before i = { i }", end = ' , ' )
+    
+    if( i%2 == 0 ):
+        i = i + 1
+    else:
+        i = i + 3
+
+    print( f"After i = { i }" )
+
+
+print( "End" )
+"""
+
+# +ve index
+"""
+msg = "Hello"
+print( f"msg = { msg }" )
+
+for i in range( len( msg ) ):
+    print( f"i = { i } and msg[i] = { msg[i] }" )
+"""
+
+# -ve index
+"""
+msg = "Hello"
+print( f"msg = { msg }" )
+
+for i in range( -1, -len( msg ) -1 , -1 ): # -1, -5, -1
+    print( f"i = { i } and msg[i] = { msg[i] }" )
+"""
+
+# Slicing
+"""
+# Syntax :- str_data[ start = 0 : end = len(str_data) : incr/decr = 1 ]
+          # str_data[ len(str_data) : -1 : -1 ]
+msg = "Hello"
+
+print( f"msg = { msg }" )
+print( f"msg[ : : ] = { msg[ : : ] }" )
+print( f"msg[ 0 : : ] = { msg[ 0 : : ] }" )
+print( f"msg[ 0 : len(msg) : ] = { msg[ 0 : len(msg) : ] }" )
+print( f"msg[ 0 : len(msg) : 1 ] = { msg[ 0 : len(msg) : 1 ] }" )
+print( f"msg[ 0 : len(msg) : -1 ] = { msg[ 0 : len(msg) : -1 ] }" )
+print( f"msg[ len(msg) -1 : 0 : -1 ] = { msg[ len(msg) -1 : 0 : -1 ] }" )
+print( f"msg[ len(msg) -6 : -5 : -1 ] = { msg[ len(msg) -1 : -5 : -1 ] }" )
+print( f"msg[ : : -1 ] = { msg[ : : -1 ] }" )
+
+print( f"msg[ len(msg) -1 : -50 : -1 ] = { msg[ len(msg) -1 : -50 : -1 ] }" )
+"""
+
+# ord()/ascii value and chr()/character
+"""
+for i in range( 0, 1000 ):
+    print( f"i = { i } and chr(i) = { chr(i) }" )
+"""
+
+"""
+word = "Hello"
+
+print( f"word = { word }" )
+
+for i in range( len( word ) ):
+    print( f"i = { i } and word[i] = { word[i] }" )
+"""
+
+"""
+word = "hello"
+new_word = ""
+
+print( f"Before, word = { word } and new_word = { new_word }" )
+
+for i in range( len( word ) ):
+    curr_char = word[i]
+    new_word = new_word + chr( ord( curr_char ) - 32 )
+    
+    # print( f"i = { i } and curr_char = { curr_char }", end = ' , ' )
+    # print( f"ord( curr_char ) = { ord( curr_char ) }", end = ' , ' )
+    # print( f"ord( curr_char ) - 32 = { ord( curr_char ) - 32 }", end = ' , ' )
+    # print( f"chr( ord( curr_char ) - 32 ) = { chr( ord( curr_char ) - 32 ) }\n" )
+
+print( f"After, word = { word } and new_word = { new_word }" )
+
+# O/p :-
+# Before, word = hello and new_word = 
+# After, word = hello and new_word = HELLO
+"""
+
+"""
+word = "hElLo"
+new_word = ""
+
+print( f"Before, word = { word } and new_word = { new_word }" )
+
+for i in range( len( word ) ):
+    curr_char = word[i]
+    curr_ord = ord( curr_char )
+
+    if( curr_ord >= 97 and curr_ord <= 122 ):
+        curr_ord = curr_ord - 32
+        curr_char = chr( curr_ord )
+
+    elif( curr_ord >= 65 and curr_ord <= 90 ):
+        curr_ord = curr_ord + 32
+        curr_char = chr( curr_ord )
+
+    new_word = new_word + curr_char
+    
+print( f"After, word = { word } and new_word = { new_word }" )
+"""
+
+
+#### String Inbuilt Functions ####
+
+# 1. Capitalize()
+"""
+msg = "Hello, how are you ?"
+print( f"msg = { msg } and msg.capitalize() = { msg.capitalize() }" )
+"""
+
+"""
+# Immutable Data Type = If any data type does not allows you to change by index then, it is known as Immutable Data Type
+# Mutable Data Type = If any data type does allows to you change by index then, it is known as Mutable Data Type
+msg = "hello, how are you ?"
+if( ord(msg[0]) >= 97 and ord(msg[0]) <= 122 ):
+    print( f"chr( ord(msg[0]) - 32 ) = { chr( ord(msg[0]) - 32 ) }" )
+
+    print( chr( ord(msg[0]) - 32 ) + msg[1: ] )
+"""
+
+# 2) lower() -> Converts all upper case into lower case
+"""
+msg = "Hello, how are you ?"
+print( f"msg = { msg } and msg.lower() = { msg.lower() }" )
+"""
+
+# 3) upper() -> Converts all upper case into lower case
+"""
+msg = "Hello, how are you ?"
+print( f"msg = { msg } and msg.upper() = { msg.upper() }" )
+"""
+
+# 4) find() -> Find the index of given substring
+# Syntax :- str_data.find( substr, start = 0, end = last_index)
+"""
+msg = "hello, how are you ? he"
+
+print( f"msg = { msg }" )
+print( msg.find( "h" ) )
+print( msg.find( "h", 0 ) )
+print( msg.find( "h", 0, len( msg ) ) )
+print( msg.find( "h", 1, len( msg ) ) )
+print( msg.find( "h", 8, len( msg ) ) )
+print( msg.find( "he", 0, len( msg ) ) )
+print( msg.find( "he", 1, len( msg ) ) )
+"""
+
+"""
+msg = "hello, how are you ? he"
+substr = 'h'
+index = 0
+
+while( True  ):
+    found_index = msg.find( substr, index )
+    if( found_index == -1 ):
+        break
+
+    print( f"index = { index } and found_index = { found_index }" )
+
+    index = found_index + 1
+"""
+
+# 5) index() -> Find the index of given substring
+"""
+# Syntax :- str_data.index( substr, start = 0, end = last_index)
+
+msg = "hello, how are you ? he"
+
+print( f"msg = { msg }" )
+print( msg.index( "h" ) )
+print( msg.index( "h", 0 ) )
+print( msg.index( "h", 0, len( msg ) ) )
+print( msg.index( "h", 1 ) )
+print( msg.index( "h", 8 ) )
+print( msg.find( "z", 0 ) )
+print( msg.index( "z", 0 ) )
+"""
+
+## 6) count() -> Returns the number of times a given substring is present in string
+"""
+msg = "hello, how are you ? he"
+print( f"msg.count( 'h' ) = { msg.count( 'h' ) }" )
+print( f"msg.count( 'o' ) = { msg.count( 'o' ) }" )
+print( f"msg.count( ' ' ) = { msg.count( ' ' ) }" )
+print( f"msg.count( 'z' ) = { msg.count( 'z' ) }" )
+print( f"msg.count( '' ) = { msg.count( '' ) }" )
+"""
+
+## 7) endswith() -> Returns true if the string ends with the substring value
+"""
+msg = "hello, how are you ? he"
+print( f"msg = { msg }" )
+print( f"msg.endswith( 'he' ) = { msg.endswith( 'he' ) }" )
+print( f"msg.endswith( 'ho' ) = { msg.endswith( 'ho' ) }" )
+print()
+"""
+
+## 8) endswith() -> Returns true if the string starts with the substring value
+"""
+msg = "hello, how are you ? he"
+print( f"msg = { msg }" )
+print( f"msg.startswith( 'he' ) = { msg.startswith( 'he' ) }" )
+print( f"msg.startswith( 'ho' ) = { msg.startswith( 'ho' ) }" )
+"""
+
+## 9) title() -> Converts the first character of each word to upper case
+"""
+msg = "hello, how are you ? he"
+print( f"msg = { msg }" )
+print( f"msg.title() = { msg.title() }" )
+"""
+
+## 10) replace()
+"""
+msg = "hello, how are you ? he"
+
+print( f"Before replace, msg = { msg }" )
+# print( f"msg.replace( 'h', 'X' ) = { msg.replace( 'h', 'X' ) }" )
+msg = msg.replace( 'A', 'X' )
+print( f"After replace, msg = { msg }" )
+
+""" 
+
+## 11) strip() -> Returns a trim version of the string
+msg = "hello, how are you ? he"
+"""
+print( f"Before strip, msg = { msg }" )
+print( f"msg.strip( ) = { msg.strip( ) }" )
+print( f"msg.strip('h') = { msg.strip('h') }" )
+print( f"After strip, msg = { msg }" )
+"""
+
+## 12) lstrip() -> Returns a trim left version of the string
+"""
+msg = "hello, how are you ? hh"
+print( f"Before strip, msg = { msg }" )
+print( f"msg.lstrip( ) = { msg.lstrip( ) }" )
+print( f"msg.lstrip('h') = { msg.lstrip('h') }" )
+print( f"After strip, msg = { msg }" )
+"""
+
+## 13) rstrip() -> Returns a trim right version of the string
+"""
+msg = "hello, how are you ? hh"
+print( f"Before strip, msg = { msg }" )
+print( f"msg.rstrip( ) = { msg.rstrip( ) }" )
+print( f"msg.rstrip('h') = { msg.rstrip('h') }" )
+print( f"After strip, msg = { msg }" )
+"""
+
+## 14) rjust() -> Returns a right justified version of the string
+"""
+addhar_number = "1246523341"
+
+print( f"Before rjust, addhar_number = { addhar_number }" )
+print( f"addhar_number.rjust( 12, '0' ) = { addhar_number.rjust( 12, '0' ) }" )
+print( f"After rjust, addhar_number = { addhar_number }" )
+
+# ( ( given_length - len( str_data ) ) * given_substr ) + str_data
+"""
+
+## 15) ljust() -> Returns a left justified version of the string
+"""
+addhar_number = "1246523341"
+
+print( f"Before rjust, addhar_number = { addhar_number }" )
+print( f"addhar_number.ljust( 12, '0' ) = { addhar_number.ljust( 12, '0' ) }" )
+print( f"After rjust, addhar_number = { addhar_number }" )
+
+# str_data + ( ( given_length - len( str_data ) ) * given_substr )
+"""
+
+"""
+message = "Hello, How are you ?"
+
+print( f"message.isalpha() = { message.isalpha() }" )
+print( f"'ABCD'.isalpha() = { 'ABCD'.isalpha() }\n" )
+
+print( f"message.isdigit() = { message.isdigit() }" )
+print( f" '67.8'.isdigit() = { '67.8'.isdigit() }" )
+print( f" '678'.isdigit() = { '678'.isdigit() }\n" )
+"""
+
+# num =input("Enter a number = ")
+# print( f"num = { num } and type( num ) = { type( num ) }" )
+
+# if( num.isdigit() ):
+#     num = int( num )
+
+# print( f"num = { num } and type( num ) = { type( num ) }" )
+"""
+message = "Hello, How are you ?"
+print( f"message.istitle() = { message.istitle() }" )
+print( f"'Hello, How Are You ?'.istitle() = { 'Hello, How Are You ?'.istitle() }" )
+print( f"''.istitle() = { ''.istitle() }\n" )
+
+
+msg = "How 12are"
+print( f"msg.title() = { msg.title() }" )
+print( f"msg.istitle() = { msg.istitle() }" )
+"""
+
+"""
+message = "Hello, How are you ?"
+
+print( f"message.isspace() = { message.isspace() }\n" )
+
+print( f"message.isalnum() = { message.isalnum() }\n" )
+
+print( f" '678'.isalnum() = { '678'.isalnum() } " )
+print( f"'678dasdad'.isalnum() = { '678dasdad'.isalnum() }" )
+print( f"'678dasd ad'.isalnum() = { '678dasd ad'.isalnum() }\n" )
+
+print( f"message.isdecimal() = { message.isdecimal() }" )
+print( f" '67.8'.isdecimal() = { '67.8'.isdecimal() }" )
+print( f" '678'.isdecimal()  = { '678'.isdecimal()  }\n" )
+
+print( f" '678'.islower() = { '678'.islower() } " )
+print( f" '67.8'.islower() = { '67.8'.islower() }" )
+print( f" message.islower() = { message.islower() }\n" )
+
+print( f" '678'.isupper() = { '678'.isupper() } " )
+print( f" message.isupper() = { message.isupper() } " )
+print( f" message.upper().isupper() = { message.upper().isupper() }\n" )
+"""
+
+[] -> List
+() -> Tuple
+{} -> Set, Dictionary
+
+################ List ###########
+
+# List Creation
+"""
+l1 = []
+# in   0, 1, 2 ,  3 ...
+# in  -4,-3,-2 , -1 ...
+
+l2 = list()
+
+print( f"l1 = { l1 } and type( l1 ) = { type( l1 ) }" )
+print( f"l2 = { l2 } and type( l2 ) = { type( l2 ) }" )
+"""
+
+# Add data in list :-
+    # 1) append()
+
+"""
+l1 = []
+print( f"l1 = { l1 } and type( l1 ) = { type( l1 ) }" )
+
+l1.append( 5 )
+print( f"l1 = { l1 }" )
+
+l1.append( 5.2 )
+print( f"l1 = { l1 }" )
+
+l1.append( True )
+print( f"l1 = { l1 }" )
+
+l1.append( False )
+print( f"l1 = { l1 }" )
+
+l1.append( "Hello" )
+print( f"l1 = { l1 }" )
+
+l1.append( "Hi" )
+print( f"l1 = { l1 }" )
+"""
+
+"""
+l1 = [ 11, 12, 13, 14, 15, 16 ]
+even_list = []
+                <
+for i in range( len(l1) ): # range( 0, 6 )
+    print( f"i = {i} and l1[i] = { l1[i] }" )
+
+    if( l1[i]%2 == 0 ):
+        even_list.append( l1[i] )
+
+print( f"even_list = { even_list }" )
+"""
+
+"""
+l1 = [ 11, 12, 13, 14, 15, 16 ]
+even_list = []
+
+for i in range( len(l1) ): # range( 0, 6 )
+    print( f"i = {i} and l1[i] = { l1[i] }" )
+
+    if( l1[i]%2 == 0 ):
+        even_list.append( l1[i] )
+        l1.append( l1[i] + 1 )
+
+print( f"even_list = { even_list }" )
+"""
+
+"""
+l1 = []
+
+l1[0] = 5
+print( f"l1= { l1 }" )
+"""
+
+# Mutability Check
+"""
+l1 = [5, 5.2, True, False, 'Hello', 'Hi']
+print( f"l1 = { l1 } and type( l1 ) = { type( l1 ) }\n" )
+
+l1[0] = 1
+
+print( f"l1 = { l1 } and type( l1 ) = { type( l1 ) }" )
+"""
+
+    # 2) insert( index, data )
+
+"""
+l1 = []
+print( f"l1 = { l1 } and type( l1 ) = { type( l1 ) }" )
+
+l1.insert( 0, 'zero' )
+print( f"l1 = { l1 }" )
+
+l1.insert( 100, 'one' )
+print( f"l1 = { l1 }" )
+
+l1.insert( -100, 'two' )
+print( f"l1 = { l1 }" )
+
+l1.insert( 3, 'Three' )
+print( f"l1 = { l1 }" )
+
+l1.insert( 1, 'Four' )
+print( f"l1 = { l1 }" )
+
+l1.insert( -1, 'Five' )
+print( f"l1 = { l1 }" )
+"""
+
+
+########### Delete the data from List ########
+# 1) Delete by index
+    # del keyword
+    # pop( index = -1) :-
+        # pop() :- deletes the last element and return the deleted value
+        # pop( index ) :- deletes the given element and return the deleted value
+# 2) Delete by Value
+    # remove()
+
+
+# del keyword
+"""
+l1 = [ 1, 8, 10, 1, True, 5, 1.2, "Hello" ]
+
+print( f"1. l1 = { l1 }" )
+
+del l1[0]
+print( f"2. l1 = { l1 }" )
+
+del l1[5]
+print( f"3. l1 = { l1 }" )
+
+del l1
+print( f"4. l1 = { l1 }" )
+"""
+
+# pop()
+"""
+l1 = [ 1, 8, 10, 1, True, 5, 1.2, "Hello" ]
+
+print( f"1. l1 = { l1 }" )
+
+print( f"l1.pop() = { l1.pop() }" )
+print( f"2. l1 = { l1 }" )
+
+print( f"l1.pop() = { l1.pop() }" )
+print( f"3. l1 = { l1 }" )
+
+print( f"l1.pop() = { l1.pop() }" )
+print( f"4. l1 = { l1 }" )
+"""
+
+# pop( index )
+"""
+l1 = [ 1, 8, 10, 1, True, 5, 1.2, "Hello" ]
+
+print( f"1. l1 = { l1 }" )
+
+print( f"l1.pop( 2 ) = { l1.pop( 2 ) }" )
+print( f"2. l1 = { l1 }" )
+
+print( f"l1.pop( -2 ) = { l1.pop( -2 ) }" )
+print( f"3. l1 = { l1 }" )
+
+print( f"l1.pop( 100 ) = { l1.pop( 100 ) }" )
+print( f"4. l1 = { l1 }" )
+"""
+
+# remove()
+"""
+l1 = [ 1, 8, 10, 1, True, 5, 1.2, "Hello", 1, True, 10 ]
+
+print( f"1. l1 = { l1 }\n" )
+
+print( f"l1.remove( True ) = { l1.remove( True ) }" )
+print( f"2. l1 = { l1 }\n" )
+
+print( f"l1.remove( 1 ) = { l1.remove( 1 ) }" )
+print( f"3. l1 = { l1 }\n" )
+
+print( f"l1.remove( 50 ) = { l1.remove( 50 ) }" )
+print( f"4. l1 = { l1 }\n" )
+"""
+
+###### Extra Inbuilt Functions ######
+
+#count() - To count the number of elements inside list,
+#Syntax :- list_name.count( value/variable )
+"""
+l1 = [3, 10, 5, 6, 6, 8, 8, 8, 9, 10, 11, 6, 9, 8, 13]
+
+print( f"l1 = { l1 }" )
+
+print( f"l1.count( 10 ) = { l1.count( 10 ) }" )
+print( f"l1.count( 9 ) = { l1.count( 9 ) }" )
+print( f"l1.count( 8 ) = { l1.count( 8 ) }" )
+print( f"l1.count( 13 ) = { l1.count( 13 ) }" )
+print( f"l1.count( 7 ) = { l1.count( 7 ) }" )
+"""
+
+#extend() - To merge the 2 list into one,
+"""
+#Syntax :- list1.extends( list2 )
+
+l1 = [6, 2, 8, 1, 0]
+l2 = [4, 6, 9, 11, 13]
+
+print(f"1. l1 = {l1}")
+print(f"1. l2 = {l2}\n")
+
+l3 = l1.extend( l2 )                #l1 = l1+l2
+# l4 = l1+l2
+
+print(f"2. l1 = {l1}")
+print(f"2. l2 = {l2}")
+# print(f"2. l3 = {l3}")
+# print(f"2. l4 = {l4}")
+"""
+
+#index()
+"""
+#Data + Start_range( Optional ) + End_range/Stop_range( Optional )
+#list_name.index( data, start_range = 0, End_range = last_index )
+#Start_range and End_range are optional for finding index but, data is neccesary.
+
+l1 = [3, 9, 10, 5, 6, 6, 8, 8, 9, 10, 11, 6, 9, 13, 10]
+
+print(f"l1 = {l1}")
+
+index1 = l1.index( 9 )
+print(f"First Time, index1 = {index1}")
+
+index1 = l1.index(9, 0 )
+print(f"Second Time, index1 = {index1}")
+
+index1 = l1.index(9, 0, len(l1) )
+print(f"Third Time, index1 = {index1}")
+
+index2 = l1.index( 9, index1 + 1 )
+print( f"Fourth Time, index2 = {index2}" )
+
+index3 = l1.index( 9, index2 + 1 )
+print( f"Fifth Time, index3 = {index3}" )
+
+index4 = l1.index(9, index3+1)
+print( f"Sixth Time, index 4 = {index4}" )
+
+#Note :- If your data is not in the range from start to End then, index() gives error.
+"""
+
+"""
+l1 = [3, 9, 10, 5, 6, 6, 8, 8, 9, 10, 11, 6, 6, 8 9, 13, 10]
+data_to_be_found = 9
+start_index = 0
+
+while( True ):
+    if( data_to_be_found in l1[start_index: ] ):
+        found_index = l1.index(data_to_be_found, start_index)
+        
+        print( f"Found Index = { found_index }" )
+
+        start_index = found_index + 1
+    else:
+        break
+"""
+
+# sorted() :- return the sorted list but doesn't change the existing/ given list.
+"""
+l1 = [3, 9, 10, 5, 6, 6, 8, 8, 9, 10, 11, 6, 9, 13, 10]
+
+print(f"Before sorted(), l1 = {l1}\n")
+
+print( f"sorted( l1 ) = { sorted( l1 ) }\n" )
+
+print(f"After sorted(), l1 = {l1}\n")
+"""
+
+
+# sort( reverse = False ) :- return the sorted list but doesn't change the existing/ given list.
+"""
+l1 = [3, 9, 10, 5, 6, 6, 8, 8, 9, 10, 11, 6, 9, 13, 10]
+
+print(f"Before sorted(), l1 = {l1}\n")
+
+print( f"l1.sort() = { l1.sort()  }\n" )
+print( f"l1.sort(reverse = False) = { l1.sort(reverse = False)  }\n" )
+print( f"l1.sort(reverse = True) = { l1.sort(reverse = True)  }\n" )
+
+l1.sort()
+print( f"l1[ : :-1] = { l1[ : :-1] }" )
+
+print(f"After sorted(), l1 = {l1}\n")
+"""
+
+# reverse()
+"""
+l1 = [3, 9, 10, 5, 6, 6, 8, 8, 9, 10, 11, 6, 9, 13, 10]
+
+print(f"Before sort(), l1 = {l1}\n")
+
+l1.sort()
+print(f"Before reverse(), l1 = {l1}\n")
+
+l1.reverse()
+
+print( f"l1[ : :-1] = { l1[ : :-1] }" )
+"""
+
+"""
+l1 = [3, 9, 10, 5, 6, 6]
+l2 = l1[ : : -1 ]
+
+temp = l1.copy()
+
+print( f"l1 = { l1 }" )
+print( f"l2 = { l2 }" )
+print( f"temp = { temp }\n" )
+
+l1 = l2.copy()
+l2 = temp.copy()
+
+print( f"l1 = { l1 }" )
+print( f"l2 = { l2 }" )
+print( f"temp = { temp }\n" )
+
+del temp
+"""
+
+# copy()
+"""
+l1 = [ 11, 12, 13 ]
+
+l2 = l1
+l3 = l1.copy()
+
+print( f"1. l1 = { l1 } and id( l1 ) = { id( l1 ) }" )
+print( f"1. l2 = { l2 } and id( l2 ) = { id( l2 ) }" )
+print( f"1. l3 = { l3 } and id( l3 ) = { id( l3 ) }\n" )
+
+l2[ 1 ] = 0
+
+print( f"2. l1 = { l1 } and id( l1 ) = { id( l1 ) }" )
+print( f"2. l2 = { l2 } and id( l2 ) = { id( l2 ) }" )
+print( f"2. l3 = { l3 } and id( l3 ) = { id( l3 ) }\n" )
+"""
+
+# List Summary :-
+    # Able to Store only values
+    # Support hybrid data types :- int, float, bool, str, list, tuple, etc
+    # Data Insertion : append( value ), insert( index, value )
+    # Data Deletion : del keyword, pop( index = -1 ), remove( value )
+    # Extra Inbuilt Functions : count( value ), <list_1>.extend( <list_2> ), index( value )
+    #                           , sorted( list_var/list_data ), sort( reverse = False )
+    #                           , reverse(), list_var/list_data.copy()
+    # Mutable
+
+########### random module ######
+>>> import random
+>>> 
+>>> random.choice( ( 10, 5, 2 ) )
+2
+>>> random.choice( [ 10, 5, 2 ] )
+5
+>>> random.choice( [ 10, 5, 2 ] )
+10
+>>> random.choice( [ 10, 5, 2 ] )
+2
+>>> random.choice( [ 10, 5, 2 ] )
+10
+>>> random.choice( [ 10, 5, 2 ] )
+5
+>>> random.randint( 1, 10 )
+7
+>>> random.randint( 1, 10 )
+1
+>>> random.randint( 1, 10 )
+7
+>>> random.randint( 1, 10 )
+6
+>>> random.randrange( 1, 10, 2 )
+3
+>>> random.randrange( 1, 10, 2 )
+9
+>>> random.randrange( 1, 10, 2 )
+1
+
+"""
+# Make a programs based on following option using List . 
+# 
+# Hint :- Use Infinte loop using while loop but don't
+# 		forget to put break condition .
+# 
+# 
+# NOTE : Use random() to put values inside list. Keep 5 random values inside the list when it is created
+
+import random
+main_list = []
+
+while( True ):
+    choice = input( "1. Create List, 2. Delete List, 3. Sort List, 4. Print List, 5. Print all List, 6. Exit = " )
+
+    if( choice == '1' ):
+        temp = []
+        for i in range( 1, 6 ):
+            temp.append( random.randint( 1, 11 ) )
+
+        main_list.append( temp )
+        print( f"List Created with index : { len( main_list ) - 1 }\n" )
+        
+    elif( choice == '2' ):
+        
+        del_choice = input( "Enter List index which has to be Deleted = " )
+
+        # integer vaue check Start
+        if( del_choice.isdigit() ):
+            del_choice = int( del_choice )
+
+            # index range Check Start
+            if( del_choice >= -len( main_list )
+                and del_choice < len( main_list )
+               ):
+                main_list.pop( del_choice )
+                print( f"Index : {del_choice} got deleted from Main List. Remaining no. of List : { len( main_list ) }\n" )
+            else:
+                print( f"Please enter correct index number, Available Range : { -len( main_list ) } to { len( main_list ) -1 }\n" )
+            # index range Check end
+
+        else:
+            print( f"Expected : List Index , Actual : { del_choice }" )
+        # integer vaue check End
+
+        del del_choice
+
+    elif( choice == '3' ):
+        sort_choice = input( "Enter List index which has to be Sorted = " )
+
+        # integer vaue check Start
+        if( sort_choice.isdigit() ):
+            sort_choice = int( sort_choice )
+
+            # index range Check Start
+            if( sort_choice >= -len( main_list )
+                and sort_choice < len( main_list )
+               ):
+                main_list[ sort_choice ].sort()
+                print( f"main_list[ {sort_choice} ] = { main_list[ sort_choice ] }\n" )
+            else:
+                print( f"Please enter correct index number, Available Range : { -len( main_list ) } to { len( main_list ) -1 }\n" )
+            # index range Check end
+            
+        else:
+            print( f"Expected : List Index , Actual : { sort_choice }" )
+        # integer vaue check End
+
+        del sort_choice
+
+    elif( choice == '4' ):
+        print_choice = input( "Enter List index which has to be Printed = " )
+
+        # integer vaue check Start
+        if( print_choice.isdigit() ):
+            print_choice = int( print_choice )
+
+            # index range Check Start
+            if( print_choice >= -len( main_list )
+                and print_choice < len( main_list )
+               ):
+                print( f"main_list[ {print_choice} ] = { main_list[ print_choice ] }\n" )
+            else:
+                print( f"Please enter correct index number, Available Range : { -len( main_list ) } to { len( main_list ) -1 }\n" )
+            # index range Check end
+
+        else:
+            print( f"List Index, Expected : {-len( main_list )} to { len( main_list ) -1 } , Actual : { print_choice }" )
+        # integer vaue check End
+
+        del print_choice
+
+    elif( choice == '5' ):
+        for i in range( len( main_list ) ):
+            print( f"{i} Index List : { main_list[i] }" )
+
+        print()
+
+    elif( choice == '6' ):
+        break
+
+    else:
+        print( f"Please choose correct Option from 1 to 6 Only\n" )
+"""
+
+############# Tuple ############
+
+l1 = [ 5, 10, 9, 12 ]
+print( f"l1 = { l1 } and type( l1 ) = { type( l1 ) }" )
+
+t1 = tuple()
+t1 = ()
+
+t1 = ( 5, 10, 9, 12 )
+print( f"t1 = { t1 } and type( t1 ) = { type( t1 ) }" )
+
+# del t1[2] # TypeError: 'tuple' object doesn't support item deletion
+
+# t1[2] = 0 # TypeError: 'tuple' object does not support item assignment
+
+# print( f"t1.count( 1 ) = { t1.count( 1 ) }" ) # t1.count( 1 ) = 0
+
+# print( f"t1.index(10) = { t1.index(10) }" ) # t1.index(10) = 1
+# print( f"t1.index(0) = { t1.index(0) }" ) # ValueError: tuple.index(x): x not in tuple
+
+# print( f"sorted( t1 ) = { sorted( t1 ) }" ) # sorted( t1 ) = [5, 9, 10, 12]
+
+t2 = t1
+
+# print( f"t1 = { t1 } and id( t1 ) = { id( t1 ) }" )
+# print( f"t2 = { t2 } and id( t2 ) = { id( t2 ) }" )
+
+# Change tuple data at data level
+"""
+t = ( 1, 2, 3 )
+print( f"1. t = {t}, type( t ) = { type( t ) } and id( t ) = { id( t ) }\n" )
+
+t = list(t)
+t[1] = 10
+print( f"2. t = {t}, type( t ) = { type( t ) } and id( t ) = { id( t ) }\n" )
+
+t = tuple( t )
+print( f"3. t = {t}, type( t ) = { type( t ) } and id( t ) = { id( t ) }\n" )
+"""
+
+# List Summary :-
+    # Able to Store only values
+    # Support hybrid data types :- int, float, bool, str, list, tuple, etc
+    # Data Insertion : NA
+    # Data Deletion : NA
+    # Extra Inbuilt Functions : count( value ), index( value )
+    #                           , sorted( tuple_var/list_data )
+    # Im-Mutable
+    
+    
+    
+############################ Set #####################################
+
+# s1 = {}     # Dictionary, Not Set
+
+# add()
+"""
+s1 = set()  # Set
+
+print( f"s1 = { s1 }" )
+
+s1.add( True )
+print( f"s1 = { s1 }" )
+
+s1.add( 1 )
+print( f"s1 = { s1 }" )
+
+s1.add( 5 )
+print( f"s1 = { s1 }" )
+
+s1.add( 'Hello' )
+print( f"s1 = { s1 }" )
+
+s1.add( 10 )
+print( f"s1 = { s1 }" )
+
+s1.add( 'Hi' )
+print( f"s1 = { s1 }" )
+
+s1.add( 6 )
+print( f"s1 = { s1 }" )
+
+s1.add( 2 )
+print( f"s1 = { s1 }" )
+
+s1.add( 0 )
+print( f"s1 = { s1 }" )
+
+s1.add( False )
+print( f"s1 = { s1 }" )
+
+
+s2 = {0, True, 'abc', 5, 'Hello', 'Hi', 6, 10, 'def' }
+
+print( f"s2 = { s2 }" )
+print( f"s2 = { s2 }" )
+print( f"s2 = { s2 }" )
+print( f"s2 = { s2 }" )
+print( f"s2 = { s2 }" )
+print( f"s2 = { s2 }" )
+print( f"s2 = { s2 }" )
+"""
+
+"""
+l = [1, 2, 3]
+
+print( f"1. l = {l} and id( l ) = { id( l ) }" )
+l = []
+print( f"2. l = {l} and id( l ) = { id( l ) }\n" )
+
+l = [1, 2, 3]
+print( f"3. l = {l} and id( l ) = { id( l ) }" )
+l.pop()
+l.pop()
+l.pop()
+print( f"4. l = {l} and id( l ) = { id( l ) }" )
+"""
+
+# clear()
+"""
+l = {1, 2, 3}
+
+print( f"1. l = {l} and id( l ) = { id( l ) }" )
+l = set()
+print( f"2. l = {l} and id( l ) = { id( l ) }\n" )
+
+l = {1, 2, 3}
+print( f"3. l = {l} and id( l ) = { id( l ) }" )
+l.remove( 1 )
+l.remove( 2 )
+l.remove( 3 )
+print( f"4. l = {l} and id( l ) = { id( l ) }\n" )
+
+l = {1, 2, 3}
+print( f"5. l = {l} and id( l ) = { id( l ) }" )
+l.clear()
+print( f"6. l = {l} and id( l ) = { id( l ) }" )
+"""
+
+# difference and difference_update
+"""
+s1 = {True, 'Hello', 5, 6, 'Hi', 10}
+s2 = {1, 5, 3}
+
+print( f"1. s1 = { s1 }" )
+print( f"1. s2 = { s2 }\n" )
+
+# print( f"s1.difference( s2 ) = { s1.difference( s2 ) }\n" )
+# s1 = s1.difference( s2 )  # manual Update
+
+print( f"s1.difference_update( s2 ) = { s1.difference_update( s2 ) }\n" )
+
+print( f"2. s1 = { s1 }" )
+print( f"2. s2 = { s2 }\n" )
+"""
+
+# discard and remove
+"""
+s1 = {True, 'Hello', 5, 6, 'Hi', 10}
+s2 = {1, 5, 3}
+
+print( f"1. s1 = { s1 }" )
+print( f"1. s2 = { s2 }\n" )
+
+# print( f"s1.discard( 7 ) = {s1.discard( 7 ) }\n" )
+# print( f"s1.remove( 7 ) = {s1.remove( 7 ) }\n" ) # KeyError: 7
+
+print( f"2. s1 = { s1 }" )
+print( f"2. s2 = { s2 }\n" )
+"""
+
+# intersection and intersection_update
+"""
+s1 = {True, 'Hello', 5, 6, 'Hi', 10}
+s2 = {1, 5, 3}
+
+print( f"1. s1 = { s1 }" )
+print( f"1. s2 = { s2 }\n" )
+
+# print( f"s1.intersection( s2 ) = { s1.intersection( s2 ) }\n" )
+print( f"s1.intersection_update( s2 ) = { s1.intersection_update( s2 ) }\n" )
+
+print( f"2. s1 = { s1 }" )
+print( f"2. s2 = { s2 }\n" )
+"""
+
+"""
+s1 = {True, 'Hello', 5, 6, 'Hi', 10}
+s2 = {1, 5, 3}
+
+print( f"1. s1 = { s1 }" )
+print( f"1. s2 = { s2 }\n" )
+
+print( f"s1.isdisjoint( s2 ) = { s1.isdisjoint( s2 ) }\n" )
+print( f"s1.isdisjoint( set() ) = { s1.isdisjoint( set() ) }\n" )
+
+print( f"2. s1 = { s1 }" )
+print( f"2. s2 = { s2 }\n" )
+"""
+
+# issubset
+"""
+s1 = {1, 'Hello', 5, 6, 'Hi', 10}
+s2 = {1, 5}
+
+print( f"1. s1 = { s1 }" )
+print( f"1. s2 = { s2 }\n" )
+
+print( f"s2.issubset( s1 ) = { s2.issubset( s1 ) }\n" )
+print( f"s2.issubset( set() ) = { s1.issubset( set() ) }\n" )
+
+print( f"2. s1 = { s1 }" )
+print( f"2. s2 = { s2 }\n" )
+"""
+
+# issubset
+"""
+s1 = {1, 'Hello', 5, 6, 'Hi', 10}
+s2 = {1, 5}
+
+print( f"1. s1 = { s1 }" )
+print( f"1. s2 = { s2 }\n" )
+
+print( f"s2.issubset( s1 ) = { s2.issubset( s1 ) }\n" )
+print( f"s2.issubset( set() ) = { s1.issubset( set() ) }\n" )
+
+print( f"2. s1 = { s1 }" )
+print( f"2. s2 = { s2 }\n" )
+"""
+
+# issuperset
+"""
+s1 = {1, 'Hello', 5, 6, 'Hi', 10}
+s2 = {1, 5}
+
+print( f"1. s1 = { s1 }" )
+print( f"1. s2 = { s2 }\n" )
+
+print( f"s1.issuperset( s2 ) = { s1.issuperset( s2 ) }\n" )
+print( f"s1.issuperset( set() ) = { s1.issuperset( set() ) }\n" )
+
+print( f"2. s1 = { s1 }" )
+print( f"2. s2 = { s2 }\n" )
+"""
+
+# pop()
+"""
+s1 = {1, 'Hello', 5, 6, 'Hi', 10}
+
+print( f"1. s1 = { s1 }\n" )
+
+print( f"s1.pop() = { s1.pop() }" )
+print( f"2. s1 = { s1 }\n" )
+
+print( f"s1.pop() = { s1.pop() }" )
+print( f"3. s1 = { s1 }\n" )
+
+print( f"s1.pop() = { s1.pop() }" )
+print( f"4. s1 = { s1 }\n" )
+
+print( f"s1.pop() = { s1.pop() }" )
+print( f"5. s1 = { s1 }\n" )
+
+print( f"s1.pop() = { s1.pop() }" )
+print( f"6. s1 = { s1 }\n" )
+
+print( f"s1.pop() = { s1.pop() }" )
+print( f"7. s1 = { s1 }\n" )
+
+print( f"s1.pop() = { s1.pop() }" )
+print( f"8. s1 = { s1 }\n" )    # KeyError: 'pop from an empty set'
+"""
+
+# symmetric_difference and symmetric_difference_update = union - intersection -> Add both sets unqiue
+"""
+s1 = {1, 'Hello', 5, 6, 'Hi', 10}
+s2 = {1, 5, 3}
+
+print( f"1. s1 = { s1 }" )
+print( f"1. s2 = { s2 }\n" )
+
+# print( f"s1.symmetric_difference( s2 ) = { s1.symmetric_difference( s2 ) }\n" )
+# print( f"s1.symmetric_difference( set() ) = { s1.symmetric_difference( set() ) }\n" )
+
+print( f"s1.symmetric_difference_update( s2 ) = { s1.symmetric_difference_update( s2 ) }\n" )
+print( f"s1.symmetric_difference_update( {'Hello'} ) = { s1.symmetric_difference_update( {'Hello'} ) }\n" )
+
+print( f"2. s1 = { s1 }" )
+print( f"2. s2 = { s2 }\n" )
+"""
+
+# union()
+"""
+s1 = {1, 'Hello', 5, 6, 10}
+s2 = {1, 5, 3}
+
+print( f"1. s1 = { s1 }" )
+print( f"1. s2 = { s2 }\n" )
+
+print( f"s2.union( s1 ) = { s2.union( s1 ) }\n" )
+print( f"s2.union( {'Hi'} ) = { s1.union( {'Hi'} ) }\n" )
+
+print( f"2. s1 = { s1 }" )
+print( f"2. s2 = { s2 }\n" )
+"""
+
+# update()
+"""
+s1 = {1, 'Hello', 5, 6, 10}
+s2 = {1, 5, 3}
+
+print( f"1. s1 = { s1 }" )
+print( f"1. s2 = { s2 }\n" )
+
+print( f"s1.update( s2 ) = { s1.update( s2 ) }\n" )
+print( f"s1.update( {'Hi'} ) = { s1.update( {'Hi'} ) }\n" )
+
+print( f"2. s1 = { s1 }" )
+print( f"2. s2 = { s2 }\n" )
+"""
+
+# Summary :-
+# TypeError: 'set' object is not subscriptable
+# It does data shuffling at the time of creation
+# It doesn't allow duplicate values
+# We can use set to implement Mathematical SETS Operations
+
+"""
+import sys
+
+# 52. Write a Python program to print all permutations with given repetition
+# number of characters of a given string.
+
+def permutation( word ):
+    # print( f"word = { word }" )
+    
+    if( len( word ) == 1 ):
+        return [ word ]
+
+    elif( len( word ) == 2 ):
+        return [ word, word[ : : -1] ]
+
+    else:
+        main_list = []
+        
+        for i in range( len(word) ):
+            
+            curr_str = word[i]
+            recc_str = word[:i] + word[i+1:]
+
+            # print( f"curr_str = { curr_str } and recc_str = { recc_str }" )
+
+            op = [ curr_str + j for j in permutation( recc_str ) ]
+            main_list.extend( op )
+
+            # print( f"op = { op }" )
+            # print( f"main_list = { main_list }\n" )
+
+        return main_list
+
+# word = "abaa"
+word = sys.argv[1]
+op = permutation( word )
+op = list( set( op ) )
+print( op )
+
+# print( f"sys.argv = { sys.argv } and type( sys.argv ) = { type( sys.argv ) }" )
+"""
+
+################################# Dictionary #################################
+
+### Add value in dictionary :-
+# dict_var[key] = value
+# if key is not present in dict_var then, it will add the key:value pair in dict_var
+# if key is already present in dict_var then, it will update the value pair for given key in dict_var
+"""
+d = {}
+print( f"d = { d } and type(d) = { type(d) }" )
+
+d[True] = 'True'
+print( f"d = { d }" )
+
+d[1] = 'one'
+print( f"d = { d }" )
+
+d[2] = [ 'one', 'two', True, False ]
+print( f"d = { d }" )
+
+d[3] = ( 0, 1 )
+print( f"d = { d }" )
+
+d[1.2] = 'Float'
+print( f"d = { d }" )
+
+d[False] = { 'False' , True, False}
+print( f"d = { d }" )
+
+d[ 'hello' ] = 'Hi'
+print( f"d = { d }" )
+
+# d = {} and type(d) = <class 'dict'>
+# d = {1: 'one'}
+# d = {1: 'one', 2: ['one', 'two', True, False]}
+# d = {1: 'one', 2: ['one', 'two', True, False], 3: (0, 1)}
+# d = {1: 'one', 2: ['one', 'two', True, False], 3: (0, 1), 1.2: 'Float'}
+# d = {1: 'True', 2: ['one', 'two', True, False], 3: (0, 1), 1.2: 'Float'}
+# d = {1: 'True', 2: ['one', 'two', True, False], 3: (0, 1), 1.2: 'Float', False: {False, True, 'False'}}
+# d = {1: 'True', 2: ['one', 'two', True, False], 3: (0, 1), 1.2: 'Float', False: {False, True, 'False'}, 'hello': 'Hi'}
+"""
+
+d = {
+     1: 'True'
+   , 2: ['one', 'two', True, False]
+   , 3: (0, 1)
+   , 1.2: { 0.1 : 'Float'}
+    }
+
+# print( f"d = { d }" )
+"""
+print( f"d[1] = { d[1] }" )
+print( f"d[2] = { d[2] }" )
+print( f"d[3] = { d[3] }" )
+print( f"d[1.2] = { d[1.2] }" )
+"""
+
+"""
+print( f"d.keys() = { d.keys() } and type( d.keys() ) = { type( d.keys() ) }" )
+print()
+
+keys = list( d.keys() )
+print( f"keys = { keys } and type( keys ) = { type( keys ) }" )
+"""
+
+"""
+for i in d.keys():
+    print( f"i = { i } and type(i) = { type(i) }" )
+
+# i = 1 and type(i) = <class 'int'>
+# i = 2 and type(i) = <class 'int'>
+# i = 3 and type(i) = <class 'int'>
+# i = 1.2 and type(i) = <class 'float'>
+"""
+
+"""
+# print( d.values() )
+for i in d.values():
+    print( f"i = { i } and type( i ) = { type( i ) }" )
+"""
+
+"""
+# print( f"items() }\n and type( d.items() ) = { type( d.items() ) }" )
+
+for i, j in d.items():
+    print( f"Key -> { i } and type( i ) = { type( i ) }" )
+    print( f"Value -> { j } and type( j ) = { type( j ) }" )
+    print()
+"""
+
+# for i in dict_var.keys()  -> Keys can be accessed
+# for i in dict_var         -> Keys can be accessed
+
+# for i in dict_var.values() -> Values can be accessed
+
+# for i in dict_var.items() -> Keys and values both can be accessed
+
+d = {
+     1: 'True'
+   , 2: ['one', 'two', True, False]
+   , 3: (0, 1)
+   , 1.2: { 0.1 : 'Float'}
+    }
+
+"""
+print( f"d[1] = { d[1] }" )
+print( f"d[2] = { d[2] }" )
+print( f"d[3] = { d[3] }" )
+print( f"d[1.2] = { d[1.2] }" )
+# print( f"d[10] = { d[10] }" )       # KeyError: 10
+print( f"d.get( 10 ) = { d.get( 10 ) }" )
+"""
+
+### Delete the key-value pair from dictionary
+"""
+print( f"1. Before pop(), d = { d }" )
+print( f"2. d.pop(1) = { d.pop(1) }" )
+print( f"3. After pop(), d = { d }\n" )
+
+del d[2]
+
+print( f"4. After del d[2], d = { d }" )
+
+# d.pop(10)   # KeyError: 10
+# del d[10]     # KeyError: 10
+print( f"5. After pop(), d = { d }\n" )
+"""
+
+"""
+# print( f"d.fromkeys( [1, 2, 3] ) = { d.fromkeys( [1, 2, 3] ) }" )
+# print( f"d.fromkeys( 'Hello' ) = { d.fromkeys( 'Hello' ) }" )
+
+print( f"dict.fromkeys( 'Hello', [1, 2, 3] ) = { dict.fromkeys( 'Hello', [1, 2, 3] ) }" )
+print( f"dict.fromkeys( 'Hello', 0 ) = { dict.fromkeys( 'Hello', 0 ) }" )
+
+# O/p :-
+# dict.fromkeys( 'Hello', [1, 2, 3] ) = {'H': [1, 2, 3], 'e': [1, 2, 3], 'l': [1, 2, 3], 'o': [1, 2, 3]}
+# dict.fromkeys( 'Hello', 0 ) = {'H': 0, 'e': 0, 'l': 0, 'o': 0}
+"""
+
+"""
+print( f"1. Before pop(), d = { d }\n" )
+
+print( f"d.popitem() = { d.popitem() }" )
+print( f"After popitem(), d = { d }\n" )
+
+print( f"d.popitem() = { d.popitem() }" )
+print( f"After popitem(), d = { d }\n" )
+
+print( f"d.popitem() = { d.popitem() }" )
+print( f"After popitem(), d = { d }\n" )
+
+print( f"d.popitem() = { d.popitem() }" )
+print( f"After popitem(), d = { d }\n" )
+
+print( f"d.popitem() = { d.popitem() }" )
+print( f"After popitem(), d = { d }\n" )
+"""
+
+"""
+d = {
+     1: 'True'
+   , 2: ['one', 'two', True, False]
+   , 3: (0, 1)
+   , 1.2: { 0.1 : 'Float'}
+    }
+
+# d[key] = value
+print( f"1. d = { d }\n" )
+
+d.setdefault( 4, 40 )
+print( f"2.1 d = { d }\n" )
+
+d[4] = None
+print( f"2.2 d = { d }\n" )
+
+d.setdefault( 5 )
+print( f"3. d = { d }\n" )
+
+d.setdefault( 6, 20 )
+print( f"4. d = { d }\n" )
+
+d.setdefault( 5, 15 )
+print( f"4. d = { d }\n" )
+"""
+
+"""
+k = [ 5, 6, 7, 8, 9, 5 ]
+v= [ 11, 12, 13, 14, 15, 16 ]
+
+d = {}
+print( f"Before, d = {d}\n" )
+
+for i in range( len(k) ):
+    # d[ k[i] ] = v[i]
+    d.setdefault( k[i], v[i] )
+    print( f"key = {k[i]}, value = {v[i]}, d = { d }\n" )
+"""
+
+"""
+d = {
+     1: 'True'
+   , 2: ['one', 'two', True, False]
+   , 3: (0, 1)
+   , 1.2: { 0.1 : 'Float'}
+    }
+
+print( f"1. d = { d }\n" )
+
+d.update( {4 : 40} )
+print( f"2. d = { d }\n" )
+
+d.update( {2 : 20} )
+print( f"3. d = { d }\n" )
+"""
+
+"""
+# d1 = { 1: 11, 2 : 22 }
+# d2 = { 3: 31, 2 : 42 }
+
+# d1 = { 1: 11, 2 : [ 22, 42 ], 3: 31 }
+"""
+
+# d = { 1: 11, 2 : 22, 3: 31, 4 : 42 }
+
+################################# File Handling #################################
+
+# r -> read
+# , w -> write
+# , a -> append
+
+# , r+ -> read and write
+# , w+ -> write and read
+# , a -> append and read
+
+r"""
+file_path = r"C:\Users\gauta\Desktop\File_Handling_File.txt"
+mode = 'r'
+
+f = open( file_path, mode )
+op = f.read()
+f.close()
+
+print( op )
+"""
+
+################################# Functions #################################
+
+# Syntax :- def function_name( <args> ):
+#               Statement 1
+#               Statement 2
+#               .
+#               .
+#               Statement n
+
+"""
+a = 6
+
+def airthmetic():
+    global a
+
+    a = 50
+
+    print( f"a = { a }" )
+    print( f"a + 5 = { a + 5 }" )
+    print( f"a - 5 = { a - 5 }" )
+    print( f"a * 5 = { a * 5 }" )
+    print( f"a / 5 = { a / 5 }\n" )
+
+print( f"Before, Outside, a = { a }\n" )
+
+for i in range( 1, 3 ):
+    airthmetic()
+
+print( f"After, Outside, a = { a }\n" )
+"""
+
+"""
+def airthmetic( a ):
+    
+    print( f"a = { a }" )
+    print( f"a + 5 = { a + 5 }" )
+    print( f"a - 5 = { a - 5 }" )
+    print( f"a * 5 = { a * 5 }" )
+    print( f"a / 5 = { a / 5 }" )
+
+    return a + 5, a - 5, a * 5, a / 5
+
+print( "Start\n" )
+
+op = airthmetic( 10 )
+print( f"op = { op }\n" )
+
+op = airthmetic( 20 )
+print( f"op = { op }\n" )
+
+print( "End" )
+"""
+
+"""
+def airthmetic( a ):
+    
+    print( f"airthmetic Start, a = { a }" )
+
+    def add(a):
+        print( f"a + 5 = { a + 5 }" )
+        return a + 5
+    
+    def sub(a):
+        print( f"a - 5 = { a - 5 }" )
+        return a - 5
+        
+    def mult(a):
+        print( f"a * 5 = { a * 5 }" )
+        return a * 5
+
+    def div(a):
+        print( f"a / 5 = { a / 5 }" )
+        return a / 5
+
+    
+    print( f"airthmetic End, a = { a }" )
+
+    return add(10), sub(10), mult(10), div(10)
+
+op = airthmetic( 10 )
+print( f"Outside, op = { op }" )
+"""
+
+"""
+a = [1, 2, 3]
+
+def f1( x ):
+    # print( f"F1, a = { a } and id(a) = { id(a) }" )
+    print( f"F1, x = { x } and id(x) = { id(x) }" )
+
+print( f"outside, a = { a } and id(a) = { id(a) }" )
+# f1(a) # f1( [1, 2, 3] )
+f1( [1, 2, 3] )
+"""
+
+"""
+a = 5
+def f1(x):
+    print( f"F1, Before, x = { x } and id(a) = { id(x) }" )
+    x = x + 5
+    print( f"F1, After, x = { x } and id(a) = { id(x) }" )
+
+
+print( f"Outside, a = {a}" )
+f1(a)
+print( f"Outside, a = {a}" )
+"""
+
+######### Types of Arguments #########
+# 1) Reuired Argument
+"""
+def f1( a ):
+    print( f"F1, a = { a }" )
+
+f1(5)
+# f1()
+# f1( 5, 10 )
+"""
+
+
+# 2) Positional argument
+"""
+def f1( a, b ):
+    print( f"F1-> Before add, a = { a }, b = {b}" )
+
+    a = a + 5
+    b = b + 10
+
+    print( f"F1-> After add, a = { a }, b = {b}" )
+
+# f1(1, 2)
+# f1(2, 1)
+f1( b = 2, a = 1 )
+"""
+
+# 3) Defualt Argument
+"""
+def add(b, a = 0):
+    print( f"F1-> Before add, a = { a }, b = {b}" )
+
+    a = a * 5
+    b = b * 3
+
+    print( f"F1-> After add, a = { a }, b = {b}, add = { a + b }\n" )
+
+add(a = 5, b = 2 )
+add( 6, a = 5 )
+add()
+"""
+
+
+# 4) args( arguments ) and kwargs( Keyword - arguments )
+"""
+def add(  *a, **x ):
+    print( f"a = {a} and type(a) = { type(a) }" )
+    print( f"x = {x} and type(x) = { type(x) }" )
+
+    all_sum = 0
+    for i in a:
+        all_sum = all_sum + i
+
+    for i in x.values():
+        all_sum = all_sum + i
+
+    print( f"all_sum = { all_sum }\n" )
+
+add( 2, 3, 4, 8, 0, 19, 9, b = 1, c = 2, d = 3 )
+"""
+
+"""
+# Required -> Default -> Args -> Kwargs
+def add(  p, q, r = 0, s = 0, *a, **x ):
+    print( f"p = {p} and type(p) = { type(p) }" )
+    print( f"q = {q} and type(q) = { type(q) }" )    
+    print( f"r = {r} and type(r) = { type(r) }" )
+    print( f"s = {s} and type(s) = { type(s) }" )
+    print( f"a = {a} and type(a) = { type(a) }" )
+    print( f"x = {x} and type(x) = { type(x) }" )
+
+    all_sum = 0
+    for i in a:
+        all_sum = all_sum + i
+
+    for i in x.values():
+        all_sum = all_sum + i
+
+    print( f"all_sum = { all_sum }\n" )
+
+# Values/ args, positional Arg/ Kwargs
+add( 2, 3, 4, 8, 0, 19, 9, b = 1, c = 2, d = 3 )
+"""
+
+"""
+import time
+
+start_time = time.time()
+
+# def f1( a, b ):
+#     return a + b
+
+# print( f1(2, 3) )
+
+print( f"2+3 = { 2+3 }" )
+
+print( f"Executed Time : { time.time() - start_time } seconds " )
+"""
+
+
+################################# Classes sand Objects #################################
+"""
+import time
+
+class Abc:
+    a = 1
+    b = 1000
+
+    def f1( self ):
+        print( f"Abc : F1, self = { self } and id( self ) = { id( self ) }\n" )
+
+
+ob1 = Abc()
+ob2 = Abc()
+ob3 = Abc()
+
+print( f"ob1 = { ob1 } and id(ob1) = { id(ob1) }" )
+print( f"ob2 = { ob2 } and id(ob2) = { id(ob2) }" )
+print( f"ob3 = { ob3 } and id(ob3) = { id(ob3) }\n" )
+
+# Abc.f1( ob1 )
+# Abc.f1( ob2 )
+# Abc.f1( ob3 )
+
+ob1.f1()
+ob2.f1()
+ob3.f1()
+"""
+
+################################# Classes sand Objects #################################
+"""
+class Arithmetic:
+    a = 10
+    b = 20
+
+    # def add( self, a, b):
+        # print( f"Arithmetic : add, a = {a} and b = {b}" )
+        # print( f"Arithmetic : add, self.a = {self.a} and self.b = { self.b }" )
+        # print( f"Arithmetic : add, Arithmetic.a = {Arithmetic.a} and Arithmetic.b = { Arithmetic.b }" )
+
+    def add(self):
+        return self.a+self.b
+
+    def sub( self):
+        return self.a-self.b
+
+    def mult( self):
+        return self.a*self.b
+
+    def div( self):
+        return self.a/self.b
+        
+
+ob1 = Arithmetic()
+
+# ob1.a = 100
+# ob1.b = 200
+# ob1.add(1, 2)
+
+print( f"ob1.add() = { ob1.add() }" )
+print( f"ob1.sub() = { ob1.sub() }" )
+print( f"ob1.mult() = { ob1.mult() }" )
+print( f"ob1.div() = { ob1.div() }" )
+"""
+
+
+# To add variable only in all Object
+'''
+class Arithmetic:
+    a = 10
+    b = 20
+
+    # def add( self, a, b):
+        # print( f"Arithmetic : add, a = {a} and b = {b}" )
+        # print( f"Arithmetic : add, self.a = {self.a} and self.b = { self.b }" )
+        # print( f"Arithmetic : add, Arithmetic.a = {Arithmetic.a} and Arithmetic.b = { Arithmetic.b }" )
+
+    def add(self):
+        return self.a+self.b
+
+    def sub( self):
+        return self.a-self.b
+
+    def mult( self):
+        return self.a*self.b
+
+    def div( self):
+        return self.a/self.b
+        
+
+ob1 = Arithmetic()
+
+# To add data in any class or Object :- <class_name/ Object_name>.variable_name = value
+
+# Adding variable only in class and changes will be reflect in class as well as on all of it's objects
+"""
+print( f"dir(Arithmetic) :- \n{ dir(Arithmetic) }\n" )
+print( f"dir(ob1) :- \n{ dir(ob1) }\n" )
+Arithmetic.c = 30
+print( f"dir(Arithmetic) :- \n{ dir(Arithmetic) }\n" )
+print( f"dir(ob1) :- \n{ dir(ob1) }\n" )
+"""
+
+
+# To add data in any class or Object :- <class_name/ Object_name>.variable_name = value
+"""
+print( f"dir(Arithmetic) :- \n{ dir(Arithmetic) }\n" )
+print( f"dir(ob1) :- \n{ dir(ob1) }\n" )
+ob1.c = 30
+print( f"dir(Arithmetic) :- \n{ dir(Arithmetic) }\n" )
+print( f"dir(ob1) :- \n{ dir(ob1) }\n" )
+"""
+
+'''
+
+########### Creation of variable - a and b inside take_input()
+"""
+import random
+
+def sub():
+        print( "Outside : Sub() \n" )
+
+class Arithmetic:
+
+    def take_input( self ): # self = ob1
+        self.a = random.randint(1, 11 ) # ob1.a = ...
+        self.b = random.randint(1, 11 ) # ob1.b = ...
+
+        print( f"Arithmetic : take_input()" )
+        print( f"id(self ) = { id(self ) }" )
+        print( f"self.a = {self.a} and self.b = {self.b}\n" )
+    
+    def add(self, func): # self = ob1
+        func()
+        return self.a+self.b
+
+ob1 = Arithmetic()
+ob2 = Arithmetic()
+
+print( f"id(ob1) = { id(ob1) }" )
+print( f"id(ob2) = { id(ob2) }\n" )
+
+ob1.take_input()
+# ob2.take_input()
+
+# print( f"ob1.add() = { ob1.add() }\n" )
+# ob2.add()
+
+# print( ob1.add( sub ) )
+"""
+
+################################# Classes sand Objects #################################
+##### Constructor -> __init__ #####
+"""
+import random
+
+class Arithmetic:
+
+    def __init__( self, x = 0, y = 0 ): # self = ob1
+        self.a = x # ob1.a = ...
+        self.b = y # ob1.b = ...
+
+        print( f"Arithmetic : take_input()" )
+        print( f"id(self ) = { id(self ) }" )
+        print( f"self.a = {self.a} and self.b = {self.b}\n" )
+    
+    def add(self):
+        return self.a+self.b
+
+x = random.randint(1, 11 )
+y = random.randint(1, 11 )
+
+ob1 = Arithmetic(x, y)
+ob2 = Arithmetic(x, y)
+
+print( f"id(ob1) = { id(ob1) }" )
+print( f"id(ob2) = { id(ob2) }\n" )
+
+ob1.add()
+
+ob1.__init__()
+"""
+
+###### Summary ######
+# 1) We should use classes and objects concept when we need to maintain data parallely and in isolated way.
+# 2) Class is always the main copy/ template and object is the duplicate copy of class/template.
+# 3) We can keep statements in class but we should not do this because if do so then that time class
+#    will executed and python will run the statement writen inside class but not in any class function.
+# 4) If we want to use any function inside clas then we must use self concept.
+# 5) 1st argument of any class's function represent the object which is running in the execution flow.
+# 6) If we do changes in any element of class/main copy/template then, it will effect all the same
+#    element of objects until unless that part of object is unchanges.
+# 7) Class Variable and Object Variable
+# 8) Constructor/ __init__() -> This is also same as normal function. The only difference is that,
+#               Constructor/ __init__() will be called automatically only for 1 time at the time of
+#               object creation.
+
+
+#####################Menu Program ##########
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 1
+
+# Enter your Name =
+# Enter your Age =
+
+# You details are added and your id is 0
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 1
+
+# Enter your Name =
+# Enter your Age =
+
+# You details are added and your id is 1
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 1
+
+# Enter your Name =
+# Enter your Age =
+
+# You details are added and your id is 2
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 1
+
+# Enter your id to be delete = 1
+# Following Person Details got Delete,
+
+# Name =
+# Age =
+# id =
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 3
+
+# Enter your id =
+
+# Name =
+# Age =
+# id =
+# Status = 'Deleted Record'
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 4
+# Show only Active people Records
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 5
+
+# Active Records : 1. Search by id, 2. Search by name =
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 6
+
+# Deleted Records : 1. Search by id, 2. Search by name =
+
+# Menu : 1) Add Person Details, 2) Delete Person Details, 3) Display Specific Person Details
+# 4) Display All Person Details, 5) Search Person, 6. Deleted Records, 7.Exit = 7
+
+# >>> Program Terminated
+
+'''
+import random
+
+class Person:
+    def __init__(self, id, name = "", age = 0):
+        self.name = name
+        self.age = age
+        self.id = id
+        self.status = 'active'
+
+    def display_info( self ):
+        print( f"Name = { self.name }" )
+        print( f"Age = { self.age }" )
+        print( f"ID = { self.id }" )
+        print()
+
+    def delete_info( self ):
+        self.display_info()
+        self.status = 'deleted'
+
+person_dict = {}
+id_count = 0
+names = [ 'A', 'B', 'C', 'D', 'E', 'F' ]
+
+while( True ):
+    op = input( """Menu : 1) Add Person Details, 2) Delete Person Details,
+    3) Display All Person Details, 4) Search Person, 5) Deleted Records, 6) Exit = """ )
+    print()
+
+    if( op == '1' ):
+        person_dict[id_count] = Person( id = id_count, name = random.choice( names ), age = random.randint( 1, 101 ) )
+        
+        print( f"Your details are added and your id is {id_count}" )
+        id_count = id_count + 1
+
+    elif( op == '2' ):
+        person_id = input( "Enter your id to be delete = " )
+        print()
+
+        if( person_id.isdigit() ):
+            person_id = int( person_id )
+
+            person_data = person_dict.get( person_id )
+
+            if( person_data ):
+                if( person_data.status == 'active' ):
+                    print( f"Following Person Details got Deleted," )
+                    person_data.delete_info()
+                else:
+                    print( f"Following Person Details was already Deleted," )
+                    person_data.display_info()
+            else:
+                print( f"Sorry Can't Delete. ID : {person_id} does not exists" )
+        else:
+            print( f"Sorry Can't Delete. Only numbers are allowed as id" )
+
+    elif( op == '3'):
+        not_found = True
+        for id, person_data in person_dict.items():
+            
+            if( person_data.status == 'active' ):
+                person_data.display_info()
+                not_found = False
+
+        if( not_found ):
+            print( "There is no active person Data" )
+
+    elif( op == '4' ):
+        search_op = input( "1. Search by id, 2. Search by name = " )
+
+        if( search_op == '1' ):
+            person_id = input( "Enter your id to be searched = " )
+
+            if( person_id.isdigit() ):
+                person_id = int( person_id )
+
+                person_data = person_dict.get( person_id )
+
+                if( person_data ):
+                    if( person_data.status == 'active' ):
+                        person_data.display_info()
+                    else:
+                        print( f"Person having id : {person_id} was already Deleted" )
+                else:
+                    print( f"Sorry Can't display. ID : {person_id} does not exists" )
+            else:
+                print( f"Sorry Can't display. Only numbers are allowed as id" )
+
+        elif( search_op == '2' ):
+            person_name = input( "Enter your name to be searched = " )
+
+            not_found = True
+            for person_data in person_dict.values():
+                
+                if( ( person_data.status == 'active' )
+                    and ( person_data.name.lower() == person_name.lower() )
+                    ):
+                    person_data.display_info()
+                    not_found = False
+
+            if( not_found ):
+                print( "There is no active person Data" )
+
+        else:
+            print( f"Sorry, Wrong Option. Please choose correct one" )
+
+    elif( op == '5' ):
+        not_found = True
+        for person_data in person_dict.values():
+            
+            if( person_data.status == 'deleted' ):
+                person_data.display_info()
+                not_found = False
+
+        if( not_found ):
+            print( "There is no delete person Data" )
+
+    elif( op == '6' ):
+        break
+
+    else:
+        print( f"Sorry, Wrong Option. Please choose correct one" )
+
+        
+    print()
+'''
+
+################################# Classes sand Objects #################################
+##### destructor -> __del__ #####
+
+"""
+class A:
+    x = 1
+
+    def __init__(self):
+        print( f"__init__() Called, id( self ) = { id( self ) }\n" )
+
+    def __del__(self):
+        print( f"__del__() Called, id( self ) = { id( self ) }\n" )
+
+ob1 = A()
+ob2 = A()
+
+print( f"id(ob1) = { id(ob1) }\n" )
+
+del ob1
+
+print( f"id(ob2) = { id(ob2) }\n" )
+"""
+
+#### Types of Inheritance ####
+# 1) Single Inheritance         :   A -> B( A, B )
+# 2) Multi-Level Inheritance    :   A -> B( A, B ) -> C( A, B, C )
+# 3) Multi-ple Inheritance      :   A, B -> C( A, B, C )
+# 4) Hierarchichal Inheritance  :   A -> B, C, D, ...
+# 5) Hybrid Inheritance         :   A -> B, C -> D
+
+# 1) Single Inheritance         :   A -> B( A, B )
+
+"""
+class A:
+    a = 1
+
+    def __init__(self):
+        print( f"A Cont., self.a = {self.a}" )
+
+    def add(self):
+        print( f"A, add : self.a + 10 = { self.a + 10 }" )
+
+class B( A ):
+    b = 2
+
+    def __init__(self):
+        print( f"B Cont., self.a = {self.a} and self.b = {self.b}" )
+
+    def mult(self):
+        print( f"B, mult : self.a * 10 = { self.a * 10 } and self.b * 10 = { self.b * 10 }" )
+
+oba = A()
+obb = B()
+
+obb.add()
+"""
+
+# 2) Multi-Level Inheritance    :   A -> B( A, B ) -> C( A, B, C )
+"""
+class A:
+    a = 1
+
+    def __init__(self):
+        print( f"A Cont., a = {self.a}" )
+
+    def add(self):
+        print( f"A, add : a + 10 = { self.a + 10 }" )
+
+class B( A ):
+    b = 2
+
+    def __init__(self):
+        print( f"B Cont., a = {self.a} and b = {self.b}" )
+
+    def mult(self):
+        print( f"B, mult : a * 10 = { self.a * 10 } and b * 10 = { self.b * 10 }" )
+
+class C( B ):
+    c = 2
+
+    def __init__(self):
+        print( f"C Cont., a = {self.a}, b = {self.b} and c = {self.c}" )
+
+    def mult(self):
+        print( f"C, mult : a * 10 = { self.a * 10 }, b * 10 = { self.b * 10 } and c * 10 = { self.c * 10 }" )
+
+oba = A()
+obb = B()
+obc = C()
+print()
+
+oba.add()
+obb.add()
+obc.add()
+print()
+
+obb.mult()
+obc.mult()
+"""
+
+# 3) Multi-ple Inheritance      :   A, B -> C( A, B, C )
+"""
+class A:
+    a = 1
+
+    def __init__(self):
+        print( f"A Cont., a = {self.a}" )
+
+    def add(self):
+        print( f"A, add : a + 10 = { self.a + 10 }" )
+
+    def mult(self):
+        print( f"A, mult : a * 10 = { self.a * 10 }" )
+
+class B:
+    b = 2
+
+    def __init__(self):
+        print( f"B Cont., b = {self.b}" )
+
+    def mult(self):
+        print( f"B, mult : b * 10 = { self.b * 10 }" )
+
+class C:
+    c = 2
+
+    def __init__(self):
+        print( f"C Cont.,c = {self.c}" )
+
+    def mult(self):
+        print( f"C, mult" )
+
+    def div(self):
+        print( f"C, c / 10 = { self.c / 10 }" )
+
+class D(A, B, C):
+    pass
+
+oba = A()
+obb = B()
+obc = C()
+obd = D()
+print()
+
+obd.mult()
+"""
+
+# 4) Hierarchichal Inheritance  :   A -> B, C, D, ...
+# 5) Hybrid Inheritance         :   A -> B, C -> D
+
+#######Abstract Class#######
+
+# Abstract Functions -> YES
+# def f1():
+#     pass
+
+## Abstract Class -> YES
+# class A:
+#   a = 1
+#   b = 2
+
+## Abstract Class -> YES
+# class A:
+#   a = 1
+#   b = 2
+#
+#   def f1(self):
+#       pass
+
+## Abstract Class -> NO
+# class A:
+#   a = 1
+#   b = 2
+#
+#   def f1(self):
+#       print( "F1" )
+
+"""
+class Vehicle:
+    wheels = 0
+    automatic = None
+
+    def color(self):
+        pass
+
+    def dimension(self):
+        pass
+"""
+
+#######Polymerphism -> Abstract Class + Inheritance( Over-riding ) #######
+"""
+class Vehicle:
+    wheels = None
+    automatic = None
+
+    def __init__(self):
+        pass
+
+    def color(self):
+        pass
+
+    def dimension(self):
+        pass
+
+
+class Car( Vehicle ):
+
+    def __init__( self, automatic = False ):
+        self.wheels = 4
+        self.automatic = automatic
+
+class Auto( Vehicle ):
+
+    def __init__( self, automatic = False ):
+        self.wheels = 3
+        self.automatic = automatic
+
+scorpio = Car( True )
+normal_auto = Auto( False )
+
+print( f"scorpio.wheels = { scorpio.wheels } and scorpio.automatic = { scorpio.automatic }" )
+print( f"normal_auto.wheels = { normal_auto.wheels } and normal_auto.automatic = { normal_auto.automatic }" )
+"""
+
+"""
+class A:
+    a = 11     # Public
+    _b = 21    # Protected
+    __c = 31   # Private
+
+    def get_c(self):
+        return self.__c
+
+    def set_c(self, new_c):
+        self.__c = new_c
+
+    def __change_fees(self):
+        print(f"__change_fees" )
+
+    def access_change_fees(self):
+        print(f"access_change_fees" )
+        self.__change_fees()
+
+oba = A()
+print( f"oba.get_c() = { oba.get_c() }" )
+oba.set_c( 1 )
+print( f"oba.get_c() = { oba.get_c() }" )
+"""
+
+######### Static, Instance and Class Method #########
+"""
+class A:
+    a = 1
+    b = 2
+    
+    def f1( self ):
+        print( f"F1, id( self ) = { id( self ) }\n" )
+
+    @classmethod
+    def f2( self ):
+        print( f"F2, id( self ) = { id( self ) }\n" )
+        self.a = 10
+        self.b = 20
+
+    @staticmethod
+    def f3():
+        print( f"F3" )
+        # print( f"F3, id( self ) = { id( self ) }\n" )
+
+oba = A()
+
+print( f"Outside, id(A) = { id(A) }" )
+print( f"Outside, id(oba) = { id(oba) }\n" )
+
+print( f"Before, A.a = {A.a} and A.b = { A.b }" )
+print( f"Before, oba.a = {oba.a} and oba.b = { oba.b }\n" )
+
+oba.b = 100
+
+oba.f1()
+oba.f2()
+oba.f3()    # A.f3( oba )
+
+print( f"After, A.a = {A.a} and A.b = { A.b }" )
+print( f"After, oba.a = {oba.a} and oba.b = { oba.b }" )
+"""
+
+##### Operator Overloading
+"""
+class A:
+
+    def __init__( self ):
+        self.a = 1
+        self.b = 2
+
+        print( f"id(self) = { id(self) }\n" )
+
+    def disp(self):
+        print( f"id(self) = { id(self) }, a = {self.a} and b = {self.b}\n" )
+
+    def __add__(self, num): # ob1, 5
+        print( f"__add__, id(self) = { id(self) }, self = {self} and num = {num}\n" )
+        return "__add__ Function"
+
+    def __sub__(self, num): # ob1, 5
+        print( f"__sub__, id(self) = { id(self) }, self = {self} and num = {num}\n" )
+        return "__sub__ Function"
+
+    def __mul__(self, num): # ob1, 5
+        print( f"__mul__, id(self) = { id(self) }, self = {self} and num = {num}\n" )
+        return "__mult__ Function"
+        
+
+ob1 = A()
+
+ob1.disp()
+
+op = ob1+5
+print( f"op = { op }\n" )
+
+op = ob1-5
+print( f"op = { op }\n" )
+
+op = ob1*5
+print( f"op = { op }\n" )
+"""
