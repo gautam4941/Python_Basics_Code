@@ -1700,6 +1700,26 @@ print( f"2. l2 = { l2 } and id( l2 ) = { id( l2 ) }" )
 print( f"2. l3 = { l3 } and id( l3 ) = { id( l3 ) }\n" )
 """
 
+# Split() and Join()
+"""
+# split() syntax :-  str_data.split( substr )
+        # input :- str_data
+        # Output :- List
+        
+# join()  syntax :-  substr.join( str_data )
+        # input :- List
+        # Output :- str_data
+        
+a = "Hello how are you ?"
+b = a.split( ' ' )
+
+print( f"a = {a}" ) #  a = "Hello how are you ?"
+print( f"b = {b}" ) #  b = ['Hello', 'how', 'are', 'you', '?']
+
+c = '*'.join( b )
+print( f"c = {c}" ) #  c = "Hello*how*are*you ?"
+"""
+
 # List Summary :-
     # Able to Store only values
     # Support hybrid data types :- int, float, bool, str, list, tuple, etc
@@ -1709,6 +1729,7 @@ print( f"2. l3 = { l3 } and id( l3 ) = { id( l3 ) }\n" )
     #                           , sorted( list_var/list_data ), sort( reverse = False )
     #                           , reverse(), list_var/list_data.copy()
     # Mutable
+    # String -> str_data.split( substr ) -> List -> sub_str.join( List_data ) -> String
 
 ########### random module ######
 >>> import random
@@ -3383,3 +3404,690 @@ print( f"op = { op }\n" )
 op = ob1*5
 print( f"op = { op }\n" )
 """
+
+
+############ Exception Handling ############
+
+### Types of Errors:-
+    # 1) Syntax Error :-
+        # print -> prit
+        # if(): -> fi():
+
+    # 2) Logical Error :-
+    # print( 1/0 )
+    # d = {}
+    # print( d[1] )
+
+# Components of Exception Handling
+
+# try
+# except
+# else
+# finally
+# raise
+# assert
+
+# try, except, else and finally
+"""
+print( "Start\n" )
+
+# Keep that code in try where you have doubt that it may fail
+try:
+    d = { 2:'a' }
+    print( f"d[1] = { d[1] }\n" )
+
+# excute only when error occurs
+except:
+    print( "Error Occured\n" )
+
+# excute only when error occurs does not occures
+else:
+    print( "Else Block\n" )
+
+# Execute in both cases :- error and non-error
+finally:
+    print( "Finally Block\n" )
+    
+print( "End" )
+"""
+
+# Types of defined Exception
+"""
+print( "Start\n" )
+
+try:
+    # prit(1)
+    # print(1/0)
+    l = []
+    print( l[2] )
+
+    # d = {}
+    # print( d[1] )
+
+except NameError as e:
+    print( f"Name Error" )
+
+except ZeroDivisionError as e:
+    print( f"Zero Division Error, e = {e}" )
+
+except Exception as e:
+    print( f"Error Occured, Message = {e}\n" )
+
+print( "End" )
+"""
+
+# raise
+"""
+l = [ 1, 0, 9, -5, 2, 7, 1 ]
+
+for i in l:
+    try:
+        if( i < 0 ):
+            raise Exception( f"Error Occured when i = {i}" )
+        else:
+            print( i )
+    except Exception as e:
+        print( f"Except Block, e = {Exception}" )
+"""
+
+# assert
+# assert False, f"Hello Assert Occured"
+"""
+print( "Start" )
+
+try:
+    assert False, f"Hello Assert Occured"
+except Exception as e:
+    print( f"Except Block, e = {e}" )
+
+print( "End" )
+"""
+
+"""
+l = [ 1, 0, 9, -5, 2, 7, 1 ]
+
+for i in l:
+    try:
+        assert i>=0, Exception( f"Error Occured when i = {i}" )
+
+        print( i )
+    except Exception as e:
+        print( f"Except Block, e = {e}" )
+"""
+
+############ Regular Expressions ############
+# Regular Expressions
+'''
+import re
+
+data = """Narendra Damodardas Modi (Gujarati: [ˈnəɾendɾə dɑmodəɾˈdɑs ˈmodiː] (listen); born 17 September 1950)[a] is an Indian politician serving as the 14th and current prime minister of India since 2014. Modi was the chief minister of Gujarat from 2001 to 2014 and is the Member of Parliament from Varanasi. He is a member of the Bharatiya Janata Party (BJP) and of the Rashtriya Swayamsevak Sangh (RSS), a right-wing Hindu nationalist paramilitary volunteer organisation. He is the first prime minister to have been born after India's independence in 1947 and the second prime minister not belonging to the Indian National Congress to have won two consecutive majorities in the Lok Sabha, or the lower house of India's parliament. He is also the longest serving prime minister from a non-Congress party.
+
+Born and raised in Vadnagar, a small town in northeastern Gujarat, Modi completed his secondary education there. He was introduced to the RSS at age eight. He has drawn attention to having to work as a child in his father's tea stall on the Vadnagar railway station platform, a description that has not been reliably corroborated. At age 18, Modi was married to Jashodaben Chimanlal Modi, whom he abandoned soon after. He left his parental home where she had come to live. He first publicly acknowledged her as his wife more than four decades later when required to do so by Indian law, but has made no contact with her since. Modi has asserted he had travelled in northern India for two years after leaving his parental home, visiting a number of religious centres, but few details of his travels have emerged. Upon his return to Gujarat in 1971, he became a full-time worker for the RSS. After the state of emergency was declared by prime minister Indira Gandhi in 1975, Modi went into hiding. The RSS assigned him to the BJP in 1985 and he held several positions within the party hierarchy until 2001, rising to the rank of general secretary.[b]
+
+Modi was appointed Chief Minister of Gujarat in 2001 due to Keshubhai Patel's failing health and poor public image following the earthquake in Bhuj. Modi was elected to the legislative assembly soon after. His administration has been considered complicit in the 2002 Gujarat riots in which 1044 people were killed, three-quarters of whom were Muslim,[c] or otherwise criticised for its management of the crisis. A Supreme Court of India–appointed Special Investigation Team found no evidence to initiate prosecution proceedings against Modi personally.[d] While his policies as chief minister—credited with encouraging economic growth—have received praise, his administration has been criticised for failing to significantly improve health, poverty and education indices in the state.[e]
+
+Modi led the BJP in the 2014 general election which gave the party a majority in the lower house of Indian parliament, the Lok Sabha, the first time for any single party since 1984. Modi's administration has tried to raise foreign direct investment in the Indian economy and reduced spending on healthcare and social welfare programmes. Modi has attempted to improve efficiency in the bureaucracy; he has centralised power by abolishing the Planning Commission. He began a high-profile sanitation campaign, controversially initiated a demonetisation of high-denomination banknotes and transformation of taxation regime, and weakened or abolished environmental and labour laws."""
+
+print( re.findall( '\d\d\d\d', data ) )
+print()
+print( re.findall( '[A-Z][a-z]+', data ) )
+'''
+
+# Functions in Regular Expressions
+# 1) findall()
+# 2) split()
+# 3) sub()
+
+# Components in Regular Expressions
+
+# ^ -> Not and Start
+# Ex :- [0-9] -> Digit
+#       [^0-9] -> Non - Digit
+#       ^[0-9] -> My String should start from digit
+
+# $ -> End
+# Ex :- [0-9] -> Digit
+#       [0-9]$ -> My String should end from digit
+
+# + -> Continious
+# "98760"
+# Ex :- [0-9] or \d -> Digit -> 9
+#       [0-9]+ or \d+ -> ['98760']
+
+# . -> Anything
+# "98760"
+# Ex :- [0-9] or \d -> Digit -> 9
+#       [0-9]+ or \d+ -> ['98760']
+
+# () -> Optional
+# Conclusion : (^)any_pattern($)
+
+# | -> works as "or"
+# Ex :- word = '23432432@#@#ABCDeg1234abcd'
+#       re.findall( '[A-Z]+|[a-z]+', word ) -> ['ABCD', 'eg', 'abcd']
+
+# Digit -> \d, [0-9]
+# Continious - Digit -> \d+, [0-9]+
+
+# Non-Digit -> \D, [^0-9]
+# Continious - Non-Digit -> \D+, [^0-9]+
+
+# space -> \s, ' '
+# Continious - space -> \s+, ' '+
+
+# Lower Case Alphabets -> [a-z]
+# Continious - Lower Case Alphabets -> [a-z]+
+
+# Upper Case Alphabets -> [A-Z]
+# Continious - Upper Case Alphabets -> [A-Z]+
+
+# Special Character -> \W
+# Continious - Special Character -> \W+
+
+# Non-Special Character -> \w
+# Continious - Non-Special Character -> \w+
+
+import re
+
+# findall()
+"""
+mystr='send an Email 6789 from HELLO this@gmail.com To test@user.com 34 times !879'
+
+#Selecting one character
+
+#syntax  :-  re.findall( 'what_to_find', 'Where_to_find')
+
+print( f"mystr = { mystr }\n" )
+
+print( f"re.findall('a', mystr) = { re.findall('a', mystr) }", end = ', ' )#Find all by 'a'
+print( f"len( re.findall('a', mystr) ) = { len( re.findall('a', mystr) ) }" )
+
+print()
+print("\d = ",end='')
+print( re.findall('\d',mystr) )# finds the positions of all available digits in string
+
+print()
+print("\D = ",end='')
+print( re.findall('\D',mystr) )# finds the positions of all available non - digits in string
+
+# '^' Sign
+print()
+print("^\d = ",end='')
+print( re.findall('^\d',mystr) )# finds the positions of all available digits in strings
+"""
+
+# split()
+"""
+mystr='786send an Email 6789 from this@gmail.com To test@user.com 34 times !879'
+
+#Selecting one character
+print( re.split('a', mystr) )#Find all by 'a'
+print()
+#\d = ['send an email ', '', '', '', ' from this@gmail.com to test@user.com ', '', ' times']
+print("\d = ",end='')
+print( re.split('\d',mystr) )# finds the positions of all available digits in string
+print()
+print("\D = ",end='')               #/D or [ ^0-9 ]
+print( re.split('\D',mystr) )# finds the positions of all available non - digits in string
+
+print("\s = ",end='')
+print( re.split('\s', mystr) )#Doesn't finds the positions but shows all available spaces in string
+
+print("\S = ",end='')
+print( re.split('\S', mystr) )#Doesn't finds the positions but shows all available non - space in string
+
+print("\W = ",end='')
+print( re.split('\W', mystr) )#Doesn't finds the positions but shows all available characters in string
+
+print("\w = ",end='')
+print( re.split('\w', mystr) )#Doesn't finds the positions but shows all available non - characters in string
+
+#Selecting Range of Charaters
+
+print( f"[0-9][0-9][a-z] = {re.split('[0-9][0-9][a-z]', mystr) }" )   #find all elements by a-z
+
+print(f"[A-Z] = {re.split('[A-Z]', mystr) }" )      #find all elements by A-Z
+
+print(f"[0-9] = {re.split('[0-9]', mystr) }" )      #find all elements by 0-9
+
+#Selecting Non - Range of Charaters
+
+print(f"[^a-z] = {re.split('[^a-z]', mystr) }" )      #find all elements by non a-z range
+
+print(f"[^A-Z] = {re.split('[^A-Z]', mystr) }" )       #find all elements by non A-Z range
+"""
+
+"""
+mystr='send an email 6789 from this@gmail.com to test@user.com 34 times'
+
+#Selecting one character
+
+#Syntax :-   re.sub( 'old_sub_str', 'new_sub_str', main_str  )
+#            re.sub( 'what to replace', 'new string', from_where_to_replace )
+
+print( re.sub('a', '&', mystr) )
+print()
+
+print( re.sub('\d', '*', mystr) )# finds the positions of all available digits in string
+print()
+
+print( re.sub('\d+', '*', mystr) )# finds the positions of all available digits in string
+print()
+
+print( re.sub('\W', '*', mystr) )
+print()
+"""
+
+################ Threading Concept Start #######################
+"""
+import time
+import threading
+
+def square( numbers, thread_name ):
+    print( "Calculating squares" )
+    
+    for i in numbers: # 0.2, 0.2, 0.2, 0.2, 0.2 = 1
+        time.sleep(0.2)
+        print( f"{thread_name} : Square = { i**2 }" )
+
+    print()
+
+def cube( numbers, thread_name ):
+    print( "Calculating Cubes" )
+    for i in numbers: # 0.3, 0.3, 0.3, 0.3, 0.3 = 1.5
+        time.sleep(0.3)
+        print( f"{thread_name} : Cube = { i**3 }" )
+
+    print()
+
+
+numbers = [4, 2, 9, 3, 10]
+start_time = time.time()
+
+# square( numbers )
+# cube( numbers )
+
+t1 = threading.Thread( target = square, args = ( numbers, "t1", ) )
+t2 = threading.Thread( target = cube, args = ( numbers, "t2", ) )
+
+numbers = [4, 2]
+t3 = threading.Thread( target = square, args = ( numbers, "t3", ) )
+t4 = threading.Thread( target = cube, args = ( numbers,"t4", ) )
+
+t1.start() # 1 Second
+t2.start() # 1.5 Second
+t3.start()
+t4.start()
+
+print( f"Before, t1.join()" )
+t1.join()       # t1 will wait here until it's done
+print( f"After, t1.join()\n" )
+
+print( f"Before, t2.join()" )
+t2.join()       # t2 will wait here until it's done
+print( f"After, t2.join()\n" )
+
+print( f"Before, t3.join()" )
+t3.join()
+print( f"After, t3.join()\n" )
+
+print( f"Before, t4.join()" )
+t4.join()
+print( f"After, t4.join()\n" )
+
+print( f"Done in : { time.time() - start_time }" )
+"""
+
+# O/p :-
+"""
+Calculating squares
+Square = 16
+Square = 4
+Square = 81
+Square = 9
+Square = 100
+
+Calculating Cubes
+Cube = 64
+Cube = 8
+Cube = 729
+Cube = 27
+Cube = 1000
+
+Done in : 3.098834276199341
+"""
+################ Threading Concept End #######################
+
+# l = [ 1, 2, 3, 4, 5 ]
+# mult = 1, 1 * 1 = 1 -> mult
+# mult = 1, mult * 2 -> 1 * 2 -> 2 -> mult
+# mult = 2, mult * 3 -> 2 * 3 -> 6 -> mult
+# mult = 3, mult * 4 -> 6 * 4 -> 24 -> mult
+# mult = 24,mult * 5 -> 24* 5 -> 120 -> mult
+
+# reduce Code Working
+# l = [ 1, 2, 3, 4, 5 ]
+# 1*2 = 2
+#       2 * 3 = 6
+#           6 * 4 = 24
+#              24 * 5 = 120
+
+
+############# Special Concepts ###############
+
+# Zip()
+"""
+l1 = [ True , "Hello", 5 , 5.6 ]
+l2 = ( 2    , 0      , 9       )
+l3 = ( 1    , 2      , 0 , 19, 11, 3 )
+l4 = [ 12   , 10     , 19, 29, 39, 49, 50 ]
+l5 = "Hello"
+d = { 11 : '1', 'message' : 'Hi' }
+#ind = 0    , 1      , 2 , 3 , 4 , 5 , 6
+
+# Expectation : [ ( True, 2, 1, 12 )
+#               , ( "Hello", 0, 2, 10 )
+#               , ( 5, 9, 0, 19 )
+#               ]
+
+# print( zip( l1, l2, l3, l4 ) ) # <zip object at 0x000001E8BBD36EC8>
+
+for i in zip( l1, l2, l3, l4, l5, d ):
+    print( i )
+
+"""
+
+######### map()
+# Without Lambda Function :- 
+    # l = [ 1, 2, 3, 4, 6 ]
+
+    # def power( num ):
+    #     return num**2 # (1, 2) ** 2
+
+    # for i in l:
+    #     print( power(i) )
+
+    # print( tuple( map( power, l ) ) )
+
+
+# With Lambda Function :-
+
+# l = [ 1, 2, 3, 4, 6 ]
+# def power( num ):
+#     return num ** 2
+
+
+# lambda num : num**2
+
+# print( tuple( map( power, l ) ) )
+
+# print( list( map( lambda num : num**2, l ) ) )
+
+######### reduce() :-
+from functools import reduce
+
+# Without Lambda Function :- 
+"""
+l = [ 1, 2, 3, 4, 5 ]
+
+def multiply( l ):
+    mult = 1
+    
+    for i in l:
+        mult = mult * i
+
+    return mult
+
+print( multiply( l ) )
+"""
+
+# Standard Code Working
+# l = [ 1, 2, 3, 4, 5 ]
+# mult = 1, 1 * 1 = 1 -> mult
+# mult = 1, mult * 2 -> 1 * 2 -> 2 -> mult
+# mult = 2, mult * 3 -> 2 * 3 -> 6 -> mult
+# mult = 3, mult * 4 -> 6 * 4 -> 24 -> mult
+# mult = 24,mult * 5 -> 24* 5 -> 120 -> mult
+
+# reduce Code Working
+# l = [ 1, 2, 3, 4, 5 ]
+# 1*2 = 2
+#       2 * 3 = 6
+#           6 * 4 = 24
+#              24 * 5 = 120
+
+# Without Lambda Function :-
+"""
+l = [ 1, 2, 3, 4, 5 ]
+
+def multiply( a, b ):
+    print( f"a = {a} and b = {b}" )
+    return a*b
+
+print( reduce( multiply, l ) )
+"""
+
+# Without Lambda Function :-
+"""
+l = [ 1, 2, 3, 4, 5 ]
+
+def multiply( a, b ):
+    return a*b
+
+
+print( reduce( lambda a, b : a*b , l ) )
+"""
+
+####### filter() ##
+
+# Without Lambda Function :-
+"""
+l = [1, 2, 3, 4, 5, 6]
+
+def even_finder( x ):
+    # print( f"x = {x}" )
+    return x%2 == 0
+
+print( list( filter( even_finder, l ) ) )
+"""
+
+# With Lambda Function :-
+"""
+l = [1, 2, 3, 4, 5, 6]
+
+print( list( filter( lambda x : x%2 == 0, l ) ) )
+"""
+
+##### Decorator #####
+# @func_name -> Decorator
+
+"""
+print( "Start\n" )
+
+def f2():
+    print( "f2" )
+
+def mother( func ):
+    print( "Inside Mother()" )
+    print( f"func = { func }" )
+
+    return f2 
+
+print( "After Mother\n" )
+
+@mother
+def f1():#  f1 = mother() return func
+    print( "f1" )
+
+print( "After f1\n" )
+
+# mother( f2 )
+f1()
+
+print( "End\n" )
+"""
+
+"""
+l = [ 1, 2, 3, 4, 5, 6 ]
+
+temp = iter( l )
+
+# print( temp[0] ) # TypeError: 'list_iterator' object is not subscriptable
+
+print( next(temp) ) # 1
+print( next(temp) ) # 2
+print( next(temp) ) # 3
+print( next(temp) ) # 4
+print( next(temp) ) # 5
+print( next(temp) ) # 6
+print( next(temp) ) # StopIteration
+"""
+
+# Generator -> yield
+"""
+def find_even( l ):
+    temp = []
+    
+    for i in l:
+        print( f"i = {i}" )
+        if( i%2 == 0 ):
+            # return i
+            # temp.append( i )
+            yield i
+
+    print( "After Loop" )
+
+print( "Start" )
+op = find_even( [1, 2, 3, 4, 5, 6] )
+
+print( "After Op" )
+print( list( op ) )
+print( "End" )
+"""
+
+############################ Database Connectivity ############################
+
+#To Import mysql.connector
+import mysql.connector as conn
+
+#To Setup the Connection
+conn = conn.connect(
+  host="localhost",
+  user="root",
+  password="gautam1234"
+)
+
+#Printing Connection for th validation purpose that it is not giving error
+print( f"connection = { conn }" )
+
+# Creating the Cursor
+cursor = conn.cursor()
+
+# cursor.execute( <SQL QUERY> )
+
+# Show Databases
+"""
+cursor.execute( "show databases" )
+for i in cursor:
+    print( i )
+"""
+
+# Use Database
+cursor.execute( "use MAMTA" )
+
+# Show Tables in selected database
+"""
+cursor.execute( "show tables" )
+for i in cursor:
+    print( i )
+"""
+
+# Select Command
+"""
+cursor.execute( "select * from employee" )
+start_time = time.time()
+
+
+for i in cursor:
+    print( i )
+
+op = iter( cursor )
+try:
+    while( op ):
+        print( next(op) )
+except:
+    pass
+
+print( f"Execution Time = { time.time() - start_time }" )
+"""
+
+"""
+cursor.execute( "select * from employee where proj_id = 'ABC' " )
+
+op = iter( cursor )
+try:
+    while( op ):
+        print( next(op) )
+except:
+    pass
+"""
+
+# Update Command
+'''
+query = """update employee set salary = 1000 where proj_id = 'ABC' """
+
+cursor.execute( query )
+
+op = iter( cursor )
+try:
+    while( op ):
+        print( next(op) )
+except:
+    pass
+
+
+# Select Command
+query = """select * from employee where proj_id = 'ABC' """
+
+cursor.execute( query )
+
+print( f"type( cursor ) = { type( cursor ) }\n" )
+
+op = iter( cursor )
+try:
+    while( op ):
+        print( next(op) )
+except:
+    pass
+
+cursor.execute( "commit" )
+# cursor.close()
+'''
+
+# Delete Command
+'''
+query = """delete from project where proj_name = 'quont' """
+
+cursor.execute( query )
+
+op = iter( cursor )
+try:
+    while( op ):
+        print( next(op) )
+except:
+    pass
+
+cursor.execute( "commit" )
+cursor.close()
+'''
+
+# Insert Command
+'''
+for i in range( 1, 101, 10 ):
+    for j in range( 1, 11 ):
+        query = f"INSERT INTO project( proj_id, proj_name ) values ( {i}, 'A{i}' )"
+        cursor.execute( query )
+
+cursor.execute( "commit" )
+cursor.close()
+'''
