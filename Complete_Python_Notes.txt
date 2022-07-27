@@ -540,113 +540,156 @@ print( f"a % 5 = { a % 5 }" )
 """
 
 ############ Conditional Statement ###################
+# Statement
+# a = 5       # Statement 1
+# print( a )  # Statement 2
 
-a = 5           # Statement1
-
-print( a )      # Statement2
-print( a + 5 )  # Statement3
-print( a * 5 )  # Statement4
-
-
-# Conditional Statement = Statement with Conditions
+# Conditional = Something with conditions
+# Conditional Statements = Statements with conditions
 
 # Types of Conditional Statements,
-# 1. If Statement
-# 2. If-else Statement
-# 3. elif ladder Statement
-# 4. nested conditional Statement
-# 5. Multiple conditional Statement
+# If Statement
 
-# 1. If Statement
-
-"""
-print( "Start" )    # Statement1
-
-if( False ):        # Condition
-    a = 5           # Statement2( Conditional )
-
-    print( a )      # Statement3( Conditional )
-    print( a + 5 )  # Statement4( Conditional )
-    print( a * 5 )  # Statement5( Conditional )
-
-print( "End" )      # Statement6
-"""
-
-"""
-print( "Start" )# Statement1
-
-a = 5           # Statement2
-print( a )      # Statement3
-
-if( True ):        # Condition
-    print( a + 5 )  # Statement4( Conditional )
-    print( a * 5 )  # Statement5( Conditional )
-
-print( "End" )      # Statement6
-"""
-
-"""
-print( "Start" )# Statement1
-
-a = 5           # Statement2
-print( f"a = {a}" )      # Statement3
-
-if( a>0 ):        # Condition
-    print( f"IF, a + 5 = { a + 5 }" )  # Statement4( Conditional )
-    print( f"IF, a * 5 = { a * 5 }" )  # Statement5( Conditional )
-
-print( "End" )      # Statement6
-"""
-
-# 2. If-else Statement
-"""
-print( "Start" )    # Statement1
-
-if( False ):        # Condition
-    print( "Inside IF" ) # Statement2( Conditional )
-else:
-    print( "Inside Else" ) # Statement2( Conditional )
-
-print( "End" )      # Statement6
-"""
-
-"""
-print( "Start" )# Statement1
-
-a = -5           # Statement2
-print( f"a = {a}" )      # Statement3
-
-if( a>0 ):        # Condition
-    print( f"IF, a + 5 = { a + 5 }" )  # Statement4( Conditional )
-    print( f"IF, a * 5 = { a * 5 }" )  # Statement5( Conditional )
-else:
-    print( f"Else, a - 5 = { a - 5 }" )  # Statement4( Conditional )
-    print( f"Else, a / 5 = { a / 5 }" )  # Statement5( Conditional )
-
-print( "End" )      # Statement6
-"""
-
-
-# Elif Ladder
+# Syntax :- if( True/ False ):
+                # Statement 1
+                # Statement 2
+                # .
+                # .
+                # Statement n
 """
 print( "Start" )
 
-if( False ):        
-    print( "Inside IF 1" )
+a = 5
+if( False ):
+    print( f"a = { a }" )
 
-elif( False ):        
-    print( "Inside IF 2" )
+print( "End" )
+"""
 
-elif( True ):        
-    print( "Inside IF 3" )
+"""
+print( "Start" )
 
-elif( False ):        
-    print( "Inside IF 4" )
-    
+a = -5
+if( a>0 ):
+    print( f"a = { a }" )
+
+print( "End" )
+"""
+
+"""
+print( "Start" )
+
+a = 15
+if( (a>0) and (a<=10) ):
+    print( f"a = { a }" )
+
+print( "End" )
+"""
+
+# If-else Statement . else = otherwise
+
+# Syntax :- if( True/ False ):
+                # Statement 1
+                # Statement 2
+                # .
+                # .
+                # Statement n
+#           else:
+                # Statement 1
+                # Statement 2
+                # .
+                # .
+                # Statement n
+
+"""
+print( "Start" )
+
+a = 5
+if( False ):
+    print( f"IF, a = { a }" )
 else:
-    print( "Inside Else" )
+    print( f"Else, a = { a }" )
 
-print( "End" )      # Statement6
+print( "End" )
+"""
+
+"""
+print( "Start" )
+
+a = 5
+if( a>0 ):
+    print( f"a = { a } and a is +ve" )
+else:
+    print( f"a = { a } and a is -ve" )
+
+print( "End" )
+"""
+
+"""
+print( "Start" )
+
+a = 11
+if( (a>0) and (a<=10) ):
+    print( f"a = { a } and a is from 1 to 10" )
+else:
+    print( f"a = { a } and a is either -ve or more than 10" )
+
+print( "End" )
+"""
+
+#### Elif Ladder ####
+# Syntax :- if( True/ False ):
+                # Statement 1
+                # Statement 2
+                # .
+                # .
+                # Statement n
+#           elif( True/ False ):
+                # Statement 1
+                # Statement 2
+                # .
+                # .
+                # Statement n
+#           elif( True/ False ):
+                # Statement 1
+                # Statement 2
+                # .
+                # .
+                # Statement n
+#           elif( True/ False ):
+                # Statement 1
+                # Statement 2
+                # .
+                # .
+                # Statement n
+#           else:
+                # Statement 1
+                # Statement 2
+                # .
+                # .
+                # Statement n
+
+"""
+print( "Start" )
+
+if( False ):
+    print( "IF 1" )
+elif( False ):
+    print( "ELIF 2" )
+elif( False ):
+    print( "ELIF 3" )
+elif( False ):
+    print( "ELIF 4" )
+elif( False ):
+    print( "ELIF 5" )
+elif( False ):
+    print( "ELIF 6" )
+elif( False ):
+    print( "ELIF 7" )
+else:
+    print( "ELSE" )
+
+print( "End" )
 """
 
 """
@@ -654,25 +697,172 @@ print( "Start" )
 
 a = 35
 
-if( a < 0 ):
-    print( f"a = { a }, Less than 0" )
+if( a<0 ):
+    print( f"IF 1, a = {a}, a is -ve" )
 
 elif( a == 0 ):
-    print( f"a = { a }, Equals to 0" )
+    print( f"ELIF 2, a = {a}, a is zero" )
 
-elif( (a > 0) and (a<11) ):
-    print( f"a = { a }, is from 1 to 10" )
+elif( (a>0) and (a<11) ):
+    print( f"ELIF 3, a = {a}, a is from 1 to 10" )
 
-elif( (a > 10) and (a<21) ):
-    print( f"a = { a }, is from 11 to 20" )
+elif( (a>10) and (a<21) ):
+    print( f"ELIF 4, a = {a}, a is from 11 to 20" )
 
-elif( (a > 20) and (a<31) ):
-    print( f"a = { a }, is from 21 to 30" )
+elif( (a>20) and (a<31) ):
+    print( f"ELIF 5, a = {a}, a is from 21 to 30" )
 
 else:
-    print( f"a = { a }, is more than 30" )
+    print( f"Else, a = {a}, a is more than 30" )
 
 print( "End" )
+"""
+
+#### Nested Condition ####
+# Conditional Block -> If , if-else, elif ladder
+    
+# Syntax :- Conditional Block:
+#                 Conditional Block:
+#                   Conditional Block:
+
+"""
+print( "Start" )
+
+if( False ):
+    print( "IF 1" )
+
+    if( True ):
+        print( "IF 1.1" )
+
+        if( True ):
+            print( "IF 1.1.1 a)" )
+
+        elif( False ):
+            print( "ELIF 1.1.1 b)" )
+
+        else:
+            print( "Else 1.1.1" )
+    else:
+        print( "Else 1.1" )
+
+elif( False ):
+    print( "ELIF 2" )
+
+elif( False ):
+    print( "ELIF 3" )
+
+    if( False ):
+        print( "IF 3.1" )
+    else:
+        print( "Else 3.1" )
+
+else:
+    print( "Else 4" )
+
+print( "End" )
+"""
+
+"""
+print( "Start" )
+
+a = 14
+
+if( a < 0 ):
+    print( f"a = {a} and a is -ve" )
+
+    if( a%3 == 0 ):
+        print( f"Divisible by 3" )
+        
+    elif( a%5 == 0 ):
+        print( f"Divisible by 5" )
+        
+    else:
+        print( f"Not Divisible by 3 or 5" )
+
+else:
+    print( f"a = {a} and a is +ve" )
+
+    if( a%2 == 0 ):
+        print( f"a is Even" )
+    else:
+        print( f"a is Odd" )
+
+print( "End" )
+"""
+
+
+#### Multiple Conditional Statements ####
+# Conditional Block -> If , if-else, elif ladder, nested structure
+    
+# Syntax :- Conditional Block 1:
+#           Conditional Block 2:
+#           .:
+#           .:
+#           Conditional Block n:
+
+"""
+print( "Start" )
+
+# Condition Block - 1 Start
+if( True ):
+    print( "IF 1" )
+# Condition Block - 1 End
+
+# Condition Block - 2 Start
+if( False ):
+    print( "IF 2" )
+# Condition Block - 2 End
+
+# Condition Block - 3 Start
+if( True ):
+    print( "IF 3" )
+
+else:
+    print( "Else" )
+# Condition Block - 3 End
+
+print( "End" )
+"""
+
+"""
+print( "Start" )
+
+a = 5
+
+if( a > 0 ):
+    print( f"a = {a}, a is +ve" )
+
+if( a%5 == 0):
+    print( f"a = {a}, a is divisible by 5" )
+else:
+    print( f"a = {a}, a is not divisible by 5" )
+    
+print( "End" )
+"""
+
+
+"""
+2. Write a C program to check whether a given number is even or odd. Go to the editor
+Test Data : 15
+Expected Output :
+15 is an odd integer
+"""
+
+"""
+a = 5
+
+if( a%2 == 0):
+    print( f"{a} is an even integer" )
+else:
+    print( f"{a} is an odd integer" )
+"""
+
+
+"""
+3. Write a C program to check whether a given number is positive or negative. Go to the editor
+Test Data : 15
+Expected Output :
+15 is a positive number
 """
 
 """
