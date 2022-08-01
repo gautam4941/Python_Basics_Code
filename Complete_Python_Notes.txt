@@ -1238,6 +1238,8 @@ for i in range(1, 11, 1 ):
 print( "End" )
 """
 
+######################## Strings Concept #######################
+
 # +ve index
 """
 msg = "Hello"
@@ -1246,8 +1248,6 @@ print( f"msg = { msg }" )
 for i in range( len( msg ) ):
     print( f"i = { i } and msg[i] = { msg[i] }" )
 """
-
-######################## Strings Concept #######################
 
 # -ve index
 """
