@@ -1490,7 +1490,7 @@ print( f"msg.endswith( 'ho' ) = { msg.endswith( 'ho' ) }" )
 print()
 """
 
-## 8) endswith() -> Returns true if the string starts with the substring value
+## 8) startswith() -> Returns true if the string starts with the substring value
 """
 msg = "hello, how are you ? he"
 print( f"msg = { msg }" )
