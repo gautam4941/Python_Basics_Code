@@ -1425,6 +1425,11 @@ msg = "Hello, how are you ?"
 print( f"msg = { msg } and msg.upper() = { msg.upper() }" )
 """
 
+# 4) swapcase() -> Converts lower into upper and upper into lower
+
+message = 'Hello, How are you ? 567 '
+print( message.swapcase() )   # 'hELLO, hOW ARE YOU ? 567 '
+
 # 4) find() -> Find the index of given substring
 # Syntax :- str_data.find( substr, start = 0, end = last_index)
 """
