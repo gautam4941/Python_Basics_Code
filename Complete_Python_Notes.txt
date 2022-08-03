@@ -1429,7 +1429,7 @@ for i in range( len(word) ):
     elif( curr_ord>=65 and curr_ord<= 90 ):
         upper_case_count = upper_case_count + 1
 
-    elif( curr_ord>=65 and curr_ord<= 122 ):
+    elif( curr_ord>=97 and curr_ord<= 122 ):
         lower_case_count = lower_case_count + 1
 
     else:
