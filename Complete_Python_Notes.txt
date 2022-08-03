@@ -1349,6 +1349,56 @@ for i in range( len( word ) ):
     print( f"i = { i } and word[i] = { word[i] }" )
 """
 
+# 0-9 -> 48 to 57
+# a-z -> 97 to 122
+# A-Z -> 65 to 90
+# remaining -> Special Character
+
+word = "Hello, HOW ARE  322567 ? @#@#@#"
+
+lower_case_count = 0
+upper_case_count = 0
+number_count = 0
+special_char_count = 0
+
+for i in range( len(word) ):
+    """
+    curr_ord = ord( word[i] )
+
+    if( curr_ord>=48 and curr_ord<= 57 ):
+        number_count = number_count + 1
+        
+    elif( curr_ord>=65 and curr_ord<= 90 ):
+        upper_case_count = upper_case_count + 1
+
+    elif( curr_ord>=65 and curr_ord<= 122 ):
+        lower_case_count = lower_case_count + 1
+
+    else:
+        special_char_count = special_char_count + 1
+    """
+
+    """
+    if( word[i] >= '0' and word[i] <= '9' ):
+        number_count = number_count + 1
+        
+    elif( word[i] >= 'A' and word[i] <= 'Z' ):
+        upper_case_count = upper_case_count + 1
+        
+    elif( word[i] >= 'a' and word[i] <= 'z' ):
+        lower_case_count = lower_case_count + 1
+
+    else:
+        special_char_count = special_char_count + 1
+    """
+
+
+print( f"word = { word }" )
+print( f"number_count = { number_count }" )
+print( f"upper_case_count = { upper_case_count }" )
+print( f"lower_case_count = { lower_case_count }" )
+print( f"special_char_count = { special_char_count }" )
+
 """
 word = "hello"
 new_word = ""
