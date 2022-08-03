@@ -1444,6 +1444,20 @@ for i in range( len( word ) ):
 print( f"After, word = { word } and new_word = { new_word }" )
 """
 
+# Assignments
+str_data = "Hello , 2.1 5 4.5 46 @#@$#$ How are you ?"
+
+# 1. Count all the lower case, upper case, numbers and SPecial characters
+# 2. Find all the float values
+# 3. Swap the lower and upper cases( lower case -> Uppper Case and Upper Case -> lower case ).
+#    All non-alphabets will be as it is
+
+# 4. Keep only 1st character as Upper case. Remaining all lower case. All non-alphabets will be as it is
+
+# 5. Convert all the word's first letter as Upper Case.
+#   Ex :-
+#   Input :- Hello , 2.1 5 4.5 46 @#@$#$ How are you ?
+#   Ouput :- Hello , 2.1 5 4.5 46 @#@$#$ How Are You ?
 
 #### String Inbuilt Functions ####
 
