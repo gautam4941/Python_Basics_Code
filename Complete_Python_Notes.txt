@@ -86,8 +86,8 @@ Photos(DL)  Video(OpenCV)   Text( Python )
                 Number                          Non-Number
        Non-Decimal      Decimal             Alphabets       Symbols             boolean
        5, 12, 9, etc    5.6, 2.3, etc       [a-z], [A-Z]     ( @, !, ), etc )   True, False
-       ( Float )        ( integer )         ( String )         ( String )       ( bool )
-           float            int                 str                 str         
+       ( integer )        ( Float )         ( String )         ( String )       ( bool )
+            int           float                 str                 str         
                                             "True"              "@@#@#"
                                             /'True'             /'@@#@#'
                                             /"""True"""         /"""@@#@#"""
