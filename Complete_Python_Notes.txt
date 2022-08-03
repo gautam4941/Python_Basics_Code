@@ -1318,6 +1318,7 @@ for i in range( -1, -len( msg ) -1 , -1 ): # -1, -5, -1
 # Slicing
 """
 # Syntax :- str_data[ start = 0 : end = len(str_data) : incr/decr = 1 ]
+	  # str_data[ start = -1 : end = 0th index : -1 ]
           # str_data[ len(str_data) : -1 : -1 ]
 msg = "Hello"
 
