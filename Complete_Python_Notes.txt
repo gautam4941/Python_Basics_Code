@@ -1335,9 +1335,67 @@ print( f"msg[ len(msg) -1 : -50 : -1 ] = { msg[ len(msg) -1 : -50 : -1 ] }" )
 """
 
 # ord()/ascii value and chr()/character
+'''
+Character/chr/str     ASCII VALUE/ ord/ Ordinal/ int
+'a' 			-> ref. no.
+'b' 			-> ref. no.
+'c' 			-> ref. no.
+.			
+.			
+'z' 			-> ref. no.
+			
+'A' 			-> ref. no.
+'B' 			-> ref. no.
+.			
+.			
+'Z' 			-> ref. no.
+			
+'0' 			-> ref. no.
+'1' 			-> ref. no.
+.			
+.			
+'9' 			-> ref. no.
+
+# remaining -> Special Characters
+Character/chr/str     ASCII VALUE/ ord/ Ordinal/int
+'!' 			-> ref. no.
+'@' 			-> ref. no.
+'#' 			-> ref. no.
+'$' 			-> ref. no.
+.
+.
+'''
+
+# Character 		FUNCTION			ASCII VALUE
+# 'a'			ord('a')			 ? -> 97
+# ? -> 'a'              chr(97)                          97
+# 0-9 -> 48 to 57
+# a-z -> 97 to 122
+# A-Z -> 65 to 90
+# remaining -> Special Character
+
+
+# for i in range( 1, 125 ):
+#     print( f"i/ord = {i} and chr(i) = { chr(i) }" )
+
 """
-for i in range( 0, 1000 ):
-    print( f"i = { i } and chr(i) = { chr(i) }" )
+i/ord = 65 and chr(i) = A	,  i/ord = 97 and chr(i) =  a	,	ord(a) - ord(A) = 97  - 65 = 32
+i/ord = 66 and chr(i) = B	,  i/ord = 98 and chr(i) =  b	,	ord(b) - ord(B) = 98  - 66 = 32
+i/ord = 67 and chr(i) = C	,  i/ord = 99 and chr(i) =  c	,	ord(c) - ord(C) = 99  - 67 = 32 
+i/ord = 68 and chr(i) = D	,  i/ord = 100 and chr(i) = d	,	ord(d) - ord(D) = 100 - 68 = 32
+i/ord = 69 and chr(i) = E	,  i/ord = 101 and chr(i) = e	,	ord(e) - ord(E) = 101 - 69 = 32
+.	                        ,  .							,	
+.	                        ,  .							,	
+i/ord = 86 and chr(i) = V	,  i/ord = 118 and chr(i) = v	,	ord(v) - ord(V) = 118 - 86 = 32
+i/ord = 87 and chr(i) = W	,  i/ord = 119 and chr(i) = w	,	ord(w) - ord(W) = 119 - 87 = 32
+i/ord = 88 and chr(i) = X	,  i/ord = 120 and chr(i) = x	,	ord(x) - ord(X) = 120 - 88 = 32
+i/ord = 89 and chr(i) = Y	,  i/ord = 121 and chr(i) = y	,	ord(y) - ord(Y) = 121 - 89 = 32
+i/ord = 90 and chr(i) = Z	,  i/ord = 122 and chr(i) = z	,	ord(z) - ord(Z) = 122 - 90 = 32
+
+'h' 	-> 'H'
+ord('h') -> 104
+ord('H') = ord('h') - 32 = 104-32 = 72
+chr(72)
 """
 
 """
@@ -1346,7 +1404,7 @@ word = "Hello"
 print( f"word = { word }" )
 
 for i in range( len( word ) ):
-    print( f"i = { i } and word[i] = { word[i] }" )
+    print( f"i = { i } and word[i]/chr = { word[i] } and ord( word[i] ) = { ord( word[i] ) }" )
 """
 
 # 0-9 -> 48 to 57
