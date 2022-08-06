@@ -366,10 +366,10 @@ float : understands Digits( 0-9 ) and decimal( . )
 
 bool( 0 ) -> False and bool( non 0 ) -> True
 bool( 0.0 ) -> False and bool( non 0.0 ) -> True
+bool( ''/ empty strig ) -> False and bool( non ''/ non empty string ) -> True
 
 input( int ) -> bool( int_value ) -> 0 -> False and Non-0 -> True
 input( float ) -> bool( float_value ) -> 0.0 -> False and Non-0.0 -> True
-input( str ) -> bool() -> empty string -> False and Non-empty string -> True
 
 Universal Type Caster :- input -> Type Casting Function -> Output/ No Error
         Answer : bool()( x ) and str()( Yes )
