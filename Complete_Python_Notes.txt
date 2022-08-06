@@ -364,8 +364,8 @@ Notes,
 int : understands only Digits( 0 - 9 )
 float : understands Digits( 0-9 ) and decimal( . )
 
-bool( 0 ) -> False and bool( 1 ) -> True
-bool( 0.0 ) -> False and bool( 1.0 ) -> True
+bool( 0 ) -> False and bool( non 0 ) -> True
+bool( 0.0 ) -> False and bool( non 0.0 ) -> True
 
 input( int ) -> bool( int_value ) -> 0 -> False and Non-0 -> True
 input( float ) -> bool( float_value ) -> 0.0 -> False and Non-0.0 -> True
