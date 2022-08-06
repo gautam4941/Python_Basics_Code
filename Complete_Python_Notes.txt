@@ -372,7 +372,7 @@ input( int ) -> bool( int_value ) -> 0 -> False and Non-0 -> True
 input( float ) -> bool( float_value ) -> 0.0 -> False and Non-0.0 -> True
 
 Universal Type Caster :- input -> Type Casting Function -> Output/ No Error
-        Answer : bool()( x ) and str()( Yes )
+        Answer : bool()( No ) and str()( Yes )
     
 Input :- integer     |   Input :- float         |   Input :- bool               |
 , Output = Other     |   , Output = Other       |   , Output = Other            |
