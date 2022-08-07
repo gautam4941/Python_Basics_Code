@@ -460,7 +460,7 @@ print( "End" )
 # 600 lines of code are pending
 """
 
-# Way1 : Prininting Multiple values inside single print
+# Way1 : Printing Multiple values inside single print
 """
 # Expecttion : 1True 2.3Hello
 # Actual : 1 True 2.3 Hello
