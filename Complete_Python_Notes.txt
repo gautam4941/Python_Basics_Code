@@ -2103,7 +2103,7 @@ print( f"2. l3 = { l3 } and id( l3 ) = { id( l3 ) }\n" )
         # input :- str_data
         # Output :- List
         
-# join()  syntax :-  substr.join( str_data )
+# join()  syntax :-  substr.join( List_data )
         # input :- List
         # Output :- str_data
         
