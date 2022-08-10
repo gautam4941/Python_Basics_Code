@@ -2128,6 +2128,21 @@ print( f"c = {c}" ) #  c = "Hello*how*are*you ?"
     # Mutable
     # String -> str_data.split( substr ) -> List -> sub_str.join( List_data ) -> String
 
+# Difference Between With range and Without Range
+l = [ 11, 12, 13, 14, 15 ]
+
+# With range -> We can access index as well as values both
+for i in range( len( l) ):
+    print( f"With Range, i = {i}" )
+
+
+print()
+print()
+
+# Without range -> We can access only values not indexes
+for i in l:
+    print( f"Without Range, i = {i}" )
+
 ########### random module ######
 >>> import random
 >>> 
