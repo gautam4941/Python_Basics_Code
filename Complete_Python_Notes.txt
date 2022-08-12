@@ -2318,7 +2318,7 @@ t = tuple( t )
 print( f"3. t = {t}, type( t ) = { type( t ) } and id( t ) = { id( t ) }\n" )
 """
 
-# List Summary :-
+# Tuple Summary :-
     # Able to Store only values
     # Support hybrid data types :- int, float, bool, str, list, tuple, etc
     # Data Insertion : NA
