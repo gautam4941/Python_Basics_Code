@@ -2323,6 +2323,7 @@ print( f"3. t = {t}, type( t ) = { type( t ) } and id( t ) = { id( t ) }\n" )
     # Support hybrid data types :- int, float, bool, str, list, tuple, etc
     # Data Insertion : NA
     # Data Deletion : NA
+    # Slicing : Allowed
     # Extra Inbuilt Functions : count( value ), index( value )
     #                           , sorted( tuple_var/list_data )
     # Im-Mutable
