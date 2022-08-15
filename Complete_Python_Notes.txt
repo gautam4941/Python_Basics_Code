@@ -1039,6 +1039,7 @@ print( 1 )
 # 3) Incr/ decr
 # 4) Incr by/ Decr by
 # 5) Work
+# 6) Loop Variable
 
 # Types of Loops
 # 1) While Loops
