@@ -2467,17 +2467,24 @@ print( f"2. s2 = { s2 }\n" )
 """
 
 """
-s1 = {True, 'Hello', 5, 6, 'Hi', 10}
-s2 = {1, 5, 3}
+# isdisjoint() -> If there is nothing common
+s1 = { 1, 2, 3, 4, 'Hi', 'Hello' }
+s2 = { 11, 12, 13, 4, 'Hi' }
+s3 = { 10 }
 
 print( f"1. s1 = { s1 }" )
-print( f"1. s2 = { s2 }\n" )
+print( f"1. s2 = { s2 }" )
+print( f"1. s3 = { s3 }" )
+print()
 
-print( f"s1.isdisjoint( s2 ) = { s1.isdisjoint( s2 ) }\n" )
-print( f"s1.isdisjoint( set() ) = { s1.isdisjoint( set() ) }\n" )
+print( f"s1.isdisjoint( s2 ) = { s1.isdisjoint( s2 ) }" )
+print( f"s2.isdisjoint( s3 ) = { s2.isdisjoint( s3 ) }" )
+print( f"s3.isdisjoint( s1 ) = { s3.isdisjoint( s1 ) }" )
+print()
 
 print( f"2. s1 = { s1 }" )
-print( f"2. s2 = { s2 }\n" )
+print( f"2. s2 = { s2 }" )
+print( f"2. s3 = { s3 }" )
 """
 
 # issubset
