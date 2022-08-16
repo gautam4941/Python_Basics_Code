@@ -2609,7 +2609,7 @@ print( f"2. s2 = { s2 }\n" )
 """
 
 # Summary :-
-# TypeError: 'set' object is not subscriptable
+# TypeError: 'set' object is not subscriptable/ indexing concept is not present in Set
 # It does data shuffling at the time of creation
 # It doesn't allow duplicate values
 # We can use set to implement Mathematical SETS Operations
