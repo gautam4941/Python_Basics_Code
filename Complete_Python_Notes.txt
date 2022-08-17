@@ -2658,6 +2658,31 @@ print( op )
 
 ################################# Dictionary #################################
 
+### Why do we need Dictionary ###
+"""
+sal_bonus = [ 25000, 16000, 23000, 30000, 12000, 12000 ]
+#				sal	  bonus	 bonus	bonus	sal		sal
+
+sal = sal + 10%
+bonus = bonus + 50%
+
+sal = [ 25000, 16000, 23000 ]		# List
+bonus = [ 30000, 12000, 12000 ]		# List
+
+Actualy : sal = [ 25000, 12000, 12000 ] and bonus = [ 16000, 23000, 30000 ]
+
+######## dictionary ######
+# Key		# Values
+{ 'sal'   : [ 25000, 12000, 12000 ]	# Key Value Pair
+'bonus' : [ 16000, 23000, 30000 ] }	# Key Value Pair
+"""
+
+### Dictionary Creation ###
+# d = {}
+# d = dict()
+
+# print( f"d = { d } and type(d) = { type(d) }" )
+
 ### Add value in dictionary :-
 # dict_var[key] = value
 # if key is not present in dict_var then, it will add the key:value pair in dict_var
