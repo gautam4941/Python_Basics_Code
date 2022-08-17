@@ -2737,6 +2737,71 @@ print( f"d[3] = { d[3] }" )
 print( f"d[1.2] = { d[1.2] }" )
 """
 
+### Delete the key-value pair from dictionary
+# pop and del
+"""
+d = {
+     1: 'True'
+   , 2: ['one', 'two', True, False]
+   , 3: (0, 1)
+   , 1.2: { 0.1 : 'Float'}
+    }
+
+print( f"1. Before pop(), d = { d }" )  # 1. Before pop(), d = {1: 'True'
+                                        # , 2: ['one', 'two', True, False]
+                                        # , 3: (0, 1)
+                                        # , 1.2: {0.1: 'Float'}}
+                                        
+print( f"2. d.pop(3) = { d.pop(3) }" )  # 2. d.pop(3) = (0, 1)
+
+print( f"3. After pop(), d = { d }\n" ) # 1. Before pop(), d = {1: 'True'
+                                        # , 2: ['one', 'two', True, False]
+                                        # , 1.2: {0.1: 'Float'}}
+
+del d[2]
+
+print( f"4. After del d[2], d = { d }" )    # 4. After del d[2], d = {1: 'True'
+                                                                    # , 1.2: {0.1: 'Float'} }
+
+# d.pop(10)   # KeyError: 10
+# del d[10]     # KeyError: 10
+print( f"5. After pop(), d = { d }\n" ) # 5. After pop(), d = {1: 'True', 1.2: {0.1: 'Float'}}
+"""
+
+# popitem
+"""
+d = {
+     1: 'True'
+   , 2: ['one', 'two', True, False]
+   , 3: (0, 1)
+   , 1.2: { 0.1 : 'Float'}
+    }
+
+print( f"1. Before pop(), d = { d }\n" ) # 1. Before pop(), d = {1: 'True'
+                                                        # , 2: ['one', 'two', True, False]
+                                                        # , 3: (0, 1)
+                                                        # , 1.2: {0.1: 'Float'} }
+
+print( f"d.popitem() = { d.popitem() }" )   # d.popitem() = (1.2, {0.1: 'Float'})
+print( f"After popitem(), d = { d }\n" ) # After popitem(), d = {1: 'True'
+                                                        # , 2: ['one', 'two', True, False]
+                                                        # , 3: (0, 1) }
+
+print( f"d.popitem() = { d.popitem() }" )   # d.popitem() = (3, (0, 1))
+print( f"After popitem(), d = { d }\n" ) # After popitem(), d = {1: 'True'
+                                                            # , 2: ['one', 'two', True, False]
+                                                            # }
+
+print( f"d.popitem() = { d.popitem() }" )   # d.popitem() = (2, ['one', 'two', True, False])
+print( f"After popitem(), d = { d }\n" )    # After popitem(), d = {1: 'True'}
+
+print( f"d.popitem() = { d.popitem() }" )   # d.popitem() = (1, 'True')
+print( f"After popitem(), d = { d }\n" )    # After popitem(), d = {}
+
+print( f"d.popitem() = { d.popitem() }" )   # KeyError: 'popitem(): dictionary is empty'
+print( f"After popitem(), d = { d }\n" )    # Will not be executed because of above Error
+"""
+
 """
 print( f"d.keys() = { d.keys() } and type( d.keys() ) = { type( d.keys() ) }" )
 print()
@@ -2745,6 +2810,7 @@ keys = list( d.keys() )
 print( f"keys = { keys } and type( keys ) = { type( keys ) }" )
 """
 
+# keys()
 """
 for i in d.keys():
     print( f"i = { i } and type(i) = { type(i) }" )
@@ -2755,12 +2821,14 @@ for i in d.keys():
 # i = 1.2 and type(i) = <class 'float'>
 """
 
+# values()
 """
 # print( d.values() )
 for i in d.values():
     print( f"i = { i } and type( i ) = { type( i ) }" )
 """
 
+# items()
 """
 # print( f"items() }\n and type( d.items() ) = { type( d.items() ) }" )
 
@@ -2784,6 +2852,7 @@ d = {
    , 1.2: { 0.1 : 'Float'}
     }
 
+# get()
 """
 print( f"d[1] = { d[1] }" )
 print( f"d[2] = { d[2] }" )
@@ -2793,21 +2862,7 @@ print( f"d[1.2] = { d[1.2] }" )
 print( f"d.get( 10 ) = { d.get( 10 ) }" )
 """
 
-### Delete the key-value pair from dictionary
-"""
-print( f"1. Before pop(), d = { d }" )
-print( f"2. d.pop(1) = { d.pop(1) }" )
-print( f"3. After pop(), d = { d }\n" )
-
-del d[2]
-
-print( f"4. After del d[2], d = { d }" )
-
-# d.pop(10)   # KeyError: 10
-# del d[10]     # KeyError: 10
-print( f"5. After pop(), d = { d }\n" )
-"""
-
+# fromkeys()
 """
 # print( f"d.fromkeys( [1, 2, 3] ) = { d.fromkeys( [1, 2, 3] ) }" )
 # print( f"d.fromkeys( 'Hello' ) = { d.fromkeys( 'Hello' ) }" )
@@ -2820,25 +2875,7 @@ print( f"dict.fromkeys( 'Hello', 0 ) = { dict.fromkeys( 'Hello', 0 ) }" )
 # dict.fromkeys( 'Hello', 0 ) = {'H': 0, 'e': 0, 'l': 0, 'o': 0}
 """
 
-"""
-print( f"1. Before pop(), d = { d }\n" )
-
-print( f"d.popitem() = { d.popitem() }" )
-print( f"After popitem(), d = { d }\n" )
-
-print( f"d.popitem() = { d.popitem() }" )
-print( f"After popitem(), d = { d }\n" )
-
-print( f"d.popitem() = { d.popitem() }" )
-print( f"After popitem(), d = { d }\n" )
-
-print( f"d.popitem() = { d.popitem() }" )
-print( f"After popitem(), d = { d }\n" )
-
-print( f"d.popitem() = { d.popitem() }" )
-print( f"After popitem(), d = { d }\n" )
-"""
-
+# setdefault()
 """
 d = {
      1: 'True'
