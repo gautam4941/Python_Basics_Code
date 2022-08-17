@@ -2684,42 +2684,42 @@ Actualy : sal = [ 25000, 12000, 12000 ] and bonus = [ 16000, 23000, 30000 ]
 # print( f"d = { d } and type(d) = { type(d) }" )
 
 ### Add value in dictionary :-
-# dict_var[key] = value
+# Syntax :- dict_var[key] = value
 # if key is not present in dict_var then, it will add the key:value pair in dict_var
 # if key is already present in dict_var then, it will update the value pair for given key in dict_var
+# True and 1 both are same as well as False and 0 are also same.
+
 """
 d = {}
-print( f"d = { d } and type(d) = { type(d) }" )
+print( f"d = { d } and type(d) = { type(d) }" ) # d = {} and type(d) = <class 'dict'>
 
 d[True] = 'True'
-print( f"d = { d }" )
+print( f"d = { d }" )   # d = {True: 'True'}
 
-d[1] = 'one'
+d[1] = 'one'            # d = {True: 'one'}
 print( f"d = { d }" )
 
 d[2] = [ 'one', 'two', True, False ]
-print( f"d = { d }" )
+print( f"d = { d }" )   # d = {True: 'one', 2: ['one', 'two', True, False]}
 
 d[3] = ( 0, 1 )
-print( f"d = { d }" )
+print( f"d = { d }" )   # d = {True: 'one', 2: ['one', 'two', True, False], 3: (0, 1)}
 
 d[1.2] = 'Float'
-print( f"d = { d }" )
+print( f"d = { d }" )   # d = {True: 'one', 2: ['one', 'two', True, False], 3: (0, 1)
+                        # , 1.2: 'Float'}
 
 d[False] = { 'False' , True, False}
-print( f"d = { d }" )
+print( f"d = { d }" )   # d = {True: 'one', 2: ['one', 'two', True, False], 3: (0, 1)
+                        # , 1.2: 'Float', False: {'False', True, False}}
+
+d[0] = 'Zero'
+print( f"d = { d }" )   # d = {True: 'one', 2: ['one', 'two', True, False], 3: (0, 1)
+                        # , 1.2: 'Float', False: 'Zero'}
 
 d[ 'hello' ] = 'Hi'
-print( f"d = { d }" )
-
-# d = {} and type(d) = <class 'dict'>
-# d = {1: 'one'}
-# d = {1: 'one', 2: ['one', 'two', True, False]}
-# d = {1: 'one', 2: ['one', 'two', True, False], 3: (0, 1)}
-# d = {1: 'one', 2: ['one', 'two', True, False], 3: (0, 1), 1.2: 'Float'}
-# d = {1: 'True', 2: ['one', 'two', True, False], 3: (0, 1), 1.2: 'Float'}
-# d = {1: 'True', 2: ['one', 'two', True, False], 3: (0, 1), 1.2: 'Float', False: {False, True, 'False'}}
-# d = {1: 'True', 2: ['one', 'two', True, False], 3: (0, 1), 1.2: 'Float', False: {False, True, 'False'}, 'hello': 'Hi'}
+print( f"d = { d }" )   # d = {True: 'one', 2: ['one', 'two', True, False], 3: (0, 1)
+                        # , 1.2: 'Float', False: 'Zero', 'hello': 'Hi'}
 """
 
 d = {
