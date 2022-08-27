@@ -2965,6 +2965,105 @@ print( op )
 
 ################################# Functions #################################
 
+#### Why Functions ###
+( 5+2 ) 							 -> 1 Units
+( ( 5+2 ) - 4 )						 -> 2 Units
+( ( 5+2 ) - 4 ) / 5					 -> 3 Units
+( ( ( 5+2 ) - 4 ) / 5 ) * 2			 -> 4 Units
+( ( ( ( 5+2 ) - 4 ) / 5 ) * 2 ) - 2	 -> 5 Units
+									--------------
+										15 Units
+									--------------
+									
+a = 5+2								-> 2 Units
+b = a-4								-> 2 Units
+c = b/5								-> 2 Units
+d = c*2								-> 2 Units
+d-2									-> 1 Units
+									--------------
+										9 Units
+									--------------
+									
+
+print( 1 )				
+print( 11 )				
+print( 12 )				 
+			
+print( 1 )				=>		for i in range( 1, 5 ):
+print( 11 )							print( 1 )	
+print( 12 )				            print( 11 )	
+							        print( 12 )	
+print( 1 )				
+print( 11 )				
+print( 12 )				 
+			
+print( 1 )				
+print( 11 )				
+print( 12 )				 
+
+-----------------------------------------------------
+
+a = 5 - 2
+
+print( 1 )				
+print( 11 )				
+print( 12 )				 
+		
+b = a * 2
+		
+print( 1 )				=>		for i in range( 1, 5 ):
+print( 11 )							a = 5 - 2
+print( 12 )				            print( 1 )	
+							        print( 11 )
+									print( 12 )	
+
+c = b/5
+
+print( 1 )				
+print( 11 )				
+print( 12 )				 
+
+d = a-2
+			
+print( 1 )				
+print( 11 )				
+print( 12 )				 
+
+---------------------------------------------
+
+x = print( 1 )				
+	print( 11 )				
+	print( 12 )				
+	
+def x():
+	print( 1 )	
+    print( 11 )
+    print( 12 )
+	
+Functions = Functions is a variable which can hold statements
+
+------------------------------------------------------------------
+def x():
+	print( 1 )	
+    print( 11 )
+    print( 12 )
+
+a = 5 - 2
+
+x()		 
+		
+b = a * 2
+		
+x()
+
+c = b/5
+
+x() 
+
+d = a-2
+			
+x()
+
 # Syntax :- def function_name( <args> ):
 #               Statement 1
 #               Statement 2
