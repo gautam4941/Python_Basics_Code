@@ -3043,26 +3043,38 @@ def x():
 Functions = Functions is a variable which can hold statements
 
 ------------------------------------------------------------------
+"""
 def x():
-	print( 1 )	
-    print( 11 )
-    print( 12 )
+    print( 'X Function' )
 
+print( "Before a" )
 a = 5 - 2
+print( "After a, a = {a}" )
+print()
 
-x()		 
-		
-b = a * 2
-		
 x()
 
+print( "Before b" )		
+b = a * 2
+print( "After b, b = {b}" )
+print()
+
+x()
+
+print( "Before c" )
 c = b/5
+print( "After c, c = {c}" )
+print()
 
 x() 
 
+print( "Before d" )
 d = a-2
-			
+print( "After d, d = {d}" )
+print()
+
 x()
+"""
 
 # Syntax :- def function_name( <args> ):
 #               Statement 1
@@ -3071,114 +3083,110 @@ x()
 #               .
 #               Statement n
 
-"""
-a = 6
 
-def airthmetic():
-    global a
-
-    a = 50
-
-    print( f"a = { a }" )
-    print( f"a + 5 = { a + 5 }" )
-    print( f"a - 5 = { a - 5 }" )
-    print( f"a * 5 = { a * 5 }" )
-    print( f"a / 5 = { a / 5 }\n" )
-
-print( f"Before, Outside, a = { a }\n" )
-
-for i in range( 1, 3 ):
-    airthmetic()
-
-print( f"After, Outside, a = { a }\n" )
-"""
 
 """
-def airthmetic( a ):
-    
-    print( f"a = { a }" )
-    print( f"a + 5 = { a + 5 }" )
-    print( f"a - 5 = { a - 5 }" )
-    print( f"a * 5 = { a * 5 }" )
-    print( f"a / 5 = { a / 5 }" )
+def arithmetic():
+    print( f"a = {a} and b = {b}" )
+    print( a+b )
+    print( a-b )
+    print( a*b )
+    print( a/b )
+    print()
 
-    return a + 5, a - 5, a * 5, a / 5
-
-print( "Start\n" )
-
-op = airthmetic( 10 )
-print( f"op = { op }\n" )
-
-op = airthmetic( 20 )
-print( f"op = { op }\n" )
-
-print( "End" )
-"""
-
-"""
-def airthmetic( a ):
-    
-    print( f"airthmetic Start, a = { a }" )
-
-    def add(a):
-        print( f"a + 5 = { a + 5 }" )
-        return a + 5
-    
-    def sub(a):
-        print( f"a - 5 = { a - 5 }" )
-        return a - 5
-        
-    def mult(a):
-        print( f"a * 5 = { a * 5 }" )
-        return a * 5
-
-    def div(a):
-        print( f"a / 5 = { a / 5 }" )
-        return a / 5
-
-    
-    print( f"airthmetic End, a = { a }" )
-
-    return add(10), sub(10), mult(10), div(10)
-
-op = airthmetic( 10 )
-print( f"Outside, op = { op }" )
-"""
-
-"""
-a = [1, 2, 3]
-
-def f1( x ):
-    # print( f"F1, a = { a } and id(a) = { id(a) }" )
-    print( f"F1, x = { x } and id(x) = { id(x) }" )
-
-print( f"outside, a = { a } and id(a) = { id(a) }" )
-# f1(a) # f1( [1, 2, 3] )
-f1( [1, 2, 3] )
-"""
-
-"""
 a = 5
-def f1(x):
-    print( f"F1, Before, x = { x } and id(a) = { id(x) }" )
-    x = x + 5
-    print( f"F1, After, x = { x } and id(a) = { id(x) }" )
+b = 6
+arithmetic()
 
+a = 15
+b = 16
+arithmetic()
 
-print( f"Outside, a = {a}" )
-f1(a)
-print( f"Outside, a = {a}" )
+a = 25
+b = 26
+arithmetic()
 """
 
-######### Types of Arguments #########
-# 1) Reuired Argument
+######## return keyword in functions ######
+"""
+def arithmetic():
+    print( f"a = {a} and b = {b}" )
+    add = a+b
+    sub = a-b
+    mult = a*b
+    div = a/b
+    print( f"Inside, add = { add }, sub = { sub }")
+    print( f"Inside, mult = { mult }, div = { div }")
+    print()
+
+    return add, sub, mult, div
+
+a = 5
+b = 6
+# op = arithmetic() # op = ( 1, 2 )
+# print( f"Outside, add = { add }, sub = { sub }")
+# print( f"Outside, mult = { mult }, div = { div }")
+# print( f"op = { op }" )
+
+p, q, r, s = arithmetic()
+print( f"p = { p }, q = { q }, r = { r } and s = { s }" )
+"""
+
+##### Arguments #####
+"""
+def arithmetic(a, b): # a = 1, b = 2
+    print( f"Inside, a = {a}, b = {b}" )
+    add = a+b
+    sub = a-b
+    mult = a*b
+    div = a/b
+    print( f"Inside, add = { add }, sub = { sub }")
+    print( f"Inside, mult = { mult }, div = { div }")
+    print()
+
+    return add, sub, mult, div
+
+
+p, q, r, s = arithmetic( 1, 2 ) # p, q, r, s = ?
+print( f"p = { p }, q = { q }, r = { r } and s = { s }" )
+print()
+
+p, q, r, s = arithmetic( 11, 12 ) # p, q, r, s = ?
+print( f"p = { p }, q = { q }, r = { r } and s = { s }" )
+print()
+
+p, q, r, s = arithmetic( 21, 22 ) # p, q, r, s = ?
+print( f"p = { p }, q = { q }, r = { r } and s = { s }" )
+"""
+
+"""
+import time
+
+def square_root( milisecond, number ):
+    print( f"number = {number}, sqrt( {number} ) = { number**0.5 }" )
+    time.sleep( milisecond/1000 )
+
+print( f"Square root after specific miliseconds:\n" )
+square_root( 100, 16 )
+square_root( 1000, 100 )
+square_root( 2000, 25100 )
+square_root( 1000, 25 )
+square_root( 1000, 49 )
+square_root( 1000, 500 )
+"""
+
+#### Types of Arguments ####
+
+# 1) Required Argument
 """
 def f1( a ):
     print( f"F1, a = { a }" )
 
-f1(5)
-# f1()
-# f1( 5, 10 )
+print( "Start" )
+# f1(5)
+# f1()        # TypeError: f1() missing 1 required positional argument: 'a'
+# f1( 5, 10 )   # TypeError: f1() takes 1 positional argument but 2 were given
+print( "End" )
 """
 
 
@@ -3192,14 +3200,17 @@ def f1( a, b ):
 
     print( f"F1-> After add, a = { a }, b = {b}" )
 
-# f1(1, 2)
+print( "Start" )
+f1(1, 2)
 # f1(2, 1)
-f1( b = 2, a = 1 )
+# f1( b = 2, a = 1 )
+# f1( b = 2, a = 1 )
+print( "End" )
 """
 
 # 3) Defualt Argument
 """
-def add(b, a = 0):
+def add(a = 0, b = 0):
     print( f"F1-> Before add, a = { a }, b = {b}" )
 
     a = a * 5
@@ -3207,15 +3218,118 @@ def add(b, a = 0):
 
     print( f"F1-> After add, a = { a }, b = {b}, add = { a + b }\n" )
 
-add(a = 5, b = 2 )
-add( 6, a = 5 )
+print( "Start" )
+# add(a = 5, b = 2 )
+# add( 6, b = 5 )
+# add( 6 )
 add()
+print( "End" )
 """
 
-
-# 4) args( arguments ) and kwargs( Keyword - arguments )
+# 4) Variable Length Argument :- *args( arguments ) and **kwargs( Keyword - arguments )
+# Required Argument -> Default Argument -> Args -> Kwargs
 """
-def add(  *a, **x ):
+def add( a=0, *b ):
+    print( f"a = {a} and type(a) = { type(a) }" )
+    print( f"b = {b} and type(b) = { type(b) }" )
+    print()
+
+op = add()          # op = None
+op = add( 1 )       # op = None
+op = add( 1, 2 )    # op = None
+op = add( 1, 2, 3, 4, 5 )   # op = None
+"""
+
+"""
+def add( *numbers ):
+    print( f"numbers = {numbers}" )
+
+    all_sum = 0
+    for i in numbers:
+        all_sum = all_sum + i
+
+    print( f"all_sum = { all_sum }\n" )
+
+add()
+add(1)
+add(1, 2)
+add(1, 2, 3)
+add(1, 2, 3, 4)
+"""
+
+"""
+def add( a, b, **abcd ):
+    print( f"a = {a}" )
+    print( f"b = {b}" )
+    print( f"abcd = { abcd }" )
+    print()
+    
+
+add(a=1, b=2)
+add(b=1, a=2, c=3)
+add(b=1, a=2, c=3, d = 4)
+add(b=1, a=2, c=3, d = 4, e = 11)
+add(b=1, a=2, c=3, d = 4, e = 11, f = 0)
+"""
+
+"""
+def add(  a, b, c = 0, *d, **x ):
+    print( f"a = {a} and type(a) = { type(a) }" )
+    print( f"b = {b} and type(b) = { type(b) }" )
+    print( f"c = {c} and type(c) = { type(c) }" )
+    print( f"d = {d} and type(d) = { type(d) }" )
+    print( f"x = {x} and type(x) = { type(x) }" )
+
+    all_sum = a+b+c
+    
+    for i in d:
+        all_sum = all_sum + i
+
+    for i in x.values():
+        all_sum = all_sum + i
+
+    print( f"all_sum = { all_sum }\n" )
+
+add(1, 2)
+# a = 1 and type(a) = <class 'int'>
+# b = 2 and type(b) = <class 'int'>
+# c = 0 and type(c) = <class 'int'>
+# d = () and type(d) = <class 'tuple'>
+# x = {} and type(x) = <class 'dict'>
+# all_sum = 3
+
+add(1, 2, 3)
+# a = 1 and type(a) = <class 'int'>
+# b = 2 and type(b) = <class 'int'>
+# c = 3 and type(c) = <class 'int'>
+# d = () and type(d) = <class 'tuple'>
+# x = {} and type(x) = <class 'dict'>
+# all_sum = 6
+
+add(1, 2, 3, 4, 5, 6, 7 )
+# a = 1 and type(a) = <class 'int'>
+# b = 2 and type(b) = <class 'int'>
+# c = 3 and type(c) = <class 'int'>
+# d = (4, 5, 6, 7) and type(d) = <class 'tuple'>
+# x = {} and type(x) = <class 'dict'>
+# all_sum = 28
+
+add(1, 2, 3, 4, 5, 6, 7, e=12, f=14, g=15 )
+# a = 1 and type(a) = <class 'int'>
+# b = 2 and type(b) = <class 'int'>
+# c = 3 and type(c) = <class 'int'>
+# d = (4, 5, 6, 7) and type(d) = <class 'tuple'>
+# x = {'e': 12, 'f': 14, 'g': 15} and type(x) = <class 'dict'>
+# all_sum = 69
+"""
+
+# Required -> Default -> Args -> Kwargs
+"""
+def add(  p, q, r = 0, s = 0, *a, **x ):
+    print( f"p = {p} and type(p) = { type(p) }" )
+    print( f"q = {q} and type(q) = { type(q) }" )    
+    print( f"r = {r} and type(r) = { type(r) }" )
+    print( f"s = {s} and type(s) = { type(s) }" )
     print( f"a = {a} and type(a) = { type(a) }" )
     print( f"x = {x} and type(x) = { type(x) }" )
 
@@ -3228,6 +3342,7 @@ def add(  *a, **x ):
 
     print( f"all_sum = { all_sum }\n" )
 
+# Values/ args, positional Arg/ Kwargs
 add( 2, 3, 4, 8, 0, 19, 9, b = 1, c = 2, d = 3 )
 """
 
@@ -3252,21 +3367,6 @@ def add(  p, q, r = 0, s = 0, *a, **x ):
 
 # Values/ args, positional Arg/ Kwargs
 add( 2, 3, 4, 8, 0, 19, 9, b = 1, c = 2, d = 3 )
-"""
-
-"""
-import time
-
-start_time = time.time()
-
-# def f1( a, b ):
-#     return a + b
-
-# print( f1(2, 3) )
-
-print( f"2+3 = { 2+3 }" )
-
-print( f"Executed Time : { time.time() - start_time } seconds " )
 """
 
 
