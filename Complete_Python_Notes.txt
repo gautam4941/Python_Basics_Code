@@ -322,14 +322,6 @@ Output :-  Numbers
    a = 5
    print( -a ) # -5
 
-10001       -> ( 1 * 2 power 4 )        |   11111       -> ( 1 * 2 power 4 ) 
-             + ( 0 * 2 power 3 )        |                + ( 1 * 2 power 3 ) 
-             + ( 0 * 2 power 2 )        |                + ( 1 * 2 power 2 ) 
-             + ( 0 * 2 power 1 )        |                + ( 1 * 2 power 1 ) 
-             + ( 1 * 2 power 0 )        |                + ( 1 * 2 power 0 )
-                                        |                
-            -> 16 + 0 + 0 + 0 + 1 = 17  |               -> 16 + 8 + 4 + 2 + 1 = 31
-
 ############################## Type Casting #############################
 
 Type = Data Type
