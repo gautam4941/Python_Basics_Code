@@ -452,84 +452,144 @@ print( "End" )
 # 600 lines of code are pending
 """
 
-# Way1 : Printing Multiple values inside single print
+############## Ways of Printing ################
+
+# Way 1 : print multiple value inside single print()
 """
-# Expecttion : 1True 2.3Hello
-# Actual : 1 True 2.3 Hello
+# Expecation : 5True 5.6Hello
+# Actual : 5 True 5.6 Hello
 
-a = 1
-b = 2.3
-c = True
-d = "Hello"
+a = 5
+b = 5.6
+c = "Hello"
+d = True
 
-print( "Start" )
-print(a,c,b,d)
-print( "End" )
-"""
+# print( a,                           b, c,                d )
 
-# Way2 : print + end = 'sep'
-"""
-# Expecttion : 1True 2.3Hello
-# Actual : 1True 2.3Hello
-
-a = 1
-b = 2.3
-c = True
-d = "Hello"
-
-print(a, end = '')
-print(c, end = ' ')
-print(b, end = '')
-print(d)
+print( a, d, b, c ) # 5 True 5.6 Hello
 """
 
-# Way3 : Type Casting Method
-"""
-# Expecttion : 1True 2.3Hello
-# Actual : 1True 2.3Hello
-
-a = 1
-b = 2.3
-c = True
-d = "Hello"
-
-print( str(a) + str(c)+ ' ' + str(b) + d )
-# print( str(1) + str(True)+ ' ' + str(2.3) + 'Hello' )
-# print( '1' + 'True' + ' ' + '2.3' + 'Hello' )
-# print( '1True 2.3Hello' )
-"""
-
-# Way4 : f String Method
-# Expecttion : 1True 2.3Hello
-# Actual : 1True 2.3Hello
-
-# f"{non_string area} str_area {non_string area} str_area"
-"""
-a = 1
-b = 2.3
-c = True
-d = "Hello"
-
-print( "ac bd" )                # ac bd
-print( f"ac bd" )               # ac bd
-print( f"{a}c bd" )             # 1c bd
-print( f"{a}{c} bd" )           # 1True bd
-print( f"{a}{c} {b}d" )         # 1True 2.3d
-print( f"{a}{c} {b}{d}" )       # 1True 2.3Hello
-print( "{a}{c} {b}{d}" )        # {a}{c} {b}{d}
-print( f"{a * 5 + 7}{c} {b * 3 + 5}{d}" )   # 12True 11.899999999999999Hello
-"""
+# Way 2 : end paramter in print(). end paramter will bring the next print() output also in same
+#         line. Also it has seperator
 
 """
-a = 7
+# Expecation : 5True 5.6Hello
+# Actual : 5True 5.6Hello
+
+a = 5
+b = 5.6
+c = "Hello"
+d = True
+
+
+print( a, end = ', ' )
+print( b, end = ' @#@##@ ' )
+print( c, end = ', ' )
+print( d )
+
+print( a, end = '' )
+print( d, end = ' '  )
+print( b, end = ''  )
+print( c )
+"""
+
+# Way 3 : String concatination method. str + str = str
+# Expecation : 5True 5.6Hello
+# Actual : 5True 5.6Hello
+
+"""
+a = 5
+b = 5.6
+c = "Hello"
+d = True
+
+print( str(a) + str(d)+ ' ' + str(b) + str(c) )
+
+# str(a) + "Hello" # '5' + "Hello" = '5Hello'
+"""
+
+
+# Way 4 : f Method
+# Way of working : f"str_area{ non_str_area }str_area{non_str_area}..."
+# Expecation : 5True 5.6Hello
+# Actual : 5True 5.6Hello
+"""
+a = 5
+b = 5.6
+c = "Hello"
+d = True
+
+print( "ad bc" )
+print( 'ad bc' )
+print()
+
+print( f"ad bc" )
+print( f'ad bc' )
+print()
+
+print( f"{a}d bc" )
+print( f'{a}d bc' )
+print()
+
+print( f"{a}{d} bc" )
+print( f'{a}{d} bc' )
+print()
+
+print( f"{a}{d} {b}{c}" )
+print( f'{a}{d} {b}{c}' )
+print()
+
+print( "{a}{d} {b}{c}" )
+print( '{a}{d} {b}{c}' )
+print()
+"""
+
+"""
+a = 5
+
 print( f"a = { a }" )
-print( f"a + 5 = { a + 5 }" )
-print( f"a - 5 = { a - 5 }" )
-print( f"a * 5 = { a * 5 }" )
-print( f"a / 5 = { a / 5 }" )
-print( f"a // 5 = { a // 5 }" )
-print( f"a % 5 = { a % 5 }" )
+print( f"a+2 = { a+2 }" )
+print( f"a-2 = { a-2 }" )
+print( f"a*2 = { a*2 }" )
+print( f"a/2 = { a/2 }" )
+print( f"a//2 = { a//2 }" )
+print( f"a%2 = { a%2 }" )
 """
+
+
+a = 5
+
+print( f"type(a) = { type(a) }" )
+
+# -----------------------------------------------------------------
+
+# Way 1 : print multiple value inside single print()
+    # Ex :- print( 1, 5, "hello" )
+
+# -----------------------------------------------------------------
+
+# Way 2 : end paramter in print().
+#         end paramter will bring the next print() output also in same
+#         line. Also it has seperator
+
+    # Ex :- 
+    # print( a, end = ' -> ' )
+    # print( b, , end = ' &*^&Y* ' )
+    # print( c )
+
+# -----------------------------------------------------------------
+
+# Way 3 : String concatination method. str + str = str
+    # Ex :- print( str(a) + str(d)+ ' ' + str(b) + str(c) )
+
+# -----------------------------------------------------------------
+
+# Way 4 : f Method
+# Way of working : f"str_area{ non_str_area }str_area{non_str_area}..."
+    # Ex :- print( f"a+2 = { a+2 }" )
+
+# -----------------------------------------------------------------
+
 
 ############ Conditional Statement ###################
 # Statement
