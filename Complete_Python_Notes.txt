@@ -4412,6 +4412,34 @@ print( re.sub('\W', '*', mystr) )
 print()
 """
 
+###################### Modules #######################
+
+python File :- Program -> You want to use the same code in other .py file
+
+Loc : Folder_1										Loc : Folder_2
+Prog_2.py :-										Prog_1.py :-		
+print( "Prog 1" )									print( "Prog 2" )
+
+													If we run Prog 2 then ,
+													it should show output 
+													:- Prog 1
+													   Prog 2
+													   
+Importing Prog_2.py into Prog_1.py
+import sys
+sys.path.append( r"C:\Users\gauta\Desktop\Folder_1" )
+
+import Prog_1
+
+print( "Prog 2" )
+
+# If anything is present at default paths :- See sys.path content then, No need to provide path.
+# You can directly import your File like following,
+
+import Prog_1
+
+print( "Prog 2" )
+
 ################ Threading Concept Start #######################
 """
 import time
