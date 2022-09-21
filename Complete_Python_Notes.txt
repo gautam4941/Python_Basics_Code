@@ -4440,7 +4440,7 @@ import Prog_1
 
 print( "Prog 2" )
 
-################ Threading Concept Start #######################
+################ Multi Threading Concept Start #######################
 """
 import time
 import threading
