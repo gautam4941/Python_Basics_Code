@@ -4767,89 +4767,141 @@ for i in cursor:
 # Select Command
 """
 cursor.execute( "select * from employee" )
-start_time = time.time()
-
-
 for i in cursor:
     print( i )
 
-op = iter( cursor )
-try:
-    while( op ):
-        print( next(op) )
-except:
-    pass
+############################ Database Connectivity ############################
 
-print( f"Execution Time = { time.time() - start_time }" )
-"""
+                        # Organisation
+# Client : Project
+# Data : Document, information
+# Team 1        Team 2          Team 3          ...         Team n
 
-"""
-cursor.execute( "select * from employee where proj_id = 'ABC' " )
+# Team 1 -> Modification 1( Original File ) -> Modified Data 1( Output File 1 )
+#         -> Team 2 -> Modification 1( Output File 1 ) -> Modified Data 2( Output File 2 )
+#                 -> Team 3( Output File 2 )
 
-op = iter( cursor )
-try:
-    while( op ):
-        print( next(op) )
-except:
-    pass
+# Each and evey team has to share the data .
+# If Team 3 want to check with Team 1 data then, they will have include Team 2 also
+#  and understand the file change logic.
+# During the sharing any data in the form of excel, etc. font size and data changes
+# this may lead to data incorrection or data loss
+
+# Solution : Create commmon Space where any authorized one can read, create, update and delete
+# the records in data.
+
+# Common Area : Database( We store the data in tabular form - row and col )
+
+#       Database/ Schema
+# Table 1,  Table 2,    ..,     Table n
+
+
+# Options for Database storage :- Oracle, mysql, pig, hive, postgres, etc.
+# mysql
+
+
+#To Import mysql.connector
+import mysql.connector as conn
+
+#To Setup the Connection
+conn = conn.connect(
+  host="localhost",
+  user="root",
+  password="gautam1234"
+)
+
+#Printing Connection for th validation purpose that it is not giving error
+print( f"connection :- { conn }" )
+
+# Creating the Cursor
+cursor = conn.cursor()
+
+# cursor.execute( <SQL QUERY> )
+
+# Show Databases
+print( "show databases :-" )
+cursor.execute( "show databases" )
+for i in cursor:
+    print( i )
+print()
+
+# Use Database
+cursor.execute( "use MAMTA" )
+
+# Show Tables in selected database
+print( "show tables :-" )
+cursor.execute( "show tables" )
+for i in cursor:
+    print( i )
+print()
+
+# Before Update - Select Command
 """
+print( "Beforre Update, select * from project WHERE PROJ_ID = 101 :-" )
+cursor.execute( "select * from project WHERE PROJ_ID = 101" )
+for i in cursor:
+    print( i )
+print()
 
 # Update Command
-'''
-query = """update employee set salary = 1000 where proj_id = 'ABC' """
-
-cursor.execute( query )
-
-op = iter( cursor )
-try:
-    while( op ):
-        print( next(op) )
-except:
-    pass
-
-
-# Select Command
-query = """select * from employee where proj_id = 'ABC' """
-
-cursor.execute( query )
-
-print( f"type( cursor ) = { type( cursor ) }\n" )
-
-op = iter( cursor )
-try:
-    while( op ):
-        print( next(op) )
-except:
-    pass
+print( "update project set proj_id = 11 where  proj_id = 101 :-" )
+cursor.execute( "update project set proj_id = 11 where  proj_id = 101" )
+for i in cursor:
+    print( i )
+print()
 
 cursor.execute( "commit" )
-# cursor.close()
+
+# After Update - Select Command
+print( "After Update, select * from project WHERE PROJ_ID = 11 :-" )
+cursor.execute( "select * from project WHERE PROJ_ID = 11" )
+for i in cursor:
+    print( i )
+print()
+"""
+
+# Before Insert - Select Command
 '''
+print( "Beforre Insert, select * from project WHERE PROJ_ID = 101 :-" )
+cursor.execute( "select * from project WHERE PROJ_ID = 101" )
+for i in cursor:
+    print( i )
+print()
+
+# Update Command
+for i in range( 1, 11 ):
+    print( "INSERT INTO project( proj_id, proj_name ) VALUES( 101, A101 )" )
+    cursor.execute( """INSERT INTO project( proj_id, proj_name ) VALUES( 101, 'A101' )""" )
+
+cursor.execute( "commit" )
+
+# After Insert - Select Command
+print( "After Insert, select * from project WHERE PROJ_ID = 101 :-" )
+cursor.execute( "select * from project WHERE PROJ_ID = 101" )
+for i in cursor:
+    print( i )
+print()
+'''
+
+# Before Delete - Select Command
+"""
+print( "Beforre Delete, select * from project WHERE PROJ_ID = 101 :-" )
+cursor.execute( "select * from project WHERE PROJ_ID = 101" )
+for i in cursor:
+    print( i )
+print()
 
 # Delete Command
-'''
-query = """delete from project where proj_name = 'quont' """
-
-cursor.execute( query )
-
-op = iter( cursor )
-try:
-    while( op ):
-        print( next(op) )
-except:
-    pass
+cursor.execute( """delete from project where  proj_id = 101""" )
 
 cursor.execute( "commit" )
-cursor.close()
-'''
 
-# Insert Command
-'''
-for i in range( 1, 101, 10 ):
-    for j in range( 1, 11 ):
-        query = f"INSERT INTO project( proj_id, proj_name ) values ( {i}, 'A{i}' )"
-        cursor.execute( query )
+# After Insert - Select Command
+print( "After Delete, select * from project WHERE PROJ_ID = 101 :-" )
+cursor.execute( "select * from project WHERE PROJ_ID = 101" )
+for i in cursor:
+    print( i )
+print()
+"""
 
-cursor.execute( "commit" )
-cursor.close()
-'''
+conn.close()
