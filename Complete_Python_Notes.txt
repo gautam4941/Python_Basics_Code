@@ -3253,7 +3253,7 @@ print( f"3. d = { d }\n" )
 # , w -> write
 # , a -> append
 
-# , r+ -> read and write
+# , r+ -> read and append
 # , w+ -> write and read
 # , a -> append and read
 
