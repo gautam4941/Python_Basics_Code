@@ -4982,49 +4982,7 @@ print( "End" )
 
 ############################ Database Connectivity ############################
 
-#To Import mysql.connector
-import mysql.connector as conn
-
-#To Setup the Connection
-conn = conn.connect(
-  host="localhost",
-  user="root",
-  password="gautam1234"
-)
-
-#Printing Connection for th validation purpose that it is not giving error
-print( f"connection = { conn }" )
-
-# Creating the Cursor
-cursor = conn.cursor()
-
-# cursor.execute( <SQL QUERY> )
-
-# Show Databases
-"""
-cursor.execute( "show databases" )
-for i in cursor:
-    print( i )
-"""
-
-# Use Database
-cursor.execute( "use MAMTA" )
-
-# Show Tables in selected database
-"""
-cursor.execute( "show tables" )
-for i in cursor:
-    print( i )
-"""
-
-# Select Command
-"""
-cursor.execute( "select * from employee" )
-for i in cursor:
-    print( i )
-
-############################ Database Connectivity ############################
-
+############### Why Database ?
                         # Organisation
 # Client : Project
 # Data : Document, information
@@ -5052,6 +5010,8 @@ for i in cursor:
 # Options for Database storage :- Oracle, mysql, pig, hive, postgres, etc.
 # mysql
 
+###########################################
+
 
 #To Import mysql.connector
 import mysql.connector as conn
@@ -5063,98 +5023,61 @@ conn = conn.connect(
   password="gautam1234"
 )
 
-#Printing Connection for th validation purpose that it is not giving error
-print( f"connection :- { conn }" )
 
-# Creating the Cursor
+#Printing Connection for th validation purpose that it is not giving error
+print( f"connection = { conn }\n" )
+
+# Creating the Cursor -> To run the query and to fetch the return data
 cursor = conn.cursor()
 
 # cursor.execute( <SQL QUERY> )
 
-# Show Databases
-print( "show databases :-" )
-cursor.execute( "show databases" )
-for i in cursor:
-    print( i )
-print()
+def queryExecution( query ):
+    try:
+        cursor.execute( query )
 
-# Use Database
-cursor.execute( "use MAMTA" )
+        for i in cursor:
+            print( i )
 
-# Show Tables in selected database
-print( "show tables :-" )
-cursor.execute( "show tables" )
-for i in cursor:
-    print( i )
-print()
+        print( f"{query} Executed properly" )
+    except Exception as e:
+        print( f"{query} did not Executed properly" )
+        print( f"Error :- {e}" )
 
-# Before Update - Select Command
-"""
-print( "Beforre Update, select * from project WHERE PROJ_ID = 101 :-" )
-cursor.execute( "select * from project WHERE PROJ_ID = 101" )
-for i in cursor:
-    print( i )
-print()
+        cursor.execute( "rollback" )
+    else:
+        cursor.execute( "commit" )
 
-# Update Command
-print( "update project set proj_id = 11 where  proj_id = 101 :-" )
-cursor.execute( "update project set proj_id = 11 where  proj_id = 101" )
-for i in cursor:
-    print( i )
-print()
+    print()
 
-cursor.execute( "commit" )
+# CURD -> Create, Update, Read and Delete
 
-# After Update - Select Command
-print( "After Update, select * from project WHERE PROJ_ID = 11 :-" )
-cursor.execute( "select * from project WHERE PROJ_ID = 11" )
-for i in cursor:
-    print( i )
-print()
-"""
+queryExecution( "use MAMTA" )
+# queryExecution( "show tables" )
 
-# Before Insert - Select Command
-'''
-print( "Beforre Insert, select * from project WHERE PROJ_ID = 101 :-" )
-cursor.execute( "select * from project WHERE PROJ_ID = 101" )
-for i in cursor:
-    print( i )
-print()
 
-# Update Command
-for i in range( 1, 11 ):
-    print( "INSERT INTO project( proj_id, proj_name ) VALUES( 101, A101 )" )
-    cursor.execute( """INSERT INTO project( proj_id, proj_name ) VALUES( 101, 'A101' )""" )
+query = "select * from employee"
+queryExecution( query )
 
-cursor.execute( "commit" )
+# query = "UPDATE employee set manager = 'M10' where emp_name = 'EMP6' and manager = 'M6' "
+# query = "DELETE FROM employee where emp_name = 'EMP6' and manager = 'M10' "
+query = "INSERT INTO employee( emp_id, emp_name, manager, salary, proj_id ) VALUES( 2, 'EMP6', 'M10', 10000, 'P8' ) "
 
-# After Insert - Select Command
-print( "After Insert, select * from project WHERE PROJ_ID = 101 :-" )
-cursor.execute( "select * from project WHERE PROJ_ID = 101" )
-for i in cursor:
-    print( i )
-print()
-'''
+queryExecution( query )
 
-# Before Delete - Select Command
-"""
-print( "Beforre Delete, select * from project WHERE PROJ_ID = 101 :-" )
-cursor.execute( "select * from project WHERE PROJ_ID = 101" )
-for i in cursor:
-    print( i )
-print()
-
-# Delete Command
-cursor.execute( """delete from project where  proj_id = 101""" )
-
-cursor.execute( "commit" )
-
-# After Insert - Select Command
-print( "After Delete, select * from project WHERE PROJ_ID = 101 :-" )
-cursor.execute( "select * from project WHERE PROJ_ID = 101" )
-for i in cursor:
-    print( i )
-print()
-"""
+query = "select * from employee"
+queryExecution( query )
 
 conn.close()
+
+
+########## Assignment #############
+
+MYSQL Database and MySQL Workbench :-
+    Install mysql Database, mysql workbench and it's connection in mysql workbench
+    Then create a database, tables using mysql workbench.
+    Put some values in Tables
+
+Python :-
+    Create DB connection in python
+    Create the cursor and perform CURD Operations
