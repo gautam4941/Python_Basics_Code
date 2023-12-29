@@ -408,6 +408,8 @@ print( f"a = { a }" ) # a = 5
 print( f"a * 5 = { a * 5 }" ) # '5' * 5, '55555'
 print( f"a * 5 = { a + 5 }" ) # '5' + 5, Error
 
+For more details, Check Type Casting Cheetsheet 1 and 2 in "Python_Basics_Code" Repository/ Folder
+
 ######################## input() #####################
 
 """
