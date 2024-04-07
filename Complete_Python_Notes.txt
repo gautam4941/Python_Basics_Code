@@ -1844,13 +1844,13 @@ if( ord(msg[0]) >= 97 and ord(msg[0]) <= 122 ):
     print( chr( ord(msg[0]) - 32 ) + msg[1: ] )
 """
 
-# 2) lower() -> Converts all upper case into lower case
+# 2) lower() -> Converts the string into lower case
 """
 msg = "Hello, how are you ?"
 print( f"msg = { msg } and msg.lower() = { msg.lower() }" )
 """
 
-# 3) upper() -> Converts all upper case into lower case
+# 3) upper() -> Converts the string into lower case
 """
 msg = "Hello, how are you ?"
 print( f"msg = { msg } and msg.upper() = { msg.upper() }" )
