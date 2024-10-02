@@ -2055,6 +2055,13 @@ print( f" message.isupper() = { message.isupper() } " )
 print( f" message.upper().isupper() = { message.upper().isupper() }\n" )
 """
 
+String Notes :- 
++ -> number + number   /   str + str
+     Addition          /   concatination
+
+* -> number * number   /   str * int
+     Multiplication.   /   repeatation
+
 [] -> List
 () -> Tuple
 {} -> Set, Dictionary
